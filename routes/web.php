@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\landingpage\LandingPageController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[LandingPageController::class,'home'])->name('LandingPage');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -29,3 +28,5 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+require __DIR__.'/user.php';
+require __DIR__.'/admin.php';
