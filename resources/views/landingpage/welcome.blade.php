@@ -8,7 +8,7 @@
                     <button class="btn  btn-link text-dark menu-btn"><i class="material-icons">menu</i><span
                             class="new-notification"></span></button>
                 </div>
-                <div class="col text-center"><img src="{{ asset('asset/img/logo.JPG') }}" alt="Logo" class="header-logo">
+                <div class="col text-center"><img src="{{ asset('asset/img/remove-bg.png') }}" alt="Logo" class="header-logo">
                 </div>
                 <div class="col-auto">
                     <form action="{{ route('logout') }}" method="POST">
