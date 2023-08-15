@@ -24,7 +24,7 @@
 
 <body>
     <!-- Loader -->
-    <div class="row no-gutters vh-100 loader-screen">
+    {{-- <div class="row no-gutters vh-100 loader-screen">
         <div class="col align-self-center text-white text-center">
             <img src="{{ asset('asset/img/logo.png') }}" height="200px" width="200px" alt="logo">
             <h1 class="mt-3"><span class="font-weight-light ">{{ env('APP_NAME') }}</h1>
@@ -36,7 +36,7 @@
                 <div></div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Loader ends -->
 
     <div class="wrapper">

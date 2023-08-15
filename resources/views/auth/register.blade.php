@@ -25,7 +25,7 @@
                     </div>
                     <div class="form-group">
                         <input type="number" name="phone" id="phone" class="form-control form-control-lg text-center"
-                            placeholder="Phone Number" required>
+                            placeholder="Phone Number" minlength="11" required>
                     </div>
                     <div class="form-group">
                         <input type="email" name="email" id="inputEmail"
@@ -51,7 +51,7 @@
         </div>
         <div class="row mx-0 bottom-button-container">
             <div class="col">
-                <button type="submit" class="btn btn-default btn-lg btn-rounded shadow btn-block">Login</button>
+                <button type="submit" class="btn btn-default btn-lg btn-rounded shadow btn-block">Register</button>
             </div>
         </div>
         </form>

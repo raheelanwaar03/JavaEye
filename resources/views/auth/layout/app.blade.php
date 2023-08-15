@@ -1,7 +1,7 @@
-@include('layouts.navigation')
+@include('auth.layout.navigation')
 
 @yield('content')
 
 <x-alert />
 
-@include('layouts.footer')
+@include('auth.layout.footer')
