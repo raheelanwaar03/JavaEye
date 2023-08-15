@@ -89,3 +89,71 @@
         </div>
     </div>
     <a href="javascript:void(0)" class="closesidemenu"><i class="material-icons icons-raised bg-dark ">close</i></a>
+
+    <div class="wrapper homepage">
+        <!-- header -->
+        <div class="header">
+            <div class="row no-gutters">
+                <div class="col-auto">
+                    <button class="btn  btn-link text-dark menu-btn"><i class="material-icons">menu</i><span
+                            class="new-notification"></span></button>
+                </div>
+                <div class="col text-center"><img src="{{ asset('asset/img/remove-bg.png') }}" alt="Logo"
+                        class="header-logo">
+                </div>
+                <div class="col-auto">
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn btn-link text-dark position-relative"><i
+                                class="material-icons">power_settings_new</i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="card bg-template shadow mt-4 h-190">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-auto">
+                            <figure class="avatar avatar-60"><img src="{{ asset('asset/img/user1.png') }}"
+                                    alt="">
+                            </figure>
+                        </div>
+                        @if (auth()->user())
+                            <div class="col pl-0 align-self-center">
+                                <h5 class="mb-1">{{ auth()->user()->name }}</h5>
+                                <p class="text-mute small">Level: ({{ auth()->user()->level }})</p>
+                            </div>
+                        @else
+                            <div class="col pl-0 align-self-center">
+                                <h5 class="mb-1">User Name</h5>
+                                <p class="text-mute small">Level:({{ auth()->user()->level }})</p>
+                            </div>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container top-100">
+            <div class="card mb-4 shadow">
+                <div class="card-body border-bottom">
+                    <div class="row">
+                        @if (auth()->user())
+                            <div class="col">
+                                <h3 class="mb-0 font-weight-normal">$ {{ auth()->user()->balance }}</h3>
+                                <p class="text-mute">My Balance</p>
+                            </div>
+                        @else
+                            <div class="col">
+                                <h3 class="mb-0 font-weight-normal">$ 00.0</h3>
+                                <p class="text-mute">My Balance</p>
+                            </div>
+                        @endif
+                        <div class="col-auto">
+                            <button class="btn btn-default btn-rounded-54 shadow" data-toggle="modal"
+                                data-target="#addmoney"><i class="material-icons">add</i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

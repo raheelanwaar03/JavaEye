@@ -1,271 +1,188 @@
 @extends('layouts.app')
 @section('content')
-    <div class="wrapper homepage">
-        <!-- header -->
-        <div class="header">
-            <div class="row no-gutters">
-                <div class="col-auto">
-                    <button class="btn  btn-link text-dark menu-btn"><i class="material-icons">menu</i><span
-                            class="new-notification"></span></button>
-                </div>
-                <div class="col text-center"><img src="{{ asset('asset/img/remove-bg.png') }}" alt="Logo" class="header-logo">
-                </div>
-                <div class="col-auto">
-                    <form action="{{ route('logout') }}" method="POST">
-                        @csrf
-                        <button type="submit" class="btn btn-link text-dark position-relative"><i
-                                class="material-icons">power_settings_new</i></button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="card bg-template shadow mt-4 h-190">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-auto">
-                            <figure class="avatar avatar-60"><img src="{{ asset('asset/img/user1.png') }}" alt="">
-                            </figure>
-                        </div>
-                        @if (auth()->user())
-                            <div class="col pl-0 align-self-center">
-                                <h5 class="mb-1">{{ auth()->user()->name }}</h5>
-                                <p class="text-mute small">Level: ({{ auth()->user()->level }})</p>
-                            </div>
-                        @else
-                            <div class="col pl-0 align-self-center">
-                                <h5 class="mb-1">Ammy Jahnson</h5>
-                                <p class="text-mute small">Work, London, UK</p>
-                            </div>
-                        @endif
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container top-100">
-            <div class="card mb-4 shadow">
-                <div class="card-body border-bottom">
-                    <div class="row">
-                        @if (auth()->user())
-                            <div class="col">
-                                <h3 class="mb-0 font-weight-normal">$ {{ auth()->user()->balance }}</h3>
-                                <p class="text-mute">My Balance</p>
-                            </div>
-                        @else
-                            <div class="col">
-                                <h3 class="mb-0 font-weight-normal">$ 00.0</h3>
-                                <p class="text-mute">My Balance</p>
-                            </div>
-                        @endif
-                        <div class="col-auto">
-                            <button class="btn btn-default btn-rounded-54 shadow" data-toggle="modal"
-                                data-target="#addmoney"><i class="material-icons">add</i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="swiper-container icon-slide mb-4">
-                    <div class="swiper-wrapper">
-                        <a href="#" class="swiper-slide text-center" data-toggle="modal" data-target="#paymodal">
-                            <div class="avatar avatar-60 no-shadow border-0">
-                                <div class="overlay bg-template"></div>
-                                <i class="material-icons text-template">local_atm</i>
-                            </div>
-                            <p class="small mt-2">Pay</p>
-                        </a>
-                        <a href="#" class="swiper-slide text-center" data-toggle="modal" data-target="#sendmoney">
-                            <div class="avatar avatar-60 no-shadow border-0">
-                                <div class="overlay bg-template"></div>
-                                <i class="material-icons text-template">send</i>
-                            </div>
-                            <p class="small mt-2">Send</p>
-                        </a>
-                        <a href="#" class="swiper-slide text-center" data-toggle="modal" data-target="#bookmodal">
-                            <div class="avatar avatar-60 no-shadow border-0">
-                                <div class="overlay bg-template"></div>
-                                <i class="material-icons text-template">directions_railway</i>
-                            </div>
-                            <p class="small mt-2">Book</p>
-                        </a>
-                        <a href="#" class="swiper-slide text-center">
-                            <div class="avatar avatar-60 no-shadow border-0">
-                                <div class="overlay bg-template"></div>
-                                <i class="material-icons text-template">assignment</i>
-                            </div>
-                            <p class="small mt-2">Bills</p>
-                        </a>
-                        <a href="#" class="swiper-slide text-center">
-                            <div class="avatar avatar-60 no-shadow border-0">
-                                <div class="overlay bg-template"></div>
-                                <i class="material-icons text-template">camera</i>
-                            </div>
-                            <p class="small mt-2">Scan</p>
-                        </a>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="container px-0">
-                    <!-- Swiper -->
-                    <div class="swiper-container offer-slide">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="card shadow border-0 bg-template">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-auto pr-0">
-                                                <img src="{{ asset('asset/img/graphics-carousel-scheme1.png') }}"
-                                                    alt="" class="mw-100">
-                                            </div>
-                                            <div class="col align-self-center">
-                                                <h5 class="mb-2 font-weight-normal">Gold loan scheme</h5>
-                                                <p class="text-mute">Get all money at market rate of gold</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide">
-                                <div class="card shadow border-0 bg-template">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col pr-0 align-self-center">
-                                                <h5 class="mb-2 font-weight-normal">Gold loan scheme</h5>
-                                                <p class="text-mute">Get all money at market rate of gold</p>
-                                            </div>
-                                            <div class="col-auto">
-                                                <img src="{{ asset('asset/img/graphics-carousel-scheme1.png') }}"
-                                                    alt="" class="mw-100">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col text-center">
-                    <h5 class="subtitle mb-1">Most Exciting Feature</h5>
-                    <p class="text-secondary">Take a look at our services</p>
-                </div>
-            </div>
-            <div class="row text-center mt-4">
-                <div class="col-6 col-md-3">
-                    <div class="card shadow border-0 mb-3">
-                        <div class="card-body">
-                            <div class="avatar avatar-60 no-shadow border-0">
-                                <div class="overlay bg-template"></div>
-                                <i class="material-icons vm md-36 text-template">card_giftcard</i>
-                            </div>
-                            <h3 class="mt-3 mb-0 font-weight-normal">2546</h3>
-                            <p class="text-secondary text-mute small">Gift it out</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="card shadow border-0 mb-3">
-                        <div class="card-body">
-                            <div class="avatar avatar-60 no-shadow border-0">
-                                <div class="overlay bg-template"></div>
-                                <i class="material-icons vm md-36 text-template">subscriptions</i>
-                            </div>
-                            <h3 class="mt-3 mb-0 font-weight-normal">635</h3>
-                            <p class="text-secondary text-mute small">Monthly Billed</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="card shadow border-0 mb-3">
-                        <div class="card-body">
-                            <div class="avatar avatar-60 no-shadow border-0">
-                                <div class="overlay bg-template"></div>
-                                <i class="material-icons vm md-36 text-template">local_florist</i>
-                            </div>
-                            <h3 class="mt-3 mb-0 font-weight-normal">1542</h3>
-                            <p class="text-secondary text-mute small">Eco environment</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="card shadow border-0 mb-3">
-                        <div class="card-body">
-                            <div class="avatar avatar-60 no-shadow border-0">
-                                <div class="overlay bg-template"></div>
-                                <i class="material-icons vm md-36 text-template">location_city</i>
-                            </div>
-                            <h3 class="mt-3 mb-0 font-weight-normal">154</h3>
-                            <p class="text-secondary text-mute small">Four Offices</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- footer-->
-        <div class="footer">
-            <div class="no-gutters">
-                <div class="col-auto mx-auto">
-                    <div class="row no-gutters justify-content-center">
-                        <div class="col-auto">
-                            <a href="index.html" class="btn btn-link-default active">
-                                <i class="material-icons">home</i>
-                            </a>
-                        </div>
-                        <div class="col-auto">
-                            <a href="statistics.html" class="btn btn-link-default">
-                                <i class="material-icons">insert_chart_outline</i>
-                            </a>
-                        </div>
-                        <div class="col-auto">
-                            <a href="wallet.html" class="btn btn-link-default">
-                                <i class="material-icons">account_balance_wallet</i>
-                            </a>
-                        </div>
-                        <div class="col-auto">
-                            <a href="transactions.html" class="btn btn-link-default">
-                                <i class="material-icons">widgets</i>
-                            </a>
-                        </div>
-                        <div class="col-auto">
-                            <a href="profile.html" class="btn btn-link-default">
-                                <i class="material-icons">account_circle</i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- footer ends-->
-
-    </div>
-    <!-- notification -->
-    <div class="notification bg-white shadow-sm border-primary">
+    <div class="container">
         <div class="row">
-            <div class="col-auto align-self-center pr-0">
-                <i class="material-icons text-primary md-36">fullscreen</i>
+            <div class="swiper-container icon-slide mb-4">
+                <div class="swiper-wrapper">
+                    <a href="#" class="swiper-slide text-center" data-toggle="modal" data-target="#paymodal">
+                        <div class="avatar avatar-60 no-shadow border-0">
+                            <div class="overlay bg-template"></div>
+                            <i class="material-icons text-template">local_atm</i>
+                        </div>
+                        <p class="small mt-2">Pay</p>
+                    </a>
+                    <a href="#" class="swiper-slide text-center" data-toggle="modal" data-target="#sendmoney">
+                        <div class="avatar avatar-60 no-shadow border-0">
+                            <div class="overlay bg-template"></div>
+                            <i class="material-icons text-template">send</i>
+                        </div>
+                        <p class="small mt-2">Share link</p>
+                    </a>
+                    <a href="{{ route('User.Team.Member') }}" class="swiper-slide text-center">
+                        <div class="avatar avatar-60 no-shadow border-0">
+                            <div class="overlay bg-template"></div>
+                            <i class="material-icons text-template">Team</i>
+                        </div>
+                        <p class="small mt-2">Team</p>
+                    </a>
+                    <a href="#" class="swiper-slide text-center">
+                        <div class="avatar avatar-60 no-shadow border-0">
+                            <div class="overlay bg-template"></div>
+                            <i class="material-icons text-template">assignment</i>
+                        </div>
+                        <p class="small mt-2">Bills</p>
+                    </a>
+                    <a href="#" class="swiper-slide text-center">
+                        <div class="avatar avatar-60 no-shadow border-0">
+                            <div class="overlay bg-template"></div>
+                            <i class="material-icons text-template">camera</i>
+                        </div>
+                        <p class="small mt-2">Scan</p>
+                    </a>
+                </div>
+                <div class="swiper-pagination"></div>
             </div>
-            <div class="col">
-                <h6>Viewing in Phone?</h6>
-                <p class="mb-0 text-secondary">Double tap to enter into fullscreen mode for each page.</p>
-            </div>
-            <div class="col-auto align-self-center pl-0">
-                <button class="btn btn-link closenotification"><i
-                        class="material-icons text-secondary text-mute md-18 ">close</i></button>
+        </div>
+
+        <div class="row">
+            <div class="container px-0">
+                <!-- Swiper -->
+                <div class="swiper-container offer-slide">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="card shadow border-0 bg-template">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-auto pr-0">
+                                            <img src="{{ asset('asset/img/graphics-carousel-scheme1.png') }}" alt=""
+                                                class="mw-100">
+                                        </div>
+                                        <div class="col align-self-center">
+                                            <h5 class="mb-2 font-weight-normal">Gold loan scheme</h5>
+                                            <p class="text-mute">Get all money at market rate of gold</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="card shadow border-0 bg-template">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col pr-0 align-self-center">
+                                            <h5 class="mb-2 font-weight-normal">Gold loan scheme</h5>
+                                            <p class="text-mute">Get all money at market rate of gold</p>
+                                        </div>
+                                        <div class="col-auto">
+                                            <img src="{{ asset('asset/img/graphics-carousel-scheme1.png') }}" alt=""
+                                                class="mw-100">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <!-- notification ends -->
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h5 class="subtitle mb-1">Most Exciting Feature</h5>
+                <p class="text-secondary">Take a look at our services</p>
+            </div>
+        </div>
+        <div class="row text-center mt-4">
+            <div class="col-6 col-md-3">
+                <div class="card shadow border-0 mb-3">
+                    <div class="card-body">
+                        <div class="avatar avatar-60 no-shadow border-0">
+                            <div class="overlay bg-template"></div>
+                            <i class="material-icons vm md-36 text-template">card_giftcard</i>
+                        </div>
+                        <h3 class="mt-3 mb-0 font-weight-normal">2546</h3>
+                        <p class="text-secondary text-mute small">Gift it out</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card shadow border-0 mb-3">
+                    <div class="card-body">
+                        <div class="avatar avatar-60 no-shadow border-0">
+                            <div class="overlay bg-template"></div>
+                            <i class="material-icons vm md-36 text-template">subscriptions</i>
+                        </div>
+                        <h3 class="mt-3 mb-0 font-weight-normal">635</h3>
+                        <p class="text-secondary text-mute small">Monthly Billed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card shadow border-0 mb-3">
+                    <div class="card-body">
+                        <div class="avatar avatar-60 no-shadow border-0">
+                            <div class="overlay bg-template"></div>
+                            <i class="material-icons vm md-36 text-template">local_florist</i>
+                        </div>
+                        <h3 class="mt-3 mb-0 font-weight-normal">1542</h3>
+                        <p class="text-secondary text-mute small">Eco environment</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card shadow border-0 mb-3">
+                    <div class="card-body">
+                        <div class="avatar avatar-60 no-shadow border-0">
+                            <div class="overlay bg-template"></div>
+                            <i class="material-icons vm md-36 text-template">location_city</i>
+                        </div>
+                        <h3 class="mt-3 mb-0 font-weight-normal">154</h3>
+                        <p class="text-secondary text-mute small">Four Offices</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer-->
+    <div class="footer">
+        <div class="no-gutters">
+            <div class="col-auto mx-auto">
+                <div class="row no-gutters justify-content-center">
+                    <div class="col-auto">
+                        <a href="index.html" class="btn btn-link-default active">
+                            <i class="material-icons">home</i>
+                        </a>
+                    </div>
+                    <div class="col-auto">
+                        <a href="statistics.html" class="btn btn-link-default">
+                            <i class="material-icons">insert_chart_outline</i>
+                        </a>
+                    </div>
+                    <div class="col-auto">
+                        <a href="wallet.html" class="btn btn-link-default">
+                            <i class="material-icons">account_balance_wallet</i>
+                        </a>
+                    </div>
+                    <div class="col-auto">
+                        <a href="transactions.html" class="btn btn-link-default">
+                            <i class="material-icons">widgets</i>
+                        </a>
+                    </div>
+                    <div class="col-auto">
+                        <a href="profile.html" class="btn btn-link-default">
+                            <i class="material-icons">account_circle</i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer ends-->
+    </div>
 
     <!-- color chooser menu start -->
     <div class="modal fade " id="colorscheme" tabindex="-1" role="dialog" aria-hidden="true">
@@ -374,20 +291,17 @@
         <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header border-0">
-                    <h5>Send Money</h5>
+                    <h5>Copy,Share and Earn </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body pt-0">
                     <div class="form-group mt-4">
-                        <select class="form-control form-control-lg text-center">
-                            <option>Mrs. Magon Johnson</option>
-                            <option selected>Ms. Shivani Dilux</option>
-                        </select>
+                        <input type="text" id="myInput" class="form-control form-control-lg text-center"
+                            value="{{ route('register', ['referral' => auth()->user()->email]) }}" readonly>
                     </div>
-
-                    <div class="card shadow border-0 mb-3">
+                    {{-- <div class="card shadow border-0 mb-3">
                         <div class="card-body">
                             <div class="row align-items-center">
                                 <div class="col-auto pr-0">
@@ -401,17 +315,12 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group text-center mt-4">
-                        <input type="text" class="form-control form-control-lg text-center" placeholder="Enter amount"
-                            required="" autofocus="">
-                    </div>
-                    <p class="text-mute text-center">You will be redirected to payment gatway to procceed further.
-                        Enter amount in USD.</p>
+                    </div> --}}
+                    <p class="text-mute text-center">Share more earn more.</p>
                 </div>
                 <div class="modal-footer border-0">
-                    <button type="button" class="btn btn-default btn-lg btn-rounded shadow btn-block" class="close"
-                        data-dismiss="modal">Next</button>
+                    <button onclick="copy()" class="btn btn-default btn-lg btn-rounded shadow btn-block" class="close"
+                        data-dismiss="modal">Copy</button>
                 </div>
             </div>
         </div>
