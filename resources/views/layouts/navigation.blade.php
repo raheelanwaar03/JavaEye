@@ -23,7 +23,7 @@
 </head>
 <body>
     <!-- Loader -->
-    <div class="row no-gutters vh-100 loader-screen">
+    {{-- <div class="row no-gutters vh-100 loader-screen">
         <div class="col align-self-center text-white text-center">
             <img src="{{ asset('asset/img/logo.png') }}" alt="logo">
             <h1 class="mt-3"><span class="font-weight-light ">{{ env('APP_NAME') }}</h1>
@@ -35,12 +35,12 @@
                 <div></div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <div class="sidebar">
         <div class="mt-4 mb-3">
             <div class="row">
                 <div class="col-auto">
-                    <figure class="avatar avatar-60 border-0"><img src="img/user1.png" alt=""></figure>
+                    <figure class="avatar avatar-60 border-0"><img src="{{ asset('asset/img/user1.png') }}" alt=""></figure>
                 </div>
                 @if (auth()->user())
                 <div class="col pl-0 align-self-center">
