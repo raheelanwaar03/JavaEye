@@ -8,13 +8,13 @@
                     <button class="btn  btn-link text-dark menu-btn"><i class="material-icons">menu</i><span
                             class="new-notification"></span></button>
                 </div>
-                <div class="col text-center"><img src="{{ asset('asset/img/logo.JPG') }}" alt="Logo"
-                        class="header-logo"></div>
+                <div class="col text-center"><img src="{{ asset('asset/img/logo.JPG') }}" alt="Logo" class="header-logo">
+                </div>
                 <div class="col-auto">
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
                         <button type="submit" class="btn btn-link text-dark position-relative"><i
-                                class="material-icons">phonelink_erase</i></button>
+                                class="material-icons">power_settings_new</i></button>
                     </form>
                 </div>
             </div>
@@ -27,10 +27,17 @@
                             <figure class="avatar avatar-60"><img src="{{ asset('asset/img/user1.png') }}" alt="">
                             </figure>
                         </div>
-                        <div class="col pl-0 align-self-center">
-                            <h5 class="mb-1">Ammy Jahnson</h5>
-                            <p class="text-mute small">Work, London, UK</p>
-                        </div>
+                        @if (auth()->user())
+                            <div class="col pl-0 align-self-center">
+                                <h5 class="mb-1">{{ auth()->user()->name }}</h5>
+                                <p class="text-mute small">Level: ({{ auth()->user()->level }})</p>
+                            </div>
+                        @else
+                            <div class="col pl-0 align-self-center">
+                                <h5 class="mb-1">Ammy Jahnson</h5>
+                                <p class="text-mute small">Work, London, UK</p>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -39,29 +46,20 @@
             <div class="card mb-4 shadow">
                 <div class="card-body border-bottom">
                     <div class="row">
-                        <div class="col">
-                            <h3 class="mb-0 font-weight-normal">$ 1548.00</h3>
-                            <p class="text-mute">My Balance</p>
-                        </div>
+                        @if (auth()->user())
+                            <div class="col">
+                                <h3 class="mb-0 font-weight-normal">$ {{ auth()->user()->balance }}</h3>
+                                <p class="text-mute">My Balance</p>
+                            </div>
+                        @else
+                            <div class="col">
+                                <h3 class="mb-0 font-weight-normal">$ 00.0</h3>
+                                <p class="text-mute">My Balance</p>
+                            </div>
+                        @endif
                         <div class="col-auto">
                             <button class="btn btn-default btn-rounded-54 shadow" data-toggle="modal"
                                 data-target="#addmoney"><i class="material-icons">add</i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-footer bg-none">
-                    <div class="row">
-                        <div class="col">
-                            <p>71.00 <i class="material-icons text-danger vm small">arrow_downward</i><br><small
-                                    class="text-mute">INR</small></p>
-                        </div>
-                        <div class="col text-center">
-                            <p>1.00 <i class="material-icons text-success vm small">arrow_upward</i><br><small
-                                    class="text-mute">USD</small></p>
-                        </div>
-                        <div class="col text-right">
-                            <p><i class="material-icons text-success vm small mr-1">arrow_upward</i>0.78<br><small
-                                    class="text-mute">GBP</small></p>
                         </div>
                     </div>
                 </div>
@@ -111,84 +109,6 @@
                 </div>
             </div>
 
-            <div class="row mb-2">
-                <div class="container px-0">
-                    <!-- Swiper -->
-                    <div class="swiper-container two-slide">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="card shadow border-0">
-                                    <div class="card-body">
-                                        <div class="row no-gutters h-100">
-                                            <div class="col">
-                                                <p>$ 1548.00<br><small class="text-secondary">Home Loan EMI</small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="card shadow border-0">
-                                    <div class="card-body">
-                                        <div class="row no-gutters h-100">
-                                            <div class="col">
-                                                <p>$ 1548.00<br><small class="text-secondary">Cash Loan EMI</small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="card shadow border-0">
-                                    <div class="card-body">
-                                        <div class="row no-gutters h-100">
-                                            <div class="col">
-                                                <p>$ 1548.00<br><small class="text-secondary">Car Loan EMI</small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="card shadow border-0">
-                                    <div class="card-body">
-                                        <div class="row no-gutters h-100">
-                                            <div class="col">
-                                                <p>$ 1548.00<br><small class="text-secondary">Business Loan EMI</small>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="card shadow border-0">
-                                    <div class="card-body">
-                                        <div class="row no-gutters h-100">
-                                            <div class="col">
-                                                <p>$ 1548.00<br><small class="text-secondary">Edu Loan EMI</small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="card shadow border-0">
-                                    <div class="card-body">
-                                        <div class="row no-gutters h-100">
-                                            <div class="col">
-                                                <p>$ 1548.00<br><small class="text-secondary">Home Loan EMI</small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-                </div>
-            </div>
-
             <div class="row">
                 <div class="container px-0">
                     <!-- Swiper -->
@@ -230,233 +150,6 @@
 
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <h6 class="subtitle">Upcoming Payments <a href="allpayment.html" class="float-right small">View All</a>
-            </h6>
-            <div class="card shadow border-0 mb-3">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col">
-                            <h5 class="font-weight-normal mb-1">$ 1548.00 </h5>
-                            <p class="text-mute small text-secondary mb-2">20d to pay electricity bill</p>
-                            <div class="progress h-4">
-                                <div class="progress-bar bg-success" role="progressbar" style="width:35%"
-                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                        <div class="col-auto pl-0">
-                            <button class="avatar avatar-50 no-shadow border-0 bg-template">
-                                <i class="material-icons">local_atm</i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card shadow border-0 mb-3">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col">
-                            <h5 class="font-weight-normal mb-1">$ 106.00 <span
-                                    class="badge badge-danger small vm text-white">Prior</span></h5>
-                            <p class="text-mute small text-secondary mb-2">33 days to pay gas bill</p>
-                            <div class="progress h-4">
-                                <div class="progress-bar bg-danger" role="progressbar" style="width: 65%"
-                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                        <div class="col-auto pl-0">
-                            <button class="avatar avatar-50 no-shadow border-0 bg-template">
-                                <i class="material-icons">local_atm</i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <h6 class="subtitle">Recent Messages</h6>
-            <div class="card shadow border-0 mb-3">
-                <div class="card-body">
-                    <div class="row align-items-center">
-                        <div class="col-auto pr-0">
-                            <div class="avatar avatar-60 no-shadow border-0">
-                                <img src="{{ asset('asset/img/user1.png') }}" alt="">
-                            </div>
-                        </div>
-                        <div class="col">
-                            <h6 class="font-weight-normal mb-1">Mrs. Magon Johnson </h6>
-                            <p class="text-mute small text-secondary">"Thank you for your purchase with our shop and
-                                making online payment."</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-footer border-top bg-none">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Recipient's username"
-                            aria-label="Quick reply" aria-describedby="button-addon4">
-                        <div class="input-group-append">
-                            <button class="btn btn-default btn-rounded-36 shadow-sm" type="button" id="button-addon4"><i
-                                    class="material-icons md-18">send</i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card shadow border-0 mb-3">
-                <div class="card-body">
-                    <div class="row align-items-center">
-                        <div class="col-auto pr-0">
-                            <div class="avatar avatar-60 no-shadow border-0">
-                                <img src="{{ asset('asset/img/user2.png') }}" alt="">
-                            </div>
-                        </div>
-                        <div class="col">
-                            <h6 class="font-weight-normal mb-1">Ms. Shivani Dilux</h6>
-                            <p class="text-mute small text-secondary">"Thank you for your purchase with our shop and
-                                making online payment."</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <h6 class="subtitle">Loan Status </h6>
-            <div class="card shadow border-0 mb-3">
-                <div class="card-body">
-                    <div class="row align-items-center">
-                        <div class="col-auto pr-0">
-                            <div class="avatar avatar-50 no-shadow border-0">
-                                <div class="overlay bg-template"></div>
-                                <i class="material-icons vm text-template">local_atm</i>
-                            </div>
-                        </div>
-                        <div class="col-auto align-self-center">
-                            <h6 class="font-weight-normal mb-1">EMI</h6>
-                            <p class="text-mute small text-secondary">Home Loan</p>
-                        </div>
-                        <div class="col-auto align-self-center border-left">
-                            <h6 class="font-weight-normal mb-1">$ 1548.00</h6>
-                            <p class="text-mute small text-secondary">Due: 15-12-2019</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card shadow border-0 mb-3">
-                <div class="card-body">
-                    <div class="row align-items-center">
-                        <div class="col-auto pr-0">
-                            <div class="avatar avatar-50 no-shadow border-0">
-                                <div class="overlay bg-template"></div>
-                                <i class="material-icons vm text-template">local_atm</i>
-                            </div>
-                        </div>
-                        <div class="col-auto align-self-center">
-                            <h6 class="font-weight-normal mb-1">EMI</h6>
-                            <p class="text-mute small text-secondary">Car Loan</p>
-                        </div>
-                        <div class="col-auto align-self-center border-left">
-                            <h6 class="font-weight-normal mb-1">$ 658.00</h6>
-                            <p class="text-mute small text-secondary">Due: 18-12-2019</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <h6 class="subtitle">News Updates</h6>
-            <div class="row">
-                <!-- Swiper -->
-                <div class="swiper-container news-slide">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="card shadow-sm border-0 bg-dark text-white">
-                                <figure class="background">
-                                    <img src="{{ asset('asset/img/product2.jpg') }}" alt="">
-                                </figure>
-                                <div class="card-body">
-                                    <a href="#"
-                                        class="btn btn-default btn-rounded-36 shadow-sm float-bottom-right"><i
-                                            class="material-icons md-18">arrow_forward</i></a>
-                                    <h5 class="small">Multipurpose Juice allows you to grow faster</h5>
-                                    <p class="text-mute small">By Anand Mangal</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card shadow-sm border-0 bg-dark text-white">
-                                <figure class="background">
-                                    <img src="{{ asset('asset/img/product3.jpg') }}" alt="">
-                                </figure>
-                                <div class="card-body">
-                                    <a href="#"
-                                        class="btn btn-default btn-rounded-36 shadow-sm float-bottom-right"><i
-                                            class="material-icons md-18">arrow_forward</i></a>
-                                    <h5 class="small">Multipurpose Juice allows you to grow faster</h5>
-                                    <p class="text-mute small">By Anand Mangal</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card shadow-sm border-0 bg-dark text-white">
-                                <figure class="background">
-                                    <img src="{{ asset('asset/img/product2.jpg') }}" alt="">
-                                </figure>
-                                <div class="card-body">
-                                    <a href="#"
-                                        class="btn btn-default btn-rounded-36 shadow-sm float-bottom-right"><i
-                                            class="material-icons md-18">arrow_forward</i></a>
-                                    <h5 class="small">Multipurpose Juice allows you to grow faster</h5>
-                                    <p class="text-mute small">By Anand Mangal</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card shadow-sm border-0 bg-dark text-white">
-                                <figure class="background">
-                                    <img src="{{ asset('asset/img/product3.jpg') }}" alt="">
-                                </figure>
-                                <div class="card-body">
-                                    <a href="#"
-                                        class="btn btn-default btn-rounded-36 shadow-sm float-bottom-right"><i
-                                            class="material-icons md-18">arrow_forward</i></a>
-                                    <h5 class="small">Multipurpose Juice allows you to grow faster</h5>
-                                    <p class="text-mute small">By Anand Mangal</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card shadow-sm border-0 bg-dark text-white">
-                                <figure class="background">
-                                    <img src="{{ asset('asset/img/product2.jpg') }}" alt="">
-                                </figure>
-                                <div class="card-body">
-                                    <a href="#"
-                                        class="btn btn-default btn-rounded-36 shadow-sm float-bottom-right"><i
-                                            class="material-icons md-18">arrow_forward</i></a>
-                                    <h5 class="small">Multipurpose Juice allows you to grow faster</h5>
-                                    <p class="text-mute small">By Anand Mangal</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card shadow-sm border-0 bg-dark text-white">
-                                <figure class="background">
-                                    <img src="{{ asset('asset/img/product3.jpg') }}" alt="">
-                                </figure>
-                                <div class="card-body">
-                                    <a href="#"
-                                        class="btn btn-default btn-rounded-36 shadow-sm float-bottom-right"><i
-                                            class="material-icons md-18">arrow_forward</i></a>
-                                    <h5 class="small">Multipurpose Juice allows you to grow faster</h5>
-                                    <p class="text-mute small">By Anand Mangal</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Add Pagination -->
-                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </div>

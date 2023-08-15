@@ -1,10 +1,10 @@
-
 <!doctype html>
 <html lang="en" class="deeppurple-theme">
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="Maxartkiller">
 
@@ -21,6 +21,7 @@
     <!-- Custom styles for this template -->
     <link href="{{ asset('asset/css/style.css') }}" rel="stylesheet">
 </head>
+
 <body>
     <!-- Loader -->
     {{-- <div class="row no-gutters vh-100 loader-screen">
@@ -40,31 +41,49 @@
         <div class="mt-4 mb-3">
             <div class="row">
                 <div class="col-auto">
-                    <figure class="avatar avatar-60 border-0"><img src="{{ asset('asset/img/user1.png') }}" alt=""></figure>
+                    <figure class="avatar avatar-60 border-0"><img src="{{ asset('asset/img/user1.png') }}"
+                            alt=""></figure>
                 </div>
                 @if (auth()->user())
-                <div class="col pl-0 align-self-center">
-                    <h5 class="mb-1">{{ auth()->user()->name }}</h5>
-                    <p class="text-mute small">{{ auth()->user()->level }}</p>
-                </div>
+                    <div class="col pl-0 align-self-center">
+                        <h5 class="mb-1">{{ auth()->user()->name }}</h5>
+                        <p class="text-mute small">{{ auth()->user()->level }}</p>
+                    </div>
                 @else
-                <div class="col pl-0 align-self-center">
-                    <h5 class="mb-1">User</h5>
-                    <p class="text-mute small">Level</p>
-                </div>
+                    <div class="col pl-0 align-self-center">
+                        <h5 class="mb-1">User</h5>
+                        <p class="text-mute small">Level</p>
+                    </div>
                 @endif
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <div class="list-group main-menu">
-                    <a href="index.html" class="list-group-item list-group-item-action active"><i class="material-icons icons-raised">home</i>Home</a>
-                    <a href="notification.html" class="list-group-item list-group-item-action"><i class="material-icons icons-raised">notifications</i>Notification <span class="badge badge-dark text-white">2</span></a>
-                    <a href="alltransactions.html" class="list-group-item list-group-item-action"><i class="material-icons icons-raised">find_in_page</i>History</a>
-                    <a href="controls.html" class="list-group-item list-group-item-action"><i class="material-icons icons-raised">view_quilt<span class="new-notification"></span></i>Pages Controls</a>
-                    <a href="setting.html" class="list-group-item list-group-item-action"><i class="material-icons icons-raised">important_devices</i>Settings</a>
-                    <a href="javascript:void(0)" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#colorscheme"><i class="material-icons icons-raised">color_lens</i>Color scheme</a>
-                    <a href="login.html" class="list-group-item list-group-item-action"><i class="material-icons icons-raised bg-danger">power_settings_new</i>Logout</a>
+                    <a href="index.html" class="list-group-item list-group-item-action active"><i
+                            class="material-icons icons-raised">home</i>Home</a>
+                    <a href="notification.html" class="list-group-item list-group-item-action"><i
+                            class="material-icons icons-raised">notifications</i>Notification <span
+                            class="badge badge-dark text-white">2</span></a>
+                    <a href="alltransactions.html" class="list-group-item list-group-item-action"><i
+                            class="material-icons icons-raised">find_in_page</i>History</a>
+                    <a href="controls.html" class="list-group-item list-group-item-action"><i
+                            class="material-icons icons-raised">view_quilt<span
+                                class="new-notification"></span></i>Pages Controls</a>
+                    <a href="setting.html" class="list-group-item list-group-item-action"><i
+                            class="material-icons icons-raised">important_devices</i>Settings</a>
+                    <a href="javascript:void(0)" class="list-group-item list-group-item-action" data-toggle="modal"
+                        data-target="#colorscheme"><i class="material-icons icons-raised">color_lens</i>Color scheme</a>
+                    @if (auth()->user())
+                        <form action="{{ route('logout') }}">
+                            @csrf
+                            <button class="list-group-item list-group-item-action"><i
+                                    class="material-icons icons-raised bg-danger">power_settings_new</i>Logout</button>
+                        </form>
+                    @else
+                        <a href="{{ route('login') }}" class="list-group-item list-group-item-action"><i
+                                class="material-icons icons-raised bg-danger">arrow_forward</i>Login</a>
+                    @endif
                 </div>
             </div>
         </div>
