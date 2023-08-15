@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="Maxartkiller">
 
-    <title>Authentication | {{ env('APP_NAME') }}</title>
+    <title>Dashboard | {{ env('APP_NAME') }}</title>
 
     <!-- Material design icons CSS -->
     <link rel="stylesheet" href="{{ asset('asset/vendor/materializeicon/material-icons.css') }}">

@@ -39,7 +39,7 @@
                         <input type="password" name="password_confirmation" id="confirmPassword"
                             class="form-control form-control-lg text-center" placeholder="Confirm Password" required>
                     </div>
-
+                    <input type="hidden" name="referral" value="{{ $referral }}">
                     <div class="form-group my-4 text-left">
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" name="remember" class="custom-control-input" id="rememberme">
