@@ -553,7 +553,6 @@
     <!-- footer ends-->
 
 </div>
-
 <!-- notification -->
 <div class="notification bg-white shadow-sm border-primary">
     <div class="row">
@@ -834,5 +833,5 @@
         </div>
     </div>
 </div>
-<!-- jquery, popper and bootstrap js -->    
+<!-- jquery, popper and bootstrap js -->
 @endsection

@@ -1,9 +1,6 @@
 <!doctype html>
 <html lang="en" class="deeppurple-theme">
 
-
-<!-- Mirrored from maxartkiller.com/website/Fimobile/Fimobile-HTML/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 03 Aug 2023 08:06:44 GMT -->
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport"
@@ -29,7 +26,7 @@
     <!-- Loader -->
     <div class="row no-gutters vh-100 loader-screen">
         <div class="col align-self-center text-white text-center">
-            <img src="{{ asset('asset/img/logo.png') }}" alt="logo">
+            <img src="{{ asset('asset/img/logo.png') }}" height="200px" width="200px" alt="logo">
             <h1 class="mt-3"><span class="font-weight-light ">{{ env('APP_NAME') }}</h1>
             <p class="text-mute text-uppercase small">Earning Platform</p>
             <div class="laoderhorizontal">
