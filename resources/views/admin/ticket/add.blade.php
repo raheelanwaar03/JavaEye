@@ -9,7 +9,7 @@
                             <h4 class="card-title">Add New Ticket</h4>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('Admin.Store.Ticket') }}" method="POST">
+                            <form action="{{ route('Admin.Store.Ticket') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <label for="title">Title</label>
@@ -25,7 +25,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="level">Image</label>
-                                    <input type="file" name="img" class="form-control">
+                                    <input type="file" name="image" class="form-control">
                                 </div>
                                 <div class="">
                                     <button class="btn btn-primary">Submit</button>

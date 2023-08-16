@@ -18,6 +18,8 @@ Route::name('Admin.')->prefix('Admin/')->middleware('auth','admin')->group(funct
 
     Route::get('Add/Ticket',[AdminTicketController::class,'add'])->name('Add.Ticket');
     Route::post('Store/Ticket',[AdminTicketController::class,'store'])->name('Store.Ticket');
+    Route::get('All/Tickets',[AdminTicketController::class,'index'])->name('All.Ticket');
+    Route::get('Delete/Ticket/{id}',[AdminTicketController::class,'delete'])->name('Delete.Ticket');
 
 
 

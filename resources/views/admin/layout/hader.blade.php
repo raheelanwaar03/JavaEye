@@ -748,6 +748,7 @@
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{ route('Admin.Add.Ticket') }}">Add New Ticket</a></li>
+                            <li><a href="{{ route('Admin.All.Ticket') }}">All Tickets</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
