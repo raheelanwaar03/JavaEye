@@ -16,33 +16,24 @@
     <link href="{{ asset('admin/vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet">
     <link href="{{ asset('admin/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('admin../../cdn.lineicons.com/2.0/LineIcons.css') }}" rel="stylesheet">
+    {{-- datatable --}}
+
+    <link href="{{ asset('admin/vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('admin/vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('admin/css/style.css') }}" rel="stylesheet">
+
 
 </head>
 
 <body>
-
-    <!--*******************
-        Preloader start
-    ********************-->
-    <div id="preloader">
+    {{-- <div id="preloader">
         <div class="sk-three-bounce">
             <div class="sk-child sk-bounce1"></div>
             <div class="sk-child sk-bounce2"></div>
             <div class="sk-child sk-bounce3"></div>
         </div>
-    </div>
-    <!--*******************
-        Preloader end
-    ********************-->
-
-    <!--**********************************
-        Main wrapper start
-    ***********************************-->
+    </div> --}}
     <div id="main-wrapper">
-
-        <!--**********************************
-            Nav header start
-        ***********************************-->
         <div class="nav-header">
             <a href="index.html" class="brand-logo">
                 <img class="logo-abbr" src="{{ asset('admin/images/logo.png') }}" alt="">
@@ -56,13 +47,6 @@
                 </div>
             </div>
         </div>
-        <!--**********************************
-            Nav header end
-        ***********************************-->
-
-        <!--**********************************
-            Chat box start
-        ***********************************-->
         <div class="chatbox">
             <div class="chatbox-close"></div>
             <div class="custom-tab-1">
@@ -755,7 +739,7 @@
                             <span class="nav-text">Users</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="#">All Users</a></li>
+                            <li><a href="{{ route('Admin.All.Users') }}">All Users</a></li>
                             <li><a href="#">Pending Users</a></li>
                             <li><a href="#">Approved Users</a></li>
                         </ul>
