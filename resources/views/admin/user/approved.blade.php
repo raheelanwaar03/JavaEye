@@ -31,14 +31,10 @@
                                                 <td>{{ $user->phone }}</td>
                                                 <td>{{ $user->referral }}</td>
                                                 <td><strong>{{ $user->balance }}</strong></td>
-                                                @if ($user->status === 'pending')
-                                                    <td><span class="badge light badge-primary">Pending</span></td>
-                                                @else
-                                                    <td><span class="badge light badge-success">Approved</span></td>
-                                                @endif
+                                                <td><span class="badge light badge-success">Approved</span></td>
                                                 <td>{{ $user->created_at }}</td>
                                                 <td>
-                                                    <a href="#" class="btn btn-sm btn-success">Approved</a>
+                                                    <a href="#" class="btn btn-sm btn-warning">Pending</a>
                                                     <a href="#" class="btn btn-sm btn-danger">Rejected</a>
                                                 </td>
                                             </tr>
