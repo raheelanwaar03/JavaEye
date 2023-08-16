@@ -26,7 +26,6 @@ class User extends Authenticatable
         'referral',
         'role',
         'password',
-        'status',
     ];
 
     /**

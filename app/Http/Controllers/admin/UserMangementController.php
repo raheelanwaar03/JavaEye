@@ -8,22 +8,27 @@ use Illuminate\Http\Request;
 
 class UserMangementController extends Controller
 {
-    public function pendingUsers()
-    {
-        $users = User::where('status','pending')->get();
-        return view('admin.user.pending', compact('users'));
-    }
-
     public function approvedUsers()
     {
-        $users = User::where('status','approved')->get();
+        $users = User::get();
         return view('admin.user.approved',compact('users'));
     }
 
-    public function rejectedUsers()
+    public function userDetails($email)
     {
-        $users = User::where('status','rejected')->get();
-        return view('admin.user.rejected',compact('users'));
+        $user = User::where('email',$email)->first();
+        return view('admin.user.details',compact('user'));
     }
+
+    public function updateUserDetails(Request $request,$id)
+    {
+        $user = User::find($id);
+        $user->balance = $request->balance;
+        $user->level = $request->level;
+        $user->save();
+        return redirect(route('Admin.Approved.Users'))->with('success','User details updated successfully');
+    }
+
+
 
 }

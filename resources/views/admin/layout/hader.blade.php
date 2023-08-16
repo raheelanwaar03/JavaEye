@@ -739,17 +739,15 @@
                             <span class="nav-text">Users</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{ route('Admin.Pending.Users') }}">Pending Users</a></li>
-                            <li><a href="{{ route('Admin.Approved.Users') }}">Approved Users</a></li>
-                            <li><a href="{{ route('Admin.Rejected.Users') }}">Rejected Users</a></li>
+                            <li><a href="{{ route('Admin.Approved.Users') }}">All Users</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                             <i class="flaticon-star"></i>
-                            <span class="nav-text">Ticket Requests</span>
+                            <span class="nav-text">Ticket</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="chart-flot.html">New</a></li>
+                            <li><a href="{{ route('Admin.Add.Ticket') }}">Add New Ticket</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">

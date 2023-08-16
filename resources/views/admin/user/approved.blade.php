@@ -17,7 +17,7 @@
                                             <th>Email</th>
                                             <th>Phone</th>
                                             <th>Referral</th>
-                                            <th>Amount</th>
+                                            <th>Balance</th>
                                             <th>Status</th>
                                             <th>Date</th>
                                             <th>Action</th>
@@ -34,8 +34,8 @@
                                                 <td><span class="badge light badge-success">Approved</span></td>
                                                 <td>{{ $user->created_at }}</td>
                                                 <td>
-                                                    <a href="#" class="btn btn-sm btn-warning">Pending</a>
-                                                    <a href="#" class="btn btn-sm btn-danger">Rejected</a>
+                                                    <a href="{{ route('Admin.User.Details', ['email' => $user->email]) }}"
+                                                        class="btn btn-sm btn-primary">Edit</a>
                                                 </td>
                                             </tr>
                                         @empty
