@@ -9,7 +9,7 @@
                             <div class="overlay bg-template"></div>
                             <i class="material-icons text-template">local_atm</i>
                         </div>
-                        <p class="small mt-2">Pay</p>
+                        <p class="small mt-2">Deposit</p>
                     </a>
                     <a href="#" class="swiper-slide text-center" data-toggle="modal" data-target="#sendmoney">
                         <div class="avatar avatar-60 no-shadow border-0">
@@ -21,7 +21,7 @@
                     <a href="{{ route('User.Team.Member') }}" class="swiper-slide text-center">
                         <div class="avatar avatar-60 no-shadow border-0">
                             <div class="overlay bg-template"></div>
-                            <i class="material-icons text-template">Team</i>
+                            <i class="material-icons text-template">people_outline</i>
                         </div>
                         <p class="small mt-2">Team</p>
                     </a>
@@ -91,59 +91,32 @@
     <div class="container">
         <div class="row">
             <div class="col text-center">
-                <h5 class="subtitle mb-1">Most Exciting Feature</h5>
-                <p class="text-secondary">Take a look at our services</p>
+                <h5 class="subtitle mb-1">Movie Tickets</h5>
+                <p class="text-secondary">Buy ticktes and earn daily profit</p>
             </div>
         </div>
         <div class="row text-center mt-4">
+            @forelse ($tickets as $ticket)
+            @csrf
             <div class="col-6 col-md-3">
-                <div class="card shadow border-0 mb-3">
-                    <div class="card-body">
-                        <div class="avatar avatar-60 no-shadow border-0">
-                            <div class="overlay bg-template"></div>
-                            <i class="material-icons vm md-36 text-template">card_giftcard</i>
+                        <div class="card shadow border-0 mb-3">
+                            <div class="card-body">
+                                <div class="avatar avatar-60 no-shadow border-0">
+                                    {{-- <div></div> --}}
+                                    <img src="{{ asset('images/'.$ticket->image) }}" alt="image" class="img-responsive" >
+                                </div>
+                                <h3 class="mt-3 mb-0 font-weight-normal">{{ $ticket->title }}</h3>
+                                <p class="text-secondary text-mute small">{{ $ticket->description }}</p>
+                                <form action="#" method="POST">
+                                    <button type="submit" class="btn btn-primary">Buy</button>
+                                </form>
+                            </div>
                         </div>
-                        <h3 class="mt-3 mb-0 font-weight-normal">2546</h3>
-                        <p class="text-secondary text-mute small">Gift it out</p>
                     </div>
-                </div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="card shadow border-0 mb-3">
-                    <div class="card-body">
-                        <div class="avatar avatar-60 no-shadow border-0">
-                            <div class="overlay bg-template"></div>
-                            <i class="material-icons vm md-36 text-template">subscriptions</i>
-                        </div>
-                        <h3 class="mt-3 mb-0 font-weight-normal">635</h3>
-                        <p class="text-secondary text-mute small">Monthly Billed</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="card shadow border-0 mb-3">
-                    <div class="card-body">
-                        <div class="avatar avatar-60 no-shadow border-0">
-                            <div class="overlay bg-template"></div>
-                            <i class="material-icons vm md-36 text-template">local_florist</i>
-                        </div>
-                        <h3 class="mt-3 mb-0 font-weight-normal">1542</h3>
-                        <p class="text-secondary text-mute small">Eco environment</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="card shadow border-0 mb-3">
-                    <div class="card-body">
-                        <div class="avatar avatar-60 no-shadow border-0">
-                            <div class="overlay bg-template"></div>
-                            <i class="material-icons vm md-36 text-template">location_city</i>
-                        </div>
-                        <h3 class="mt-3 mb-0 font-weight-normal">154</h3>
-                        <p class="text-secondary text-mute small">Four Offices</p>
-                    </div>
-                </div>
-            </div>
+            @empty
+                <h3>No Ticket Available</h3>
+            @endforelse
+            {{ $tickets->withQueryString()->links('pagination::bootstrap-5') }}
         </div>
     </div>
 
