@@ -86,6 +86,13 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="">
+                        <a href="#" class="btn btn-primary">Give Referal Bounse</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

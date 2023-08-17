@@ -46,6 +46,7 @@ class clean extends Command
         $user->email = 'admin@gmail.com';
         $user->password = Hash::make('asdfasdf');
         $user->role = 'admin';
+        $user->status = 'approved';
         $user->save();
 
         $user = new User();
@@ -57,6 +58,7 @@ class clean extends Command
         $user->balance = '0';
         $user->password = Hash::make('asdfasdf');
         $user->role = 'user';
+        $user->status = 'approved';
         $user->save();
 
         // Inserting users

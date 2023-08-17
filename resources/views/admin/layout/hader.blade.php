@@ -170,7 +170,7 @@
                     <p class="fs-14 font-w200"><strong class="font-w400">{{ env('APP_NAME') }} Admin
                             Dashboard</strong> ©
                         2022 All Rights Reserved</p>
-                    <p>Made with <span class="heart"></span> by raheel_reli</p>
+                    <p>Made with <span class="heart"></span> by {{env('APP_NAME')}}</p>
                 </div>
             </div>
         </div>
