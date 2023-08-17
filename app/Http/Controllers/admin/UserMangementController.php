@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\user\UserDeposit;
 use Illuminate\Http\Request;
 
 class UserMangementController extends Controller
@@ -27,6 +28,12 @@ class UserMangementController extends Controller
         $user->level = $request->level;
         $user->save();
         return redirect(route('Admin.Approved.Users'))->with('success','User details updated successfully');
+    }
+
+    public function depositRequests()
+    {
+        $deposits = UserDeposit::where('status','pending')->get();
+        return view('admin.user.deposit.new',compact('deposits'));
     }
 
 

@@ -19,6 +19,8 @@ Route::name('Admin.')->prefix('Admin/')->middleware('auth','admin')->group(funct
     Route::post('Store/Ticket',[AdminTicketController::class,'store'])->name('Store.Ticket');
     Route::get('All/Tickets',[AdminTicketController::class,'index'])->name('All.Ticket');
     Route::get('Delete/Ticket/{id}',[AdminTicketController::class,'delete'])->name('Delete.Ticket');
+    // user deposit requests
+    Route::get('User/Deposit/Requests',[UserMangementController::class,'depositRequests'])->name('User.Deposit.Requests');
     // New buy ticket routes
     Route::get('User/Tickets',[AdminTicketController::class,'newTicket'])->name('User.Buy.Tickets');
 

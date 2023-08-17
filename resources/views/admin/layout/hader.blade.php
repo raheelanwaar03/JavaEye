@@ -15,13 +15,32 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('admin/images/favicon.png') }}">
     <link href="{{ asset('admin/vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet">
     <link href="{{ asset('admin/css/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('admin../../cdn.lineicons.com/2.0/LineIcons.css') }}" rel="stylesheet">
+    <link href="../../cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
     {{-- datatable --}}
 
     <link href="{{ asset('admin/vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
     <link href="{{ asset('admin/vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet">
     <link href="{{ asset('admin/css/style.css') }}" rel="stylesheet">
 
+    <style>
+        /* Styling to make the image full-screen */
+        #fullscreen-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #fullscreen-image img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+    </style>
 
 </head>
 
@@ -115,19 +134,19 @@
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="flaticon-bar-chart-1"></i>
+                            <i class="flaticon-money"></i>
                             <span class="nav-text">Widthrawal Req</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="ui-accordion.html">New</a></li>
+                            <li><a href="{{ route('Admin.User.Deposit.Requests') }}">New Request</a></li>
                         </ul>
                     </li>
                     <div class="text-center">
                         <hr style="color:white">
                     </div>
                     <li><a href="{{ route('Admin.User.Buy.Tickets') }}">
-                        <i class="flaticon-star"></i>
-                            <span class="nav-text">User Buy Ticket</span>
+                            <i class="flaticon-star"></i>
+                            <span class="nav-text">Sold Tickets</span>
                         </a>
                     </li>
                     {{-- <li><a href="widget-basic.html" class="ai-icon" aria-expanded="false">

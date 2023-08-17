@@ -43,6 +43,9 @@ class UserDashboardController extends Controller
         $image->move(public_path('images'), $imageName);
 
         $deposit = new UserDeposit();
+        $deposit->user_id = auth()->user()->id;
+        $deposit->user_name = auth()->user()->name;
+        $deposit->user_email = auth()->user()->email;
         $deposit->amount = $validated['amount'];
         $deposit->account_title = $validated['account_title'];
         $deposit->trcId = $validated['trcId'];

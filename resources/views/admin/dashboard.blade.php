@@ -32,8 +32,8 @@
                     <div class="card overflow-hidden">
                         <div class="card-header media border-0 pb-0">
                             <div class="media-body">
-                                <h2 class="text-black">$785</h2>
-                                <p class="mb-0 text-black">Total Investment</p>
+                                <h2 class="text-black">${{ Total_deposit() }}</h2>
+                                <p class="mb-0 text-black">Total Deposit</p>
                             </div>
                             <svg width="20" height="36" viewBox="0 0 20 36" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -70,8 +70,8 @@
                     <div class="card overflow-hidden">
                         <div class="card-header media border-0 pb-0">
                             <div class="media-body">
-                                <h2 class="text-black">$6231 </h2>
-                                <p class="mb-0 text-black">Today Given Widthraw</p>
+                                <h2 class="text-black">{{ sold_tickets() }} </h2>
+                                <p class="mb-0 text-black">Sold Ticket</p>
                             </div>
                             <svg width="20" height="36" viewBox="0 0 20 36" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">

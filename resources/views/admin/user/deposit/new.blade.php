@@ -24,25 +24,26 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse ($tickets as $ticket)
+                                        @forelse ($deposits as $deposit)
                                             <tr>
-                                                <td>{{ $ticket->user_name }}</td>
-                                                <td>{{ $ticket->user_email }}</td>
-                                                <td>{{ $ticket->account_title }}</td>
-                                                <td>{{ $ticket->amont }}</td>
-                                                <td>{{ $ticket->trcId }}</td>
+                                                <td>{{ $deposit->user_name }}</td>
+                                                <td>{{ $deposit->user_email }}</td>
+                                                <td>{{ $deposit->account_title }}</td>
+                                                <td>{{ $deposit->amount }}</td>
+                                                <td>{{ $deposit->trcId }}</td>
                                                 <td>
-                                                    <img src="{{ asset('images/' . $ticket->screen_shot) }}"
+                                                    <img src="{{ asset('images/' . $deposit->screen_shot) }}"
                                                         class="img-responsive img-thumbnail" height="80px" width="80px">
                                                 </td>
-                                                <td>{{ $ticket->created_at }}</td>
+                                                <td>{{ $deposit->created_at }}</td>
                                                 <td>
-                                                    <a href="#" class="btn btn-success">Approved</a>
-                                                    <a href="#" class="btn btn-primary">Rejected</a>
+                                                    <a href="#" class="btn btn-sm btn-success">Approved</a>
+                                                    <a href="#" class="btn btn-sm btn-primary">Rejected</a>
+                                                    <a href="#" class="btn btn-sm btn-warning">Edit</a>
                                                 </td>
                                             </tr>
                                         @empty
-                                            <h3>No Ticket added yet!</h3>
+                                            <h3>No deposit added yet!</h3>
                                         @endforelse
                                     </tbody>
                                 </table>
