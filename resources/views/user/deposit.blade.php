@@ -5,7 +5,7 @@
         <h1 class="subtitle text-center">Deposit Money</h1>
         <div class="row">
             <div class="col-12 px-0">
-                <div class="card">
+                <div class="card py-4">
                     <div class="card-body">
                         <form action="{{ route('User.Store.Deposit.Money') }}" method="POST" enctype="multipart/form-data">
                             @csrf
@@ -18,8 +18,10 @@
                                 <input type="text" name="account_title" class="form-control" placeholder="Enter your Account Title" required>
                             </div>
                             <div class="form-group float-label">
-                                <label for="trcId">Our TRC20 Id</label>
-                                <a class="btn btn-sm btn-info text-white" onclick="copy()">Click to Copy</a>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <label for="trcId">Our TRC20 Id</label>
+                                    <a class="btn btn-sm btn-info ml-3 text-white" onclick="copy()">Click to Copy</a>
+                                </div>
                                 <input type="text" name="trcId" class="form-control" id="myInput" value="TYjaBbDLPakArN7pUAptMG1KdqAQGjUCQg" readonly>
                             </div>
                             <div class="form-group">
