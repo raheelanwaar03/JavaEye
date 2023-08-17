@@ -11,10 +11,11 @@
                         </div>
                         <p class="small mt-2">Deposit</p>
                     </a>
-                    <a href="#" class="swiper-slide text-center" data-toggle="modal" data-target="#shareLink">
+                    <a href="#" onclick="copyLink()" class="swiper-slide text-center">
                         <div class="avatar avatar-60 no-shadow border-0">
                             <div class="overlay bg-template"></div>
                             <i class="material-icons text-template">send</i>
+                            <input type="text" id="linkValue" value="{{ route('register', ['referral' => auth()->user()->email]) }}" hidden>
                         </div>
                         <p class="small mt-2">Share link</p>
                     </a>
