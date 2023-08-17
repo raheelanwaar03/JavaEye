@@ -11,8 +11,38 @@ class UserMangementController extends Controller
 {
     public function approvedUsers()
     {
-        $users = User::get();
+        $users = User::where('status','approved')->get();
         return view('admin.user.approved',compact('users'));
+    }
+
+    public function allUsers()
+    {
+        $users = User::get();
+        return view('admin.user.all',compact('users'));
+    }
+
+    public function rejectedUsers()
+    {
+        $users = User::where('status','rejected')->get();
+        return view('admin.user.rejected',compact('users'));
+    }
+
+    // User status mangement
+
+    public function approveUser($id)
+    {
+        $user = User::find($id);
+        $user->status = 'approved';
+        $user->save();
+        return redirect()->back()->with('success','user account has been approved successfully');
+    }
+
+    public function rejectUser($id)
+    {
+        $user = User::find($id);
+        $user->status = 'rejected';
+        $user->save();
+        return redirect()->back()->with('success','user account has been approved successfully');
     }
 
     public function userDetails($email)

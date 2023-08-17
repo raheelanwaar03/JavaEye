@@ -6,7 +6,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">All Users</h4>
+                            <h4 class="card-title">Rejected Users</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -34,8 +34,8 @@
                                                 <td><span class="badge light badge-success">Approved</span></td>
                                                 <td>{{ $user->created_at }}</td>
                                                 <td>
-                                                    <a href="{{ route('Admin.Reject.User',['id'=>$user->id]) }}"
-                                                        class="btn btn-sm btn-primary">Reject</a>
+                                                    <a href="{{ route('Admin.User.Details', ['email' => $user->email]) }}"
+                                                        class="btn btn-sm btn-primary">Edit</a>
                                                 </td>
                                             </tr>
                                         @empty

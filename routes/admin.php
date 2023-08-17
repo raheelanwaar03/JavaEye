@@ -10,7 +10,13 @@ Route::name('Admin.')->prefix('Admin/')->middleware('auth','admin')->group(funct
 
     Route::get('Dashboard',[AdminDashboardController::class,'dashboard'])->name('Dashboard');
     // User Mangment Routes
+    Route::get('All/Users',[UserMangementController::class,'allUsers'])->name('All.Users');
     Route::get('Approved/Users',[UserMangementController::class,'approvedUsers'])->name('Approved.Users');
+    Route::get('Rejected/Users',[UserMangementController::class,'rejectedUsers'])->name('Rejected.Users');
+    // user status routes 
+    Route::get('Approve/User/{id}',[UserMangementController::class,'approveUser'])->name('Approve.User');
+    Route::get('Reject/User/{id}',[UserMangementController::class,'rejectUser'])->name('Reject.User');
+
     // user edit route
     Route::get('User/Details/{email}',[UserMangementController::class,'userDetails'])->name('User.Details');
     Route::post('Update/User/Details/{id}',[UserMangementController::class,'updateUserDetails'])->name('Update.User.Details');
