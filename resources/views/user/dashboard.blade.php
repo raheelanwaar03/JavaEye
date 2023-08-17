@@ -15,7 +15,8 @@
                         <div class="avatar avatar-60 no-shadow border-0">
                             <div class="overlay bg-template"></div>
                             <i class="material-icons text-template">send</i>
-                            <input type="text" id="linkValue" value="{{ route('register', ['referral' => auth()->user()->email]) }}" hidden>
+                            <input type="text" id="linkValue"
+                                value="{{ route('register', ['referral' => auth()->user()->email]) }}" hidden>
                         </div>
                         <p class="small mt-2">Share link</p>
                     </a>
@@ -45,8 +46,9 @@
                                                 class="mw-100">
                                         </div>
                                         <div class="col align-self-center">
-                                            <h5 class="mb-2 font-weight-normal">Gold loan scheme</h5>
-                                            <p class="text-mute">Get all money at market rate of gold</p>
+                                            <h5 class="mb-2 font-weight-normal">Referral Program</h5>
+                                            <p class="text-mute">User A invites user B, and user B complates the work. User A
+                                                will get 8% rebate. Invite more you will earn more.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -56,31 +58,33 @@
                             <div class="card shadow border-0 bg-template">
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col pr-0 align-self-center">
-                                            <h5 class="mb-2 font-weight-normal">Gold loan scheme</h5>
-                                            <p class="text-mute">Get all money at market rate of gold</p>
-                                        </div>
-                                        <div class="col-auto">
+                                        <div class="col-auto pr-0">
                                             <img src="{{ asset('asset/img/graphics-carousel-scheme1.png') }}" alt=""
                                                 class="mw-100">
+                                        </div>
+                                        <div class="col align-self-center">
+                                            <h5 class="mb-2 font-weight-normal">Invite & earn</h5>
+                                            <p class="text-mute">User C invites user D, and user D complates the work.
+                                                User C will get 8%, user B will get 4% and user A will get 2%
+                                                rebate.</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="card shadow border-0 bg-template">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-auto pr-0">
-                                                <img src="{{ asset('asset/img/graphics-carousel-scheme1.png') }}"
-                                                    alt="" class="mw-100">
-                                            </div>
-                                            <div class="col align-self-center">
-                                                <h5 class="mb-2 font-weight-normal">Gold loan scheme</h5>
-                                                <p class="text-mute">Get all money at market rate of gold</p>
-                                            </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow border-0 bg-template">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-auto pr-0">
+                                            <img src="{{ asset('asset/img/graphics-carousel-scheme1.png') }}" alt=""
+                                                class="mw-100">
+                                        </div>
+                                        <div class="col pr-0 align-self-center">
+                                            <h5 class="mb-2 font-weight-normal">Affilate program</h5>
+                                            <p class="text-mute">User B invites user C, and user C complates the work. User
+                                                B
+                                                will get 8% rebate and user A will get 4% rebate.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -99,17 +103,21 @@
             </div>
             <div class="row text-center mt-4">
                 @forelse ($tickets as $ticket)
-                    @csrf
                     <div class="col-6 col-md-3">
                         <div class="card shadow border-0 mb-3">
                             <div class="card-body">
                                 <div class="avatar avatar-60 no-shadow border-0">
                                     {{-- <div></div> --}}
-                                    <img src="{{ asset('images/' . $ticket->image) }}" alt="image" class="img-responsive">
+                                    <img src="{{ asset('images/' . $ticket->image) }}" alt="image"
+                                        class="img-responsive">
                                 </div>
-                                <h3 class="mt-3 mb-0 font-weight-normal">{{ $ticket->title }}</h3>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h3 class="mt-3 mb-0 font-weight-normal">{{ $ticket->title }}</h3>
+                                    <h5 class="mt-3 mb-0 font-weight-normal">${{ $ticket->price }}</h5>
+                                </div>
                                 <p class="text-secondary text-mute small">{{ $ticket->description }}</p>
-                                <form action="#" method="POST">
+                                <form action="{{ route('User.Buy.Ticket', ['id' => $ticket->id]) }}" method="POST">
+                                    @csrf
                                     <button type="submit" class="btn btn-primary">Buy</button>
                                 </form>
                             </div>
@@ -121,4 +129,4 @@
                 {{ $tickets->withQueryString()->links('pagination::bootstrap-5') }}
             </div>
         </div>
-@endsection
+    @endsection
