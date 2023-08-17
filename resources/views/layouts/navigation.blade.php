@@ -75,7 +75,7 @@
                     <a href="javascript:void(0)" class="list-group-item list-group-item-action" data-toggle="modal"
                         data-target="#colorscheme"><i class="material-icons icons-raised">color_lens</i>Color scheme</a>
                     @if (auth()->user())
-                        <form action="{{ route('logout') }}">
+                        <form action="{{ route('logout') }}" method="POST">
                             @csrf
                             <button class="list-group-item list-group-item-action"><i
                                     class="material-icons icons-raised bg-danger">power_settings_new</i>Logout</button>
