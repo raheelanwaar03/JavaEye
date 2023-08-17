@@ -131,20 +131,17 @@
                             <span class="nav-text">Sold Tickets</span>
                         </a>
                     </li>
-                    {{-- <li><a href="widget-basic.html" class="ai-icon" aria-expanded="false">
-                            <i class="flaticon-network"></i>
-                            <span class="nav-text">Widget</span>
-                        </a>
-                    </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="flaticon-form"></i>
-                            <span class="nav-text">Forms</span>
+                            <i class="flaticon-money"></i>
+                            <span class="nav-text">Widthraw</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="form-element.html">Form Elements</a></li>
+                            <li><a href="{{ route('Admin.User.Widthrawal') }}">New Widthraw</a></li>
+                            <li><a href="{{ route('Admin.User.Approved.Widthrawals') }}">Approved Widthraw</a></li>
+                            <li><a href="{{ route('Admin.User.Rejected.Widthrawals') }}">Rejected Widthraw</a></li>
                         </ul>
                     </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    {{--  <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                             <i class="flaticon-table"></i>
                             <span class="nav-text">Table</span>
                         </a>

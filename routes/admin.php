@@ -26,8 +26,16 @@ Route::name('Admin.')->prefix('Admin/')->middleware('auth','admin')->group(funct
     Route::get('Deposit/{id}',[UserMangementController::class,'depositAmount'])->name('Deposit.Amount');
     Route::get('Approve/Deposit/{id}',[UserMangementController::class,'approveDepositAmount'])->name('Approve.Deposit');
     Route::get('Rejected/Deposit/{id}',[UserMangementController::class,'rejectedDepositAmount'])->name('Rejected.Deposit');
-    // New buy ticket routes
+    // Sold ticket routes
     Route::get('User/Tickets',[AdminTicketController::class,'newTicket'])->name('User.Buy.Tickets');
+
+    // Widthrawal Routes
+    Route::get('Widthrawal/Users',[AdminDashboardController::class,'widthrawalRoutes'])->name('User.Widthrawal');
+    Route::get('Approve/Widthrawal/{id}',[AdminDashboardController::class,'approveWidthrawal'])->name('User.Approve.Widthrawal');
+    Route::get('Reject/Widthrawal/{id}',[AdminDashboardController::class,'rejecteWidthrawal'])->name('User.Reject.Widthrawal');
+    // Widthrawal Routes View
+    Route::get('Approved/Widthrwas',[AdminDashboardController::class,'approvedWidthrawal'])->name('User.Approved.Widthrawals');
+    Route::get('Rejected/Widthrwas',[AdminDashboardController::class,'rejectedWidthrawal'])->name('User.Rejected.Widthrawals');
 
 
 });

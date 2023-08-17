@@ -51,7 +51,7 @@
                     <div class="card overflow-hidden">
                         <div class="card-header media border-0 pb-0">
                             <div class="media-body">
-                                <h2 class="text-black">$56</h2>
+                                <h2 class="text-black">$00</h2>
                                 <p class="mb-0 text-black">Given Widthraw</p>
                             </div>
                             <svg width="20" height="36" viewBox="0 0 20 36" fill="none"
