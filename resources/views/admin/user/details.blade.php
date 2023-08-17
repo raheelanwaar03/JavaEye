@@ -6,7 +6,8 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">{{ $user->email }} Details</h4>
+                            <h4 class="card-title">{{ $user->email }}</h4>
+                            <h4 class="card-title">{{ $amount ?? 'user' }}</h4>
                         </div>
                         <div class="card-body">
                             <form action="{{ route('Admin.Update.User.Details',['id'=>$user->id]) }}" method="POST">

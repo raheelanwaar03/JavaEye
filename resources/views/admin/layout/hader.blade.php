@@ -22,26 +22,6 @@
     <link href="{{ asset('admin/vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet">
     <link href="{{ asset('admin/css/style.css') }}" rel="stylesheet">
 
-    <style>
-        /* Styling to make the image full-screen */
-        #fullscreen-image {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            display: none;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #fullscreen-image img {
-            max-width: 90%;
-            max-height: 90%;
-        }
-    </style>
-
 </head>
 
 <body>
@@ -135,10 +115,12 @@
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                             <i class="flaticon-money"></i>
-                            <span class="nav-text">Widthrawal Req</span>
+                            <span class="nav-text">Deposit Req</span>
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{ route('Admin.User.Deposit.Requests') }}">New Request</a></li>
+                            <li><a href="{{ route('Admin.Approved.Deposit.Requests') }}">Approved Request</a></li>
+                            <li><a href="{{ route('Admin.Rejected.Deposit.Requests') }}">Rejected Request</a></li>
                         </ul>
                     </li>
                     <div class="text-center">

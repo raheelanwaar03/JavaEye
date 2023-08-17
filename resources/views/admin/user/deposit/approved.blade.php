@@ -30,14 +30,16 @@
                                                 <td>{{ $deposit->user_email }}</td>
                                                 <td>{{ $deposit->account_title }}</td>
                                                 <td>{{ $deposit->amount }}</td>
-                                                <td><span class="badge light badge-info">{{ $deposit->status }}</span></td>
+                                                <td><span class="badge light badge-success">{{ $deposit->status }}</span>
+                                                </td>
                                                 <td>
                                                     <img src="{{ asset('images/' . $deposit->screen_shot) }}"
                                                         class="img-responsive img-thumbnail" height="80px" width="80px">
                                                 </td>
                                                 <td>{{ $deposit->created_at }}</td>
                                                 <td>
-                                                    <a href="{{ route('Admin.Rejected.Deposit',$deposit->id) }}" class="btn btn-sm btn-primary">Rejected</a>
+                                                    <a href="{{ route('Admin.Rejected.Deposit', ['id' => $deposit->id]) }}"
+                                                        class="btn btn-sm btn-primary">Rejected</a>
                                                     <a href="{{ route('Admin.Deposit.Amount', ['id' => $deposit->id]) }}"
                                                         class="btn btn-sm btn-warning">Edit</a>
                                                 </td>

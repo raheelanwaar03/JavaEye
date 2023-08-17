@@ -35,7 +35,42 @@ class UserMangementController extends Controller
         $deposits = UserDeposit::where('status','pending')->get();
         return view('admin.user.deposit.new',compact('deposits'));
     }
+ 
+    
+    public function approvedpositRequests()
+    {
+        $deposits = UserDeposit::where('status','approved')->get();
+        return view('admin.user.deposit.approved',compact('deposits'));
+    }
 
+    public function rejectedpositRequests()
+    {
+        $deposits = UserDeposit::where('status','rejected')->get();
+        return view('admin.user.deposit.rejected',compact('deposits'));
+    }
+
+    public function depositAmount($id)
+    {
+        $deposit = UserDeposit::find($id);
+        $amount = $deposit->amount;
+        $user = User::where('id',$deposit->user_id)->first();
+        return view('admin.user.details',compact('user','amount'));
+    }
+
+    public function approveDepositAmount($id)
+    {
+        $deposit = UserDeposit::find($id);
+        $deposit->status = 'approved';
+        $deposit->save();
+        return redirect()->back()->with('success','Deposit request approved successfully');
+    }
+    public function rejectedDepositAmount($id)
+    {
+        $deposit = UserDeposit::find($id);
+        $deposit->status = 'rejected';
+        $deposit->save();
+        return redirect()->back()->with('success','Deposit request rejected successfully');
+    }
 
 
 }
