@@ -16,6 +16,7 @@ Route::name('User.')->prefix('User/')->middleware('auth','user')->group(function
     Route::post('Buy/Ticket/{id}',[UserDashboardController::class,'buyTicket'])->name('Buy.Ticket');
     // widthrawal Routes
     Route::get('Widthraw/Balance',[UserDashboardController::class,'widthrawal'])->name('Widthraw.Balance');
+    Route::get('Widthraw/Transcation',[UserDashboardController::class,'widthrawalTranscation'])->name('Widthraw.Transcation');
     Route::post('Store/Widthraw/Balance',[UserDashboardController::class,'storeWidthrawal'])->name('Store.Widthraw.Balance');
 
 

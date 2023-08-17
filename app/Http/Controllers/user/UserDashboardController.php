@@ -146,6 +146,12 @@ class UserDashboardController extends Controller
 
     }
 
+    public function widthrawalTranscation()
+    {
+        $transcations = Widthrawal::get();
+        return view('user.widthraw.transcation',compact('transcations'));
+    }
+
 
 
 

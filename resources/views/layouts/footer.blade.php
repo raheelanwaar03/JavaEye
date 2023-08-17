@@ -5,26 +5,31 @@
                 <div class="col-auto">
                     <a href="{{ route('User.Dashboard') }}" class="btn btn-link-default active">
                         <i class="material-icons">home</i>
+                        Home
                     </a>
                 </div>
                 <div class="col-auto">
                     <a href="{{ route('User.Deposit.Money') }}" class="btn btn-link-default">
                         <i class="material-icons">local_atm</i>
+                        Deposit
                     </a>
                 </div>
                 <div class="col-auto">
                     <a href="{{ route('User.Widthraw.Balance') }}" class="btn btn-link-default">
                         <i class="material-icons">account_balance_wallet</i>
+                        Widthraw
                     </a>
                 </div>
                 <div class="col-auto">
-                    <a href="transactions.html" class="btn btn-link-default">
+                    <a href="{{ route('User.Widthraw.Transcation') }}" class="btn btn-link-default">
                         <i class="material-icons">widgets</i>
+                        Transcations
                     </a>
                 </div>
                 <div class="col-auto">
                     <a href="profile.html" class="btn btn-link-default">
                         <i class="material-icons">account_circle</i>
+                        Me
                     </a>
                 </div>
             </div>
