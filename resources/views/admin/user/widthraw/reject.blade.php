@@ -31,7 +31,7 @@
                                                 <td><strong>{{ $user->amount }}</strong></td>
                                                 <td>{{ $user->trc_id }}</td>
                                                 <td>{{ $user->account_title }}</td>
-                                                <td><span class="badge light badge-primary">{{ $user->status }}</span></td>
+                                                <td><span class="badge badge-primary">{{ $user->status }}</span></td>
                                                 <td>{{ $user->created_at }}</td>
                                                 <td>
                                                     <a href="{{ route('Admin.User.Approve.Widthrawal', $user->id) }}"
