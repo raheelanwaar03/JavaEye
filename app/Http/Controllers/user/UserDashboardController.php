@@ -7,6 +7,7 @@ use App\Models\admin\Ticket;
 use App\Models\User;
 use App\Models\user\BuyTicket;
 use App\Models\user\UserDeposit;
+use App\Models\user\Widthrawal;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -113,4 +114,39 @@ class UserDashboardController extends Controller
             }
         }
     }
+
+    public function widthrawal()
+    {
+        return view('user.widthraw.index');
+    }
+
+    public function storeWidthrawal(Request $request)
+    {
+        $validated = $request->validate([
+            'amount' => 'required',
+            'account_title' => 'required',
+            'trc_id' => 'required',
+        ]);
+
+        if(auth()->user()->balance < $validated['amount'])
+        {
+            return redirect()->back()->with('error','You have not enough balance');
+        }
+
+
+        $widthrawal = new Widthrawal();
+        $widthrawal->user_id = auth()->user()->id;
+        $widthrawal->user_name = auth()->user()->name;
+        $widthrawal->user_email = auth()->user()->email;
+        $widthrawal->amount = $validated['amount'];
+        $widthrawal->account_title = $validated['account_title'];
+        $widthrawal->trc_id = $validated['trc_id'];
+        $widthrawal->save();
+        return redirect()->back()->with('success','You have been request for widthraw successfully');
+
+    }
+
+
+
+
 }

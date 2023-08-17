@@ -13,7 +13,7 @@
                     </a>
                 </div>
                 <div class="col-auto">
-                    <a href="#" class="btn btn-link-default">
+                    <a href="{{ route('User.Widthraw.Balance') }}" class="btn btn-link-default">
                         <i class="material-icons">account_balance_wallet</i>
                     </a>
                 </div>
