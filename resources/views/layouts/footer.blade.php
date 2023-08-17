@@ -72,7 +72,7 @@
         copyText.setSelectionRange(0, 99999);
         navigator.clipboard.writeText(copyText.value);
         // Alert the copied text
-        alert("Your refer Link is Copied");
+        alert("Copied!");
     }
 </script>
 

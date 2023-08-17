@@ -150,8 +150,10 @@
                             </div>
                         @endif
                         <div class="col-auto">
-                            <button class="btn btn-default btn-rounded-54 shadow" data-toggle="modal"
-                                data-target="#addmoney"><i class="material-icons">add</i></button>
+                            <a href="{{ route('User.Deposit.Money') }}">
+                                <button class="btn btn-default btn-rounded-54 shadow" data-toggle="modal"
+                                    data-target="#addmoney"><i class="material-icons">add</i></button>
+                            </a>
                         </div>
                     </div>
                 </div>
