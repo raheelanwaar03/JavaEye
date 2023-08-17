@@ -15,12 +15,12 @@ Route::name('Admin.')->prefix('Admin/')->middleware('auth','admin')->group(funct
     Route::get('User/Details/{email}',[UserMangementController::class,'userDetails'])->name('User.Details');
     Route::post('Update/User/Details/{id}',[UserMangementController::class,'updateUserDetails'])->name('Update.User.Details');
     // Adding ticket routes
-
     Route::get('Add/Ticket',[AdminTicketController::class,'add'])->name('Add.Ticket');
     Route::post('Store/Ticket',[AdminTicketController::class,'store'])->name('Store.Ticket');
     Route::get('All/Tickets',[AdminTicketController::class,'index'])->name('All.Ticket');
     Route::get('Delete/Ticket/{id}',[AdminTicketController::class,'delete'])->name('Delete.Ticket');
-
+    // New buy ticket routes
+    Route::get('User/Tickets',[AdminTicketController::class,'newTicket'])->name('User.Buy.Tickets');
 
 
 });

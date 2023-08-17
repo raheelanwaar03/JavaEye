@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\admin\Ticket;
+use App\Models\user\BuyTicket;
 use Illuminate\Http\Request;
 
 class AdminTicketController extends Controller
@@ -47,4 +48,12 @@ class AdminTicketController extends Controller
         $ticket->delete();
         return redirect()->back()->with('success', 'Ticket Deleted successfully');
     }
+
+    public function newTicket()
+    {
+        $tickets = BuyTicket::get();
+        return view('admin.user.tickets',compact('tickets'));
+    }
+
+
 }

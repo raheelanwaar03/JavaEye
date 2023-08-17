@@ -7,7 +7,7 @@
                     <div class="card overflow-hidden">
                         <div class="card-header media border-0 pb-0">
                             <div class="media-body">
-                                <h2 class="text-black">56</h2>
+                                <h2 class="text-black">{{ allUser() }}</h2>
                                 <p class="mb-0 text-black">Total User</p>
                             </div>
                             <svg width="32" height="36" viewBox="0 0 32 36" fill="none"
