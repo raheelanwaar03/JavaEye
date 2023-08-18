@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('user_id');
             $table->string('user_email');
             $table->string('user_name');
+            $table->string('qty');
             $table->string('ticket_title');
             $table->string('ticket_price');
             $table->string('ticket_img');

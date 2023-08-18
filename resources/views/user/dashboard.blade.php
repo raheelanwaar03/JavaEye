@@ -107,20 +107,45 @@
                     <div class="col-6 col-md-3">
                         <div class="card shadow border-0 mb-3">
                             <div class="card-body">
-                                <div class="avatar avatar-60 no-shadow border-0">
+                                <div class="no-shadow border-0">
                                     {{-- <div></div> --}}
-                                    <img src="{{ asset('images/' . $ticket->image) }}" alt="image"
-                                        class="img-responsive">
+                                    <img src="{{ asset('images/' . $ticket->image) }}" alt="image" height="200px"
+                                        width="200px" class="img-responsive">
                                 </div>
                                 <h3 class="mt-3 mb-0 font-weight-normal">{{ $ticket->title }}</h3>
                                 <p class="text-secondary text-mute small">{{ $ticket->description }}</p>
                                 <form action="{{ route('User.Buy.Ticket', ['id' => $ticket->id]) }}" method="POST">
                                     @csrf
-                                    <button type="submit" class="btn btn-primary">Buy</button>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex jusitfy-content-center align-items-center">
+                                            <input type="number" style="width:50px;" name="qty" min="1"
+                                                value="1">
+                                        </div>
+                                        <div class="">
+                                            <button type="submit" class="btn btn-primary">Buy</button>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                         </div>
                     </div>
+                    {{-- <script>
+                        function updateQuantity(operation) {
+                            var quantityElement = document.getElementById('{{ $ticket->title }}');
+                            var quantity = parseInt(quantityElement.value);
+
+                            // Increase or decrease the quantity based on the operation
+                            if (operation === 'plus') {
+                                quantity += 1;
+                            } else if (operation === 'minus') {
+                                if (quantity > 1) {
+                                    quantity -= 1;
+                                }
+                            }
+                            // Update the quantity input field
+                            quantityElement.value = quantity;
+                        }
+                    </script> --}}
                 @empty
                     <h3>No Ticket Available</h3>
                 @endforelse

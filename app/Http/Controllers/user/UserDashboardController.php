@@ -65,30 +65,73 @@ class UserDashboardController extends Controller
         $ticket_title = $ticket->title;
         $ticket_img = $ticket->image;
         // checking if user have balance
-        if (auth()->user()->balance < $ticket_price) {
-            return redirect()->back()->with('error', 'you have not enough balance to purchase this ticket');
+
+        $qty_price = $request->qty * 10;
+
+        if (auth()->user()->balance < $qty_price) {
+            return redirect()->back()->with('error', 'you have not enough balance');
         }
 
+        // checking user level and purchase quantity
+
+        $level = auth()->user()->level;
+        if ($level == "VIP0") {
+            // quantity
+            $quantity = $request->qty;
+            if ($quantity >= 3) {
+                return redirect()->back()->with('error', 'you cannot buy more than 2 tickets with VIP0 level upgrade your level to buy more tickets');
+            }
+        }
+
+        $tickets = BuyTicket::where('user_id', auth()->user()->id)->whereDate('created_at', Carbon::today())->get();
+        if ($tickets != null) {
+            if (auth()->user()->level == "VIP0") {
+                $quantity = 0;
+                foreach ($tickets as $ticket) {
+                    $quantity += $ticket->qty;
+                }
+                if ($quantity >= 2) {
+                    return redirect()->back()->with('error', 'Your daily purchase limit is over');
+                }
+            }
+            if (auth()->user()->level ==  "VIP1") {
+                foreach ($tickets as $ticket) {
+                    $quantity += $ticket->qty;
+                }
+                if ($quantity >= 100) {
+                    return redirect()->back()->with('error', 'Your daily purchase limit is over');
+                }
+            }
+            if (auth()->user()->level == "VIP2") {
+                foreach ($tickets as $ticket) {
+                    $quantity += $ticket->qty;
+                }
+                if ($quantity >= 500) {
+                    return redirect()->back()->with('error', 'Your daily purchase limit is over');
+                }
+            }
+        }
         // Checking if user purchases a ticket in 2 hrs with level 0
 
-        $ticket = BuyTicket::where('user_id', auth()->user()->id)->latest()->first();
+        $user = BuyTicket::where('user_id', auth()->user()->id)->latest()->first();
         if ($ticket == null) {
-
             // dedecting ticket amount
             $user = User::where('id', auth()->user()->id)->first();
-            $user->balance -= $ticket_price;
+            $user->balance -= $qty_price;
             $user->save();
             // purchasing ticket
             $user_buy_ticket = new BuyTicket();
             $user_buy_ticket->user_id = auth()->user()->id;
             $user_buy_ticket->user_email = auth()->user()->email;
             $user_buy_ticket->user_name = auth()->user()->name;
-            $user_buy_ticket->ticket_price = $ticket_price;
+            $user_buy_ticket->qty = $request->qty;
+            $user_buy_ticket->ticket_price = $qty_price;
             $user_buy_ticket->ticket_title = $ticket_title;
             $user_buy_ticket->ticket_img = $ticket_img;
             $user_buy_ticket->save();
-            return redirect()->back()->with('success', 'You have purchased this ticket successfully');
+            return redirect()->back()->with('success', 'You have purchased ticket successfully');
         }
+
         if (auth()->user()->level == 'VIP0') {
             $ticket = BuyTicket::where('user_id', auth()->user()->id)->latest()->first();
             $time_of_purchasing = $ticket->created_at;
@@ -99,14 +142,15 @@ class UserDashboardController extends Controller
                 return redirect()->back()->with('error', 'you have to wait for 2 hrs to buy new ticket or upgrade your level');
             } else {
                 $user = User::where('id', auth()->user()->id)->first();
-                $user->balance -= $ticket_price;
+                $user->balance -= $qty_price;
                 $user->save();
                 // purchasing ticket
                 $user_buy_ticket = new BuyTicket();
                 $user_buy_ticket->user_id = auth()->user()->id;
                 $user_buy_ticket->user_email = auth()->user()->email;
                 $user_buy_ticket->user_name = auth()->user()->name;
-                $user_buy_ticket->ticket_price = $ticket_price;
+                $user_buy_ticket->qty = $request->qty;
+                $user_buy_ticket->ticket_price = $qty_price;
                 $user_buy_ticket->ticket_title = $ticket_title;
                 $user_buy_ticket->ticket_img = $ticket_img;
                 $user_buy_ticket->save();
@@ -128,9 +172,8 @@ class UserDashboardController extends Controller
             'trc_id' => 'required',
         ]);
 
-        if(auth()->user()->balance < $validated['amount'])
-        {
-            return redirect()->back()->with('error','You have not enough balance');
+        if (auth()->user()->balance < $validated['amount']) {
+            return redirect()->back()->with('error', 'You have not enough balance');
         }
 
 
@@ -142,17 +185,12 @@ class UserDashboardController extends Controller
         $widthrawal->account_title = $validated['account_title'];
         $widthrawal->trc_id = $validated['trc_id'];
         $widthrawal->save();
-        return redirect()->back()->with('success','You have been request for widthraw successfully');
-
+        return redirect()->back()->with('success', 'You have been request for widthraw successfully');
     }
 
     public function widthrawalTranscation()
     {
         $transcations = Widthrawal::get();
-        return view('user.widthraw.transcation',compact('transcations'));
+        return view('user.widthraw.transcation', compact('transcations'));
     }
-
-
-
-
 }

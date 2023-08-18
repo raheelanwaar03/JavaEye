@@ -17,6 +17,7 @@
                                             <th>Email</th>
                                             <th>Price</th>
                                             <th>Title</th>
+                                            <th>Quantity</th>
                                             <th>Image</th>
                                             <th>Date</th>
                                         </tr>
@@ -28,6 +29,7 @@
                                                 <td>{{ $ticket->user_email }}</td>
                                                 <td>{{ $ticket->ticket_price }}</td>
                                                 <td>{{ $ticket->ticket_title }}</td>
+                                                <td>{{ $ticket->qty }}</td>
                                                 <td>
                                                     <img src="{{ asset('images/' . $ticket->ticket_img) }}"
                                                         class="img-responsive img-thumbnail" height="80px" width="80px">
