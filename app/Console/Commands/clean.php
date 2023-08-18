@@ -55,7 +55,7 @@ class clean extends Command
         $user->level = 'VIP0';
         $user->phone = '03001122333';
         $user->referral = 'default';
-        $user->balance = '0';
+        $user->balance = '100';
         $user->password = Hash::make('asdfasdf');
         $user->role = 'user';
         $user->status = 'approved';

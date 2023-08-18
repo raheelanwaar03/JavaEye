@@ -89,7 +89,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="">
-                        <a href="#" class="btn btn-primary">Give Referal Bounse</a>
+                        <a href="{{ route('Admin.Give.Bouns') }}" class="btn btn-primary">Give Bouns</a>
                     </div>
                 </div>
             </div>

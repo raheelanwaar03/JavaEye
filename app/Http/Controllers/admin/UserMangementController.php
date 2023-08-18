@@ -11,19 +11,19 @@ class UserMangementController extends Controller
 {
     public function approvedUsers()
     {
-        $users = User::where('status','approved')->get();
+        $users = User::where('status','approved')->where('role','user')->get();
         return view('admin.user.approved',compact('users'));
     }
 
     public function allUsers()
     {
-        $users = User::get();
+        $users = User::where('status','pending')->where('role','user')->get();
         return view('admin.user.all',compact('users'));
     }
 
     public function rejectedUsers()
     {
-        $users = User::where('status','rejected')->get();
+        $users = User::where('status','rejected')->where('role','user')->get();
         return view('admin.user.rejected',compact('users'));
     }
 
@@ -42,7 +42,7 @@ class UserMangementController extends Controller
         $user = User::find($id);
         $user->status = 'rejected';
         $user->save();
-        return redirect()->back()->with('success','user account has been approved successfully');
+        return redirect()->back()->with('success','user account has been rejected successfully');
     }
 
     public function userDetails($email)
@@ -65,8 +65,8 @@ class UserMangementController extends Controller
         $deposits = UserDeposit::where('status','pending')->get();
         return view('admin.user.deposit.new',compact('deposits'));
     }
- 
-    
+
+
     public function approvedpositRequests()
     {
         $deposits = UserDeposit::where('status','approved')->get();

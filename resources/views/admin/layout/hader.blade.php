@@ -101,7 +101,9 @@
                             <span class="nav-text">Users</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{ route('Admin.Approved.Users') }}">All Users</a></li>
+                            <li><a href="{{ route('Admin.All.Users') }}">All Users</a></li>
+                            <li><a href="{{ route('Admin.Approved.Users') }}">Approved Users</a></li>
+                            <li><a href="{{ route('Admin.Rejected.Users') }}">Rejected Users</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">

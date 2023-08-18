@@ -77,8 +77,8 @@
                     @if (auth()->user())
                         <form action="{{ route('logout') }}" method="POST">
                             @csrf
-                            <button class="list-group-item list-group-item-action"><i
-                                    class="material-icons icons-raised bg-danger">power_settings_new</i>Logout</button>
+                            <button type="submit" title="Logout" class="list-group-item list-group-item-action"><i
+                                    class="material-icons icons-raised bg-danger">power_settings_new</i></button>
                         </form>
                     @else
                         <a href="{{ route('login') }}" class="list-group-item list-group-item-action"><i

@@ -34,8 +34,10 @@
                                                 <td><span class="badge light badge-success">Approved</span></td>
                                                 <td>{{ $user->created_at }}</td>
                                                 <td>
-                                                    <a href="{{ route('Admin.User.Details', ['email' => $user->email]) }}"
-                                                        class="btn btn-sm btn-primary">Edit</a>
+                                                    <a href="{{ route('Admin.Approve.User',['id'=>$user->id]) }}"
+                                                        class="btn btn-sm btn-success">Approved</a>
+                                                        <a href="{{ route('Admin.Reject.User',['id'=>$user->id]) }}"
+                                                            class="btn btn-sm btn-primary">Reject</a>
                                                 </td>
                                             </tr>
                                         @empty

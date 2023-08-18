@@ -47,7 +47,8 @@
                                         </div>
                                         <div class="col align-self-center">
                                             <h5 class="mb-2 font-weight-normal">Referral Program</h5>
-                                            <p class="text-mute">User A invites user B, and user B complates the work. User A
+                                            <p class="text-mute">User A invites user B, and user B complates the work. User
+                                                A
                                                 will get 8% rebate. Invite more you will earn more.</p>
                                         </div>
                                     </div>
@@ -97,7 +98,7 @@
         <div class="container">
             <div class="row">
                 <div class="col text-center">
-                    <h5 class="subtitle mb-1">Movie Tickets</h5>
+                    <h5 class="subtitle mb-1">Movie Ticket [Price : $10]</h5>
                     <p class="text-secondary">Buy ticktes and earn daily profit</p>
                 </div>
             </div>
@@ -111,10 +112,7 @@
                                     <img src="{{ asset('images/' . $ticket->image) }}" alt="image"
                                         class="img-responsive">
                                 </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <h3 class="mt-3 mb-0 font-weight-normal">{{ $ticket->title }}</h3>
-                                    <h5 class="mt-3 mb-0 font-weight-normal">${{ $ticket->price }}</h5>
-                                </div>
+                                <h3 class="mt-3 mb-0 font-weight-normal">{{ $ticket->title }}</h3>
                                 <p class="text-secondary text-mute small">{{ $ticket->description }}</p>
                                 <form action="{{ route('User.Buy.Ticket', ['id' => $ticket->id]) }}" method="POST">
                                     @csrf
