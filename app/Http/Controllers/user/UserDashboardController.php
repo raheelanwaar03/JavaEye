@@ -83,34 +83,39 @@ class UserDashboardController extends Controller
             }
         }
 
-        $tickets = BuyTicket::where('user_id', auth()->user()->id)->whereDate('created_at', Carbon::today())->get();
-        if ($tickets != null) {
-            if (auth()->user()->level == "VIP0") {
-                $quantity = 0;
-                foreach ($tickets as $ticket) {
-                    $quantity += $ticket->qty;
+
+        $user = BuyTicket::where('user_id', auth()->user()->id)->latest()->first();
+        if ($user != null) {
+            $tickets = BuyTicket::where('user_id', auth()->user()->id)->whereDate('created_at', Carbon::today())->get();
+            if ($tickets != null) {
+                if (auth()->user()->level == "VIP0") {
+                    $quantity = 0;
+                    foreach ($tickets as $ticket) {
+                        $quantity += $ticket->qty;
+                    }
+                    if ($quantity >= 2) {
+                        return redirect()->back()->with('error', 'Your daily purchase limit is over');
+                    }
                 }
-                if ($quantity >= 2) {
-                    return redirect()->back()->with('error', 'Your daily purchase limit is over');
+                if (auth()->user()->level ==  "VIP1") {
+                    foreach ($tickets as $ticket) {
+                        $quantity += $ticket->qty;
+                    }
+                    if ($quantity >= 100) {
+                        return redirect()->back()->with('error', 'Your daily purchase limit is over');
+                    }
                 }
-            }
-            if (auth()->user()->level ==  "VIP1") {
-                foreach ($tickets as $ticket) {
-                    $quantity += $ticket->qty;
-                }
-                if ($quantity >= 100) {
-                    return redirect()->back()->with('error', 'Your daily purchase limit is over');
-                }
-            }
-            if (auth()->user()->level == "VIP2") {
-                foreach ($tickets as $ticket) {
-                    $quantity += $ticket->qty;
-                }
-                if ($quantity >= 500) {
-                    return redirect()->back()->with('error', 'Your daily purchase limit is over');
+                if (auth()->user()->level == "VIP2") {
+                    foreach ($tickets as $ticket) {
+                        $quantity += $ticket->qty;
+                    }
+                    if ($quantity >= 500) {
+                        return redirect()->back()->with('error', 'Your daily purchase limit is over');
+                    }
                 }
             }
         }
+
         // Checking if user purchases a ticket in 2 hrs with level 0
 
         $user = BuyTicket::where('user_id', auth()->user()->id)->latest()->first();
@@ -134,12 +139,14 @@ class UserDashboardController extends Controller
 
         if (auth()->user()->level == 'VIP0') {
             $ticket = BuyTicket::where('user_id', auth()->user()->id)->latest()->first();
-            $time_of_purchasing = $ticket->created_at;
-            $currentDateTime = Carbon::now();
-            $timeDifference = $currentDateTime->diffInHours($time_of_purchasing);
+            if ($ticket != null) {
+                $time_of_purchasing = $ticket->created_at;
+                $currentDateTime = Carbon::now();
+                $timeDifference = $currentDateTime->diffInHours($time_of_purchasing);
 
-            if ($timeDifference <= 2) {
-                return redirect()->back()->with('error', 'you have to wait for 2 hrs to buy new ticket or upgrade your level');
+                if ($timeDifference <= 2) {
+                    return redirect()->back()->with('error', 'you have to wait for 2 hrs to buy new ticket or upgrade your level');
+                }
             } else {
                 $user = User::where('id', auth()->user()->id)->first();
                 $user->balance -= $qty_price;

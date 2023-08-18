@@ -34,74 +34,66 @@
 
         <div class="row">
             <div class="container px-0">
-                <div class="autoplay">
-                    <div class="card shadow border-0 bg-template">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-auto pr-0">
-                                    <img src="{{ asset('asset/img/graphics-carousel-scheme1.png') }}" alt=""
-                                        class="mw-100">
-                                </div>
-                                <div class="col align-self-center">
-                                    <h5 class="mb-2 font-weight-normal">Referral Program</h5>
-                                    <p class="text-mute">User A invites user B, and user B complates the work. User
-                                        A
-                                        will get 8% rebate. Invite more you will earn more.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card shadow border-0 bg-template">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-auto pr-0">
-                                    <img src="{{ asset('asset/img/graphics-carousel-scheme1.png') }}" alt=""
-                                        class="mw-100">
-                                </div>
-                                <div class="col align-self-center">
-                                    <h5 class="mb-2 font-weight-normal">Invite & earn</h5>
-                                    <p class="text-mute">User C invites user D, and user D complates the work.
-                                        User C will get 8%, user B will get 4% and user A will get 2%
-                                        rebate.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card shadow border-0 bg-template">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-auto pr-0">
-                                    <img src="{{ asset('asset/img/graphics-carousel-scheme1.png') }}" alt=""
-                                        class="mw-100">
-                                </div>
-                                <div class="col align-self-center">
-                                    <h5 class="mb-2 font-weight-normal">Referral Program</h5>
-                                    <p class="text-mute">User A invites user B, and user B complates the work. User
-                                        A
-                                        will get 8% rebate. Invite more you will earn more.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card shadow border-0 bg-template">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-auto pr-0">
-                                    <img src="{{ asset('asset/img/graphics-carousel-scheme1.png') }}" alt=""
-                                        class="mw-100">
-                                </div>
-                                <div class="col pr-0 align-self-center">
-                                    <h5 class="mb-2 font-weight-normal">Affilate program</h5>
-                                    <p class="text-mute">User B invites user C, and user C complates the work. User
-                                        B
-                                        will get 8% rebate and user A will get 4% rebate.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
                 <!-- Swiper -->
+                <div class="swiper-container offer-slide">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="card shadow border-0 bg-template">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-auto pr-0">
+                                            <img src="{{ asset('asset/img/graphics-carousel-scheme1.png') }}" alt=""
+                                                class="mw-100">
+                                        </div>
+                                        <div class="col align-self-center">
+                                            <h5 class="mb-2 font-weight-normal">Referral Program</h5>
+                                            <p class="text-mute">User A invites user B, and user B complates the work. User
+                                                A
+                                                will get 8% rebate. Invite more you will earn more.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow border-0 bg-template">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-auto pr-0">
+                                            <img src="{{ asset('asset/img/graphics-carousel-scheme1.png') }}" alt=""
+                                                class="mw-100">
+                                        </div>
+                                        <div class="col align-self-center">
+                                            <h5 class="mb-2 font-weight-normal">Invite & earn</h5>
+                                            <p class="text-mute">User C invites user D, and user D complates the work.
+                                                User C will get 8%, user B will get 4% and user A will get 2%
+                                                rebate.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow border-0 bg-template">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-auto pr-0">
+                                            <img src="{{ asset('asset/img/graphics-carousel-scheme1.png') }}" alt=""
+                                                class="mw-100">
+                                        </div>
+                                        <div class="col pr-0 align-self-center">
+                                            <h5 class="mb-2 font-weight-normal">Affilate program</h5>
+                                            <p class="text-mute">User B invites user C, and user C complates the work. User
+                                                B
+                                                will get 8% rebate and user A will get 4% rebate.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Swiper -->
+                    </div>
+                </div>
             </div>
         </div>
         <div class="container">
@@ -138,23 +130,6 @@
                             </div>
                         </div>
                     </div>
-                    {{-- <script>
-                        function updateQuantity(operation) {
-                            var quantityElement = document.getElementById('{{ $ticket->title }}');
-                            var quantity = parseInt(quantityElement.value);
-
-                            // Increase or decrease the quantity based on the operation
-                            if (operation === 'plus') {
-                                quantity += 1;
-                            } else if (operation === 'minus') {
-                                if (quantity > 1) {
-                                    quantity -= 1;
-                                }
-                            }
-                            // Update the quantity input field
-                            quantityElement.value = quantity;
-                        }
-                    </script> --}}
                 @empty
                     <h3>No Ticket Available</h3>
                 @endforelse
