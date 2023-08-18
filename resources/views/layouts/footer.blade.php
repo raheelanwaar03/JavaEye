@@ -1,36 +1,38 @@
 <div class="footer">
     <div class="no-gutters">
         <div class="col-auto mx-auto">
-            <div class="row no-gutters justify-content-center">
+            <div class="row no-gutters justify-content-center align-items-center">
                 <div class="col-auto">
                     <a href="{{ route('User.Dashboard') }}" class="btn btn-link-default active">
                         <i class="material-icons">home</i>
-                        Home
                     </a>
+                    <small>
+                        Home
+                    </small>
                 </div>
                 <div class="col-auto">
                     <a href="{{ route('User.Deposit.Money') }}" class="btn btn-link-default">
                         <i class="material-icons">local_atm</i>
-                        <span style="color: black">Deposit</span>
                     </a>
+                    <small>Deposit</small>
                 </div>
                 <div class="col-auto">
                     <a href="{{ route('User.Widthraw.Balance') }}" class="btn btn-link-default">
                         <i class="material-icons">account_balance_wallet</i>
-                        <span style="color: black">Widthraw</span>
                     </a>
+                    <small>Widthraw</small>
                 </div>
                 <div class="col-auto">
                     <a href="{{ route('User.Widthraw.Transcation') }}" class="btn btn-link-default">
                         <i class="material-icons">widgets</i>
-                        <span style="color: black">Transcations</span>
                     </a>
+                    <small>Trancsations</small>
                 </div>
                 <div class="col-auto">
                     <a href="{{ route('profile.edit') }}" class="btn btn-link-default">
                         <i class="material-icons">account_circle</i>
-                        <span style="color: black">Me</span>
                     </a>
+                    <small style="margin-left:20px">Me</small>
                 </div>
             </div>
         </div>
