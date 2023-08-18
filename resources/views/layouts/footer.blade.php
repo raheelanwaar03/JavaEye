@@ -11,25 +11,25 @@
                 <div class="col-auto">
                     <a href="{{ route('User.Deposit.Money') }}" class="btn btn-link-default">
                         <i class="material-icons">local_atm</i>
-                        Deposit
+                        <span style="color: black">Deposit</span>
                     </a>
                 </div>
                 <div class="col-auto">
                     <a href="{{ route('User.Widthraw.Balance') }}" class="btn btn-link-default">
                         <i class="material-icons">account_balance_wallet</i>
-                        Widthraw
+                        <span style="color: black">Widthraw</span>
                     </a>
                 </div>
                 <div class="col-auto">
                     <a href="{{ route('User.Widthraw.Transcation') }}" class="btn btn-link-default">
                         <i class="material-icons">widgets</i>
-                        Transcations
+                        <span style="color: black">Transcations</span>
                     </a>
                 </div>
                 <div class="col-auto">
                     <a href="profile.html" class="btn btn-link-default">
                         <i class="material-icons">account_circle</i>
-                        Me
+                        <span style="color: black">Me</span>
                     </a>
                 </div>
             </div>
