@@ -8,13 +8,11 @@
             <div class="col-12 px-0">
                 <ul class="list-group list-group-flush border-top border-bottom">
                     @foreach ($transcations as $item)
-                        
-                    @endforeach
                     <li class="list-group-item">
                         <div class="row align-items-center">
                             <div class="col-auto pr-0">
                                 <div class="avatar avatar-50 no-shadow border-0">
-                                    <img src="{{ asset('asset/img/user3.png') }}" alt="">
+                                    <img src="{{ asset('asset/img/user3.png') }}" >
                                 </div>
                             </div>
                             <div class="col align-self-center pr-0">
@@ -29,6 +27,7 @@
                             </div>
                         </div>
                     </li>
+                    @endforeach
                 </ul>
             </div>
         </div>

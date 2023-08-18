@@ -27,7 +27,7 @@
                     </a>
                 </div>
                 <div class="col-auto">
-                    <a href="profile.html" class="btn btn-link-default">
+                    <a href="{{ route('profile.edit') }}" class="btn btn-link-default">
                         <i class="material-icons">account_circle</i>
                         <span style="color: black">Me</span>
                     </a>
@@ -44,6 +44,23 @@
 <script src="{{ asset('asset/vendor/swiper/js/swiper.min.js') }}"></script>
 <script src="{{ asset('asset/vendor/cookie/jquery.cookie.js') }}"></script>
 <script src="{{ asset('asset/js/main.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+    integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"
+    integrity="sha512-WNZwVebQjhSxEzwbettGuQgWxbpYdoLf7mH+25A7sfQbbxKeS5SQ9QBf97zOY4nOlwtksgDA/czSTmfj4DUEiQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script>
+    $('.autoplay').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1000,
+    });
+</script>
+
 <script>
     function copyLink() {
         // Get the text field
