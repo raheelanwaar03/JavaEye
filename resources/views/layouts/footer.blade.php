@@ -12,7 +12,7 @@
             <strong style="color: white;">Transactions</strong>
         </div>
     </a>
-    <a href="{{ route('User.Dashboard') }}" class="item">
+    <a href="{{ route('User.All.Tickets') }}" class="item">
         <div class="col">
             <i class="fa fa-film" aria-hidden="true" style="font-size: 20px;color:white;"></i>
             <strong style="color: white;">Tickets</strong>
