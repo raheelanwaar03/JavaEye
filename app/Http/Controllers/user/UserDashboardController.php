@@ -25,6 +25,15 @@ class UserDashboardController extends Controller
         return view('user.allTickets', compact('tickets'));
     }
 
+    public function mine()
+    {
+        return view('user.mine');
+    }
+    public function agreement()
+    {
+        return view('user.agreement');
+    }
+
     public function team()
     {
         $users = User::where('referral', auth()->user()->email)->get();

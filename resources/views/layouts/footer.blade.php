@@ -1,8 +1,7 @@
 <div class="appBottomMenu" style="background-color: black;">
     <a href="{{ route('User.Dashboard') }}" class="item active">
         <div class="col">
-            <i class="fa fa-home" aria-hidden="true"
-                style="font-size: 20px;color:rgb(215, 68, 93) !important;"></i>
+            <i class="fa fa-home" aria-hidden="true" style="font-size: 20px;color:rgb(215, 68, 93) !important;"></i>
             <strong style="color: white;">Home</strong>
         </div>
     </a>
@@ -22,6 +21,12 @@
         <div class="col">
             <i class="fa fa-cog" aria-hidden="true" style="font-size: 20px;color:white;"></i>
             <strong style="color: white;">Setting</strong>
+        </div>
+    </a>
+    <a href="{{ route('User.Mine') }}" class="item">
+        <div class="col">
+            <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 20px;color:white;"></i>
+            <strong style="color: white;">Mine</strong>
         </div>
     </a>
 </div>
@@ -87,4 +92,3 @@
 </body>
 
 </html>
-

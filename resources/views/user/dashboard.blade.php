@@ -1,27 +1,70 @@
 @extends('layouts.app')
 @section('content')
-    <div class="section" style="margin-top: -50px;border-bottom: 1px solid black;">
-        <div class="section-heading padding">
-            <h2 class="title" style="color: white;">Hot Selling!</h2>
-        </div>
 
-        <div id="card-container" class="card-container">
-            @forelse ($tickets as $ticket)
-                <div class="col-4"
-                    style="margin-left: 7px; width:100px;height: 100px;background-image: url('{{ asset('images/' . $ticket->image) }}');border-radius: 10px !important;">
-                    <a href="{{ route('User.Dashboard') }}">
-                        <p class="card-text" style="font-size: 11px;margin-top: 70px;"><span
-                                style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">{{ $ticket->price }}$</span><span
-                                style="float: right;padding: 2px 10px;color: white;border-radius: 10px;background-color: red;">Buy</span>
-                        </p>
-                    </a>
-                </div>
-            @empty
-                <h2>NO ticket in hot sell</h2>
-            @endforelse
-        </div>
-
+<div class="section" style="border-bottom: 1px solid black;">
+    <div class="section-heading padding">
+        <h2 class="title" style="color: white;">Hot Selling!</h2>
     </div>
+
+    <div id="card-container" class="card-container">
+
+        <div class="col-4"
+            style="margin-left: 7px; width:100px;height: 100px;background-image: url('{{ asset('assets/img/img1.jpg') }}');border-radius: 10px !important;">
+            <a href="{{ route('User.Dashboard') }}">
+                <p class="card-text" style="font-size: 11px;margin-top: 70px;"><span
+                        style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">0$</span><span
+                        style="float: right;padding: 2px 10px;color: white;border-radius: 10px;background-color: red;">Buy</span>
+                </p>
+            </a>
+        </div>
+
+        <div class="col-4"
+            style="margin-left: 7px;width:100px;height: 100px;background-image: url('{{ asset('assets/img/img1.jpg') }}');border-radius: 10px !important;">
+            <a href="{{ route('User.Dashboard') }}">
+                <p class="card-text" style="font-size: 11px;margin-top: 70px;"><span
+                        style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">0$</span><span
+                        style="float: right;padding: 2px 10px;color: white;border-radius: 10px;background-color: red;">Buy</span>
+                </p>
+            </a>
+
+        </div>
+
+
+        <div class="col-4"
+            style="margin-left: 7px;width:100px;height: 100px;background-image: url('{{ asset('assets/img/img1.jpg') }}');border-radius: 10px !important;">
+            <a href="{{ route('User.Dashboard') }}">
+                <p class="card-text" style="font-size: 11px;margin-top: 70px;"><span
+                        style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">0$</span><span
+                        style="float: right;padding: 2px 10px;color: white;border-radius: 10px;background-color: red;">Buy</span>
+                </p>
+            </a>
+
+        </div>
+
+        <div class="col-4"
+            style="margin-left: 7px;width:100px;height: 100px;background-image: url('{{ asset('assets/img/img1.jpg') }}');border-radius: 10px !important;">
+            <a href="{{ route('User.Dashboard') }}">
+                <p class="card-text" style="font-size: 11px;margin-top: 70px;"><span
+                        style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">0$</span><span
+                        style="float: right;padding: 2px 10px;color: white;border-radius: 10px;background-color: red;">Buy</span>
+                </p>
+            </a>
+
+        </div>
+
+        <div class="col-4"
+            style="margin-left: 7px;width:100px;height: 100px;background-image: url('{{ asset('assets/img/img1.jpg') }}');border-radius: 10px !important;">
+            <a href="{{ route('User.Dashboard') }}">
+                <p class="card-text" style="font-size: 11px;margin-top: 70px;"><span
+                        style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">0$</span><span
+                        style="float: right;padding: 2px 10px;color: white;border-radius: 10px;background-color: red;">Buy</span>
+                </p>
+            </a>
+
+        </div>
+    </div>
+
+</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>

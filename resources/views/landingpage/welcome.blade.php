@@ -86,10 +86,11 @@
 <body>
     <div class="appHeader text-light">
         <div class="left">
-            <h4 style="color: white;">starsharkpro</h4>
+            <h4 style="color: white;">{{ env('APP_NAME') }}</h4>
         </div>
         <div class="right">
-            <h4><a href="#"><i class="fa fa-user-circle" aria-hidden="true" style="color: white;"></i></a></h4>
+            <h4><a href="{{ route('login') }}"><i class="fa fa-user-circle" aria-hidden="true"
+                        style="color: white;"></i></a></h4>
         </div>
 
     </div>
@@ -100,22 +101,26 @@
                 <i class="input-icon"><i class="fa fa-bullhorn" aria-hidden="true" style="color: white;"></i></i>
 
                 <div align="right" style="width:60%;float:right ;">
-                    <marquee direction="left" style="color: white;">Welcome to starsharkpro...</marquee>
+                    <marquee direction="left" style="color: white;">Welcome to {{ env('APP_NAME') }}...</marquee>
                 </div>
             </div>
         </div>
 
         <div class="slideshow-container">
             <div class="mySlides1">
-                <img src="{{ asset('assets/img/img1.jpg') }}" style="width:100%">
+                <img src="{{ asset('assets/img/img.jpg') }}" style="width:100%">
             </div>
 
             <div class="mySlides1">
-                <img src="{{ asset('assets/img/img1.jpg') }}" style="width:100%">
+                <img src="{{ asset('assets/img/img2.jpg') }}" style="width:100%">
             </div>
 
             <div class="mySlides1">
-                <img src="{{ asset('assets/img/img1.jpg') }}" style="width:100%">
+                <img src="{{ asset('assets/img/img3.jpg') }}" style="width:100%">
+            </div>
+
+            <div class="mySlides1">
+                <img src="{{ asset('assets/img/img4.jpg') }}" style="width:100%">
             </div>
 
             <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
@@ -173,7 +178,6 @@
         </div>
         </center>
     </div>
-
 
 
     <div class="section" style="margin-top: -50px;border-bottom: 1px solid black;">
@@ -271,20 +275,40 @@
         });
     </script>
 
-    <div class="section full mb-3">
+    <div class="section full mb-5">
         <div class="col-12">
-            <div class="row" style="padding:10px;" id="homeProducts">
-                <div class="col-6" style="margin-top:10px;">
-                    <a href="{{ route('User.Dashboard') }}">
-                        <div class="blog-card"
-                            style="width:130px;height: 130px; border-radius: 10px !important;padding: 5px; background-image: url('{{ asset('assets/img/img1.jpg') }}');">
-                            <p class="card-text" style="font-size: 11px;margin-top: 90px;"><span
-                                    style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">0$</span><span
-                                    style="float: right;padding: 2px 12px;color: white;border-radius: 10px;background-color: red;">Buy</span>
-                            </p>
+            <h3 class="text-center text-white">All Tickets (Price: 10$)</h3>
+            <div class="row text-center mt-4">
+                @forelse ($tickets as $ticket)
+                    <div class="col-6 col-md-3">
+                        <div class="card bg-transparent shadow border-0 mb-3 bordered">
+                            <div class="card-body">
+                                <div class="no-shadow border-0">
+                                    <img src="{{ asset('images/' . $ticket->image) }}" alt="image" height="200px"
+                                        width="200px" class="img-fluid rounded">
+                                </div>
+                                <h3 class="mt-3 mb-0 font-weight-normal text-white">{{ $ticket->title }}</h3>
+                                <p class="text-secondary text-mute small text-white">{{ $ticket->description }}</p>
+                                <form action="{{ route('User.Buy.Ticket', ['id' => $ticket->id]) }}" method="POST">
+                                    @csrf
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex jusitfy-content-center align-items-center">
+                                            <input type="number" style="width:50px;border:1px solid white"
+                                                class="bg-transparent text-white" name="qty" min="1"
+                                                value="1">
+                                        </div>
+                                        <div class="">
+                                            <button type="submit" class="btn btn-sm btn-danger">Buy</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-                    </a>
-                </div>
+                    </div>
+                @empty
+                    <h3>No Ticket Available</h3>
+                @endforelse
+                {{ $tickets->withQueryString()->links('pagination::bootstrap-5') }}
             </div>
         </div>
     </div>
@@ -298,14 +322,14 @@
         </a>
         <a href="{{ route('User.Dashboard') }}" class="item">
             <div class="col">
-                <i class="fa fa-money" aria-hidden="true" style="font-size: 20px;color:white;"></i>
-                <strong style="color: white;">Income</strong>
+                <i class="fa fa-exchange" aria-hidden="true" style="font-size: 20px;color:white;"></i>
+                <strong style="color: white;">Transcations</strong>
             </div>
         </a>
         <a href="{{ route('User.Dashboard') }}" class="item">
             <div class="col">
-                <i class="fa fa-gamepad" aria-hidden="true" style="font-size: 20px;color:white;"></i>
-                <strong style="color: white;">Games</strong>
+                <i class="fa fa-film" aria-hidden="true" style="font-size: 20px;color:white;"></i>
+                <strong style="color: white;">Tickets</strong>
             </div>
         </a>
         <a href="{{ route('User.Dashboard') }}" class="item">
@@ -316,8 +340,8 @@
         </a>
         <a href="{{ route('User.Dashboard') }}" class="item">
             <div class="col">
-                <i class="fa fa-tasks" aria-hidden="true" style="font-size: 20px;color:white;"></i>
-                <strong style="color: white;">Wallet</strong>
+                <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 20px;color:white;"></i>
+                <strong style="color: white;">Mine</strong>
             </div>
         </a>
     </div>

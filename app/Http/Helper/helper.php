@@ -3,6 +3,7 @@
 use App\Models\User;
 use App\Models\user\BuyTicket;
 use App\Models\user\UserDeposit;
+use App\Models\user\Widthrawal;
 
 function allUser()
 {
@@ -41,4 +42,17 @@ function sold_tickets()
     $tickets = BuyTicket::get()->count();
     return $tickets;
 }
+
+
+function Total_widthrawal()
+{
+    $widthraws = Widthrawal::where('user_id',auth()->user()->id)->get();
+    $total_widthraw = 0;
+    foreach ($widthraws as $widthraw)
+    {
+        $total_widthraw += $widthraw->amount;
+    }
+    return $total_widthraw;
+}
+
 

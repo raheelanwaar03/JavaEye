@@ -1,34 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <!-- page content here -->
-        <h6 class="subtitle">Team Member</h6>
-        <div class="row">
-            <div class="col-12 px-0">
-                <ul class="list-group list-group-flush border-top border-bottom">
-                    @forelse ($users as $user)
-                        <li class="list-group-item">
-                            <div class="row align-items-center">
-                                <div class="col-auto pr-0">
-                                    <div class="avatar avatar-50 no-shadow border-0">
-                                        <img src="{{ asset('asset/img/user3.png') }}" alt="avatar">
-                                    </div>
-                                </div>
-                                <div class="col align-self-center pr-0">
-                                    <h6 class="font-weight-normal mb-1">{{ $user->name }}</h6>
-                                    <p class="text-mute small text-secondary">{{ $user->created_at }}</p>
-                                </div>
-                                <div class="col-auto">
-                                    <h6 class="text-success">${{ $user->balance }}</h6>
-                                </div>
-                            </div>
-                        </li>
-                    @empty
-                        <h3>You have not any team member</h3>
-                    @endforelse
-                </ul>
+<div id="appCapsule">
+    <h3 class="text-center text-white">Team Members</h3>
+    @foreach ($users as $user)
+        <div class="col-12" style="margin-top:2px;">
+            <div class="blog-card" style="border-radius: 5px !important;padding: 5px;">
+
+                <p class="card-text" style="font-size: 11px; color: black !important;">{{ $user->user_name }}<span
+                        style="float: right;">{{ $user->status }}</span></p>
+
+                <p class="card-text" style="margin-top:-20px;font-size: 11px;color: rgb(64, 64, 151);">
+                    {{ $user->balance }}$
+                    <span
+                        style="float: right;color: rgb(64, 64, 151);margin-right: -60px;">{{ $user->created_at }}</span>
+                </p>
             </div>
         </div>
-    </div>
+        <hr>
+    @endforeach
+</div>
 @endsection
