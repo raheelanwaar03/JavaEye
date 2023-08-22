@@ -1,54 +1,22 @@
 <!doctype html>
-<html lang="en" class="deeppurple-theme">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
-    <meta name="description" content="">
-    <meta name="author" content="Maxartkiller">
-
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
     <title>{{ env('APP_NAME') }}</title>
+    <meta name="description" content="Finapp HTML Mobile Template">
+    <meta name="keywords"
+        content="bootstrap, wallet, banking, fintech mobile template, cordova, phonegap, mobile, html, responsive" />
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/icon/192x192.png') }}">
+    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
 
-    <!-- Material design icons CSS -->
-    <link rel="stylesheet" href="{{ asset('asset/vendor/materializeicon/material-icons.css') }}">
-    <!-- Roboto fonts CSS -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
-    <!-- Bootstrap core CSS -->
-    <link href="{{ asset('asset/vendor/bootstrap-4.4.1/css/bootstrap.min.css') }}" rel="stylesheet">
-    <!-- Swiper CSS -->
-    <link href="{{ asset('asset/vendor/swiper/css/swiper.min.css') }}" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="{{ asset('asset/css/style.css') }}" rel="stylesheet">
 </head>
 
-<body>
-    <!-- Loader -->
-    {{-- <div class="row no-gutters vh-100 loader-screen">
-        <div class="col align-self-center text-white text-center">
-            <img src="{{ asset('asset/img/logo.png') }}" height="200px" width="200px" alt="logo">
-            <h1 class="mt-3"><span class="font-weight-light ">{{ env('APP_NAME') }}</h1>
-            <p class="text-mute text-uppercase small">Earning Platform</p>
-            <div class="laoderhorizontal">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </div>
-    </div> --}}
-    <!-- Loader ends -->
+<body style="background-image: url('{{ asset('assets/img/background.png') }}');">
 
-    <div class="wrapper">
-        <!-- header -->
-        <div class="header">
-            <div class="row no-gutters">
-                <div class="col-auto">
-                    <a href="{{ route('LandingPage') }}" class="btn  btn-link text-dark"><i
-                            class="material-icons">chevron_left</i></a>
-                </div>
-                <div class="col text-center"></div>
-                <div class="col-auto">
-                </div>
-            </div>
-        </div>

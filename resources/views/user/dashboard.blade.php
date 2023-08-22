@@ -1,129 +1,80 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="swiper-container icon-slide mb-4">
-                <div class="swiper-wrapper">
-                    <a href="{{ route('User.Deposit.Money') }}" class="swiper-slide text-center">
-                        <div class="avatar avatar-60 no-shadow border-0">
-                            <div class="overlay bg-template"></div>
-                            <i class="material-icons text-template">local_atm</i>
-                        </div>
-                        <p class="small mt-2">Deposit</p>
-                    </a>
-                    <a href="#" onclick="copyLink()" class="swiper-slide text-center">
-                        <div class="avatar avatar-60 no-shadow border-0">
-                            <div class="overlay bg-template"></div>
-                            <i class="material-icons text-template">send</i>
-                            <input type="text" id="linkValue"
-                                value="{{ route('register', ['referral' => auth()->user()->email]) }}" hidden>
-                        </div>
-                        <p class="small mt-2">Share link</p>
-                    </a>
-                    <a href="{{ route('User.Team.Member') }}" class="swiper-slide text-center">
-                        <div class="avatar avatar-60 no-shadow border-0">
-                            <div class="overlay bg-template"></div>
-                            <i class="material-icons text-template">people_outline</i>
-                        </div>
-                        <p class="small mt-2">Team</p>
-                    </a>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
+    <div class="section" style="margin-top: -50px;border-bottom: 1px solid black;">
+        <div class="section-heading padding">
+            <h2 class="title" style="color: white;">Hot Selling!</h2>
         </div>
 
-        <div class="row">
-            <div class="container px-0">
-                <!-- Swiper -->
-                <div class="swiper-container offer-slide">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="card shadow border-0 bg-template">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-auto pr-0">
-                                            <img src="{{ asset('asset/img/graphics-carousel-scheme1.png') }}" alt=""
-                                                class="mw-100">
-                                        </div>
-                                        <div class="col align-self-center">
-                                            <h5 class="mb-2 font-weight-normal">Referral Program</h5>
-                                            <p class="text-mute">User A invites user B, and user B complates the work. User
-                                                A
-                                                will get 8% rebate. Invite more you will earn more.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card shadow border-0 bg-template">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-auto pr-0">
-                                            <img src="{{ asset('asset/img/graphics-carousel-scheme1.png') }}" alt=""
-                                                class="mw-100">
-                                        </div>
-                                        <div class="col align-self-center">
-                                            <h5 class="mb-2 font-weight-normal">Invite & earn</h5>
-                                            <p class="text-mute">User C invites user D, and user D complates the work.
-                                                User C will get 8%, user B will get 4% and user A will get 2%
-                                                rebate.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card shadow border-0 bg-template">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-auto pr-0">
-                                            <img src="{{ asset('asset/img/graphics-carousel-scheme1.png') }}" alt=""
-                                                class="mw-100">
-                                        </div>
-                                        <div class="col pr-0 align-self-center">
-                                            <h5 class="mb-2 font-weight-normal">Affilate program</h5>
-                                            <p class="text-mute">User B invites user C, and user C complates the work. User
-                                                B
-                                                will get 8% rebate and user A will get 4% rebate.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Swiper -->
-                    </div>
+        <div id="card-container" class="card-container">
+            @forelse ($tickets as $ticket)
+                <div class="col-4"
+                    style="margin-left: 7px; width:100px;height: 100px;background-image: url('{{ asset('images/' . $ticket->image) }}');border-radius: 10px !important;">
+                    <a href="{{ route('User.Dashboard') }}">
+                        <p class="card-text" style="font-size: 11px;margin-top: 70px;"><span
+                                style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">{{ $ticket->price }}$</span><span
+                                style="float: right;padding: 2px 10px;color: white;border-radius: 10px;background-color: red;">Buy</span>
+                        </p>
+                    </a>
                 </div>
-            </div>
+            @empty
+                <h2>NO ticket in hot sell</h2>
+            @endforelse
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col text-center">
-                    <h5 class="subtitle mb-1">Movie Ticket [Price : $10]</h5>
-                    <p class="text-secondary">Buy ticktes and earn daily profit</p>
-                </div>
-            </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cardContainer = document.getElementById("card-container");
+            let isDragging = false;
+            let startPosition = 0;
+            let currentScrollPosition = 0;
+
+            cardContainer.addEventListener("mousedown", (event) => {
+                isDragging = true;
+                startPosition = event.clientX;
+                currentScrollPosition = cardContainer.scrollLeft;
+                cardContainer.style.cursor = "grabbing";
+            });
+
+            cardContainer.addEventListener("mouseup", () => {
+                isDragging = false;
+                cardContainer.style.cursor = "grab";
+            });
+
+            cardContainer.addEventListener("mousemove", (event) => {
+                if (!isDragging) return;
+                const deltaX = event.clientX - startPosition;
+                cardContainer.scrollLeft = currentScrollPosition - deltaX;
+            });
+        });
+    </script>
+
+    <div class="section full mb-5">
+        <div class="col-12">
+            <h3 class="text-center text-white">All Tickets (Price: 10$)</h3>
             <div class="row text-center mt-4">
                 @forelse ($tickets as $ticket)
                     <div class="col-6 col-md-3">
-                        <div class="card shadow border-0 mb-3">
+                        <div class="card bg-transparent shadow border-0 mb-3 bordered">
                             <div class="card-body">
                                 <div class="no-shadow border-0">
-                                    {{-- <div></div> --}}
                                     <img src="{{ asset('images/' . $ticket->image) }}" alt="image" height="200px"
                                         width="200px" class="img-fluid rounded">
                                 </div>
-                                <h3 class="mt-3 mb-0 font-weight-normal">{{ $ticket->title }}</h3>
-                                <p class="text-secondary text-mute small">{{ $ticket->description }}</p>
+                                <h3 class="mt-3 mb-0 font-weight-normal text-white">{{ $ticket->title }}</h3>
+                                <p class="text-secondary text-mute small text-white">{{ $ticket->description }}</p>
                                 <form action="{{ route('User.Buy.Ticket', ['id' => $ticket->id]) }}" method="POST">
                                     @csrf
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="d-flex jusitfy-content-center align-items-center">
-                                            <input type="number" style="width:50px;" name="qty" min="1"
+                                            <input type="number" style="width:50px;border:1px solid white"
+                                                class="bg-transparent text-white" name="qty" min="1"
                                                 value="1">
                                         </div>
                                         <div class="">
-                                            <button type="submit" class="btn btn-primary">Buy</button>
+                                            <button type="submit" class="btn btn-sm btn-danger">Buy</button>
                                         </div>
                                     </div>
                                 </form>
@@ -135,5 +86,58 @@
                 @endforelse
                 {{ $tickets->withQueryString()->links('pagination::bootstrap-5') }}
             </div>
+            {{-- <div class="row" style="padding:10px;" id="homeProducts">
+            @forelse ($tickets as $ticket)
+                <div class="col-6" style="margin-top:10px;">
+                    <a href="{{ route('User.Dashboard') }}">
+                        <div class="blog-card"
+                            style="width:130px;height: 130px; border-radius: 10px !important;padding: 5px; background-image: url('{{ asset('images/' . $ticket->image) }}');">
+                            <p class="card-text" style="font-size: 11px;margin-top: 90px;"><span
+                                    style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">{{ $ticket->price }}$</span><span
+                                    style="float: right;padding: 2px 12px;color: white;border-radius: 10px;background-color: red;">Buy</span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            @empty
+                <h3>No Ticket availiable</h3>
+            @endforelse
+            {{ $tickets->withQueryString()->links('pagination::bootstrap-5') }}
+        </div> --}}
         </div>
-    @endsection
+    </div>
+@endsection
+
+
+
+{{-- <div class="row text-center mt-4">
+    @forelse ($tickets as $ticket)
+        <div class="col-6 col-md-3">
+            <div class="card shadow border-0 mb-3">
+                <div class="card-body">
+                    <div class="no-shadow border-0">
+                        <img src="{{ asset('images/' . $ticket->image) }}" alt="image" height="200px"
+                            width="200px" class="img-fluid rounded">
+                    </div>
+                    <h3 class="mt-3 mb-0 font-weight-normal">{{ $ticket->title }}</h3>
+                    <p class="text-secondary text-mute small">{{ $ticket->description }}</p>
+                    <form action="{{ route('User.Buy.Ticket', ['id' => $ticket->id]) }}" method="POST">
+                        @csrf
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex jusitfy-content-center align-items-center">
+                                <input type="number" style="width:50px;" name="qty" min="1"
+                                    value="1">
+                            </div>
+                            <div class="">
+                                <button type="submit" class="btn btn-primary">Buy</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    @empty
+        <h3>No Ticket Available</h3>
+    @endforelse
+    {{ $tickets->withQueryString()->links('pagination::bootstrap-5') }}
+</div> --}}

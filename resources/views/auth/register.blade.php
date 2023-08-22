@@ -1,59 +1,93 @@
 @extends('auth.layout.app')
+
 @section('content')
-    <div class="wrapper">
-        <!-- header -->
-        <div class="header">
-            <div class="row no-gutters">
-                <div class="col-auto">
-                    <a href="{{ route('LandingPage') }}" class="btn  btn-link text-dark"><i
-                            class="material-icons">chevron_left</i></a>
-                </div>
-                <div class="col text-center"></div>
-                <div class="col-auto">
-                </div>
-            </div>
+    <div id="appCapsule">
+
+        <div class="section mt-2 text-center">
+            <img src="{{ asset('assets/img/logo.png') }}" alt="img" height="100px" width="100px">
         </div>
-        <div class="row no-gutters login-row">
-            <div class="col align-self-center px-3 text-center">
-                <br>
-                <img src="{{ asset('asset/img/logo.JPG') }}" alt="logo" class="logo-small">
-                <form action="{{ route('register') }}" method="POST" class="form-signin mt-3 ">
-                    @csrf
-                    <div class="form-group">
-                        <input type="text" id="username" name="name" class="form-control form-control-lg text-center"
-                            placeholder="Username" required autofocus>
-                    </div>
-                    <div class="form-group">
-                        <input type="number" name="phone" id="phone" class="form-control form-control-lg text-center"
-                            placeholder="Phone Number" minlength="11" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" id="inputEmail"
-                            class="form-control form-control-lg text-center" placeholder="Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="password" name="password" id="inputPassword"
-                            class="form-control form-control-lg text-center" placeholder="Password" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="password" name="password_confirmation" id="confirmPassword"
-                            class="form-control form-control-lg text-center" placeholder="Confirm Password" required>
-                    </div>
-                    <input type="hidden" name="referral" value="{{ $referral }}">
-                    <div class="form-group my-4 text-left">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" name="remember" class="custom-control-input" id="rememberme">
-                            <label class="custom-control-label" for="rememberme">Keep me sign in</label>
+        <div class="section mb-5 p-2">
+            <form action="{{ route('register') }}" method="POST">
+                @csrf
+                <div class="card">
+                    <div class="card-body pb-1">
+                        <div class="form-group round">
+                            <div class="input-wrapper">
+                                <label class="label">Name</label>
+                                <input type="text" class="form-control" name="name"
+                                    placeholder="Enter your email">
+                                <i class="clear-input">
+                                    <ion-icon name="close-circle"></ion-icon>
+                                </i>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group round">
+                            <div class="input-wrapper">
+                                <label class="label">Email</label>
+                                <input type="email" class="form-control" name="email"
+                                    placeholder="Enter your email">
+                                <i class="clear-input">
+                                    <ion-icon name="close-circle"></ion-icon>
+                                </i>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group round">
+                            <div class="input-wrapper">
+                                <label class="label">Phone</label>
+                                <input type="number" class="form-control" name="phone"
+                                    placeholder="Enter your email">
+                                <i class="clear-input">
+                                    <ion-icon name="close-circle"></ion-icon>
+                                </i>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group round">
+                            <div class="input-wrapper">
+                                <label class="label" for="password1">Password</label>
+                                <input type="password" class="form-control" name="password" id="password"
+                                    autocomplete="off" placeholder="New Password">
+                                <i class="clear-input">
+                                    <ion-icon name="close-circle"></ion-icon>
+                                </i>
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="form-group round">
+                            <div class="input-wrapper">
+                                <label class="label" for="password1">Confirm Password</label>
+                                <input type="password" class="form-control" name="password_confirmation" id="password"
+                                    autocomplete="off" placeholder="Confirm Password">
+                                <i class="clear-input">
+                                    <ion-icon name="close-circle"></ion-icon>
+                                </i>
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="form-group round">
+                            <div class="input-wrapper">
+                                <label class="label" for="password1">Referral</label>
+                                <input type="text" class="form-control" name="referral" value="{{ $referral }}" id="password"
+                                    autocomplete="off" readonly placeholder="Invite Code">
+                                <i class="clear-input">
+                                    <ion-icon name="close-circle"></ion-icon>
+                                </i>
+                            </div>
+                        </div>
+                        <div class="form-links mt-2">
+                            <div><input type="checkbox"> Accept <span style="color: blue;">Terms and Conditions</span></a>
+                            </div>
+                        </div>
+                        <div class="form-links mt-2">
+                            <button type="submit" class="btn btn-danger btn-block btn-lg">Sign Up</button>
                         </div>
                     </div>
-                    <a href="{{ route('login') }}" class="mt-4 d-block">Already have an account?</a>
-            </div>
+                </div>
+            </form>
         </div>
-        <div class="row mx-0 bottom-button-container">
-            <div class="col">
-                <button type="submit" class="btn btn-default btn-lg btn-rounded shadow btn-block">Register</button>
-            </div>
-        </div>
-        </form>
     </div>
 @endsection

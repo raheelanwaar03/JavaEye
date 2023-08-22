@@ -1,0 +1,20 @@
+{
+  "name": "jquery-emoji-picker",
+  "version": "0.2.2",
+  "authors": [
+    "Wedgies, Inc"
+  ],
+  "keywords": [
+    "emoji",
+    "jquery",
+    "picker"
+  ],
+  "license": "ISC",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "Gruntfile.js",
+    "package.json"
+  ]
+}

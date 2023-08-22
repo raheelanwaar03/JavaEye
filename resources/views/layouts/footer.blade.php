@@ -1,52 +1,72 @@
-<div class="footer">
-    <div class="no-gutters">
-        <div class="col-auto mx-auto">
-            <div class="row no-gutters justify-content-center align-items-center">
-                <div class="col-auto">
-                    <a href="{{ route('User.Dashboard') }}" class="btn btn-link-default active">
-                        <i class="material-icons">home</i>
-                    </a>
-                    <small>
-                        Home
-                    </small>
-                </div>
-                <div class="col-auto">
-                    <a href="{{ route('User.Deposit.Money') }}" class="btn btn-link-default">
-                        <i class="material-icons">local_atm</i>
-                    </a>
-                    <small>Deposit</small>
-                </div>
-                <div class="col-auto">
-                    <a href="{{ route('User.Widthraw.Balance') }}" class="btn btn-link-default">
-                        <i class="material-icons">account_balance_wallet</i>
-                    </a>
-                    <small>Widthraw</small>
-                </div>
-                <div class="col-auto">
-                    <a href="{{ route('User.Widthraw.Transcation') }}" class="btn btn-link-default">
-                        <i class="material-icons">widgets</i>
-                    </a>
-                    <small>Trancsations</small>
-                </div>
-                <div class="col-auto">
-                    <a href="{{ route('profile.edit') }}" class="btn btn-link-default">
-                        <i class="material-icons">account_circle</i>
-                    </a>
-                    <small style="margin-left:20px">Me</small>
-                </div>
-            </div>
+<div class="appBottomMenu" style="background-color: black;">
+    <a href="{{ route('User.Dashboard') }}" class="item active">
+        <div class="col">
+            <i class="fa fa-home" aria-hidden="true"
+                style="font-size: 20px;color:rgb(215, 68, 93) !important;"></i>
+            <strong style="color: white;">Home</strong>
         </div>
-    </div>
+    </a>
+    <a href="{{ route('User.Dashboard') }}" class="item">
+        <div class="col">
+            <i class="fa fa-money" aria-hidden="true" style="font-size: 20px;color:white;"></i>
+            <strong style="color: white;">Income</strong>
+        </div>
+    </a>
+    <a href="{{ route('User.Dashboard') }}" class="item">
+        <div class="col">
+            <i class="fa fa-gamepad" aria-hidden="true" style="font-size: 20px;color:white;"></i>
+            <strong style="color: white;">Games</strong>
+        </div>
+    </a>
+    <a href="{{ route('User.Dashboard') }}" class="item">
+        <div class="col">
+            <i class="fa fa-cog" aria-hidden="true" style="font-size: 20px;color:white;"></i>
+            <strong style="color: white;">Setting</strong>
+        </div>
+    </a>
+    <a href="{{ route('User.Dashboard') }}" class="item">
+        <div class="col">
+            <i class="fa fa-tasks" aria-hidden="true" style="font-size: 20px;color:white;"></i>
+            <strong style="color: white;">Wallet</strong>
+        </div>
+    </a>
 </div>
-</div>
-<!-- jquery, popper and bootstrap js -->
-<script src="{{ asset('asset/js/jquery-3.3.1.min.js') }}"></script>
-<script src="{{ asset('asset/js/popper.min.js') }}"></script>
-<script src="{{ asset('asset/vendor/bootstrap-4.4.1/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('asset/vendor/swiper/js/swiper.min.js') }}"></script>
-<script src="{{ asset('asset/vendor/cookie/jquery.cookie.js') }}"></script>
-<script src="{{ asset('asset/js/main.js') }}"></script>
 
+
+
+<script src="{{ asset('assets/js/jquery-3.2.1.min.js') }}"></script>
+<!-- Bootstrap -->
+<script src="{{ asset('assets/js/lib/bootstrap.bundle.min.js') }}"></script>
+<!-- Ionicons -->
+<script type="module" src="{{ asset('assets/js/ionicons.js') }}"></script>
+<!-- Splide -->
+<script src="{{ asset('assets/js/plugins/splide/splide.min.js') }}"></script>
+
+<script>
+    let slideIndex = [1, 1];
+    let slideId = ["mySlides1", "mySlides2"]
+    showSlides(1, 0);
+    showSlides(1, 1);
+
+    function plusSlides(n, no) {
+        showSlides(slideIndex[no] += n, no);
+    }
+
+    function showSlides(n, no) {
+        let i;
+        let x = document.getElementsByClassName(slideId[no]);
+        if (n > x.length) {
+            slideIndex[no] = 1
+        }
+        if (n < 1) {
+            slideIndex[no] = x.length
+        }
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex[no] - 1].style.display = "block";
+    }
+</script>
 
 <script>
     function copyLink() {
@@ -70,7 +90,7 @@
         alert("TRC20 Id Copied!");
     }
 </script>
-
 </body>
 
 </html>
+

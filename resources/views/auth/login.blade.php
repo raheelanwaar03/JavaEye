@@ -1,49 +1,44 @@
 @extends('auth.layout.app')
 @section('content')
-    <div class="wrapper">
-        <!-- header -->
-        <div class="header">
-            <div class="row no-gutters">
-                <div class="col-auto">
-                    <a href="{{ route('LandingPage') }}" class="btn  btn-link text-dark"><i
-                            class="material-icons">chevron_left</i></a>
-                </div>
-                <div class="col text-center"></div>
-                <div class="col-auto">
-                </div>
-            </div>
+    <div id="appCapsule">
+        <div class="section mt-2 text-center">
+            <img src="{{ asset('assets/img/logo.png') }}" alt="img" height="100px" width="100px">
         </div>
-        <div class="row no-gutters login-row">
-            <div class="col align-self-center px-3 text-center">
-                <br>
-                <img src="{{ asset('asset/img/logo.JPG') }}" alt="logo" class="logo-small">
-                <form action="{{ route('login') }}" method="POST" class="form-signin mt-3 ">
-                    @csrf
-                    <div class="form-group">
-                        <input type="email" name="email" id="inputEmail"
-                            class="form-control form-control-lg text-center" placeholder="email" required autofocus>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="password" name="password" id="inputPassword"
-                            class="form-control form-control-lg text-center" placeholder="Password" required>
-                    </div>
-
-                    <div class="form-group my-4 text-left">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" name="remember" class="custom-control-input" id="rememberme">
-                            <label class="custom-control-label" for="rememberme">Remember Me</label>
+        <div class="section mb-5 p-2">
+            <form action="{{ route('login') }}" method="POST">
+                @csrf
+                <div class="card">
+                    <div class="card-body pb-1">
+                        <div class="form-group round">
+                            <div class="input-wrapper">
+                                <label class="label">Email</label>
+                                <input type="text" class="form-control" name="email" placeholder="Enter your email">
+                                <i class="clear-input">
+                                    <ion-icon name="close-circle"></ion-icon>
+                                </i>
+                            </div>
                         </div>
-                    </div>
-
-                    <a href="#" class="mt-4 d-block">Forgot Password?</a>
+                        <br>
+                        <div class="form-group round">
+                            <div class="input-wrapper">
+                                <label class="label" for="password1">Password</label>
+                                <input type="password" class="form-control" name="password" autocomplete="on"
+                                    placeholder="Enter your password">
+                                <i class="clear-input">
+                                    <ion-icon name="close-circle"></ion-icon>
+                                </i>
+                            </div>
+                        </div>
+                        <div class="form-links mt-2">
+                            <button type="submit" class="btn btn-danger btn-block btn-lg">Login</button>
+                        </div>
+            </form>
+            <div class="form-links mt-2">
+                <div><a href="{{ route('register') }}" style="color: blue;">Don't have an account? Sign
+                        Up</a></div>
             </div>
         </div>
-        <div class="row mx-0 bottom-button-container">
-            <div class="col">
-                <button type="submit" class="btn btn-default btn-lg btn-rounded shadow btn-block">Login</button>
-            </div>
-        </div>
-        </form>
+    </div>
+    </div>
     </div>
 @endsection

@@ -1,29 +1,370 @@
 <!doctype html>
-<html lang="en" class="deeppurple-theme">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
-    <meta name="description" content="">
-    <meta name="author" content="Maxartkiller">
-
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
     <title>{{ env('APP_NAME') }}</title>
+    <meta name="description" content="Finapp HTML Mobile Template">
+    <meta name="keywords"
+        content="bootstrap, wallet, banking, fintech mobile template, cordova, phonegap, mobile, html, responsive" />
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/icon/192x192.png') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('font-awesome/css/font-awesome.min.css') }}">
 
-    <!-- Material design icons CSS -->
-    <link rel="stylesheet" href="{{ asset('asset/vendor/materializeicon/material-icons.css') }}">
-    <!-- Roboto fonts CSS -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
-    <!-- Bootstrap core CSS -->
-    <link href="{{ asset('asset/vendor/bootstrap-4.4.1/css/bootstrap.min.css') }}" rel="stylesheet">
-    <!-- Swiper CSS -->
-    <link href="{{ asset('asset/vendor/swiper/css/swiper.min.css') }}" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="{{ asset('asset/css/style.css') }}" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        .mySlides1,
+        .mySlides2 {
+            display: none
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        /* Slideshow container */
+
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+        /* Next & previous buttons */
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a grey background color */
+
+        .prev:hover,
+        .next:hover {
+            background-color: #f1f1f1;
+            color: black;
+        }
+
+        .card-container {
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 10px;
+            cursor: grab;
+        }
+    </style>
+
 </head>
 
 <body>
-    <!-- Loader -->
+    <div class="appHeader text-light">
+        <div class="left">
+            <h4 style="color: white;">starsharkpro</h4>
+        </div>
+        <div class="right">
+            <h4><a href="#"><i class="fa fa-user-circle" aria-hidden="true" style="color: white;"></i></a></h4>
+        </div>
+
+    </div>
+    <div id="appCapsule">
+        <div style="padding-left: 3px;padding-right: 3px;margin-top: 5px;">
+            <div class="col-md-12 col-12"
+                style="border-radius: 20px; border: 1px solid white;height: 25px; margin-bottom: 10px;">
+                <i class="input-icon"><i class="fa fa-bullhorn" aria-hidden="true" style="color: white;"></i></i>
+
+                <div align="right" style="width:60%;float:right ;">
+                    <marquee direction="left" style="color: white;">Welcome to starsharkpro...</marquee>
+                </div>
+            </div>
+        </div>
+
+        <div class="slideshow-container">
+            <div class="mySlides1">
+                <img src="{{ asset('assets/img/img1.jpg') }}" style="width:100%">
+            </div>
+
+            <div class="mySlides1">
+                <img src="{{ asset('assets/img/img1.jpg') }}" style="width:100%">
+            </div>
+
+            <div class="mySlides1">
+                <img src="{{ asset('assets/img/img1.jpg') }}" style="width:100%">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+        </div>
+
+
+
+
+        <div class="section full mt-4" style="border-bottom: 1px solid black;">
+            <center>
+                <div class="row">
+
+                    <div class="col-4" style="text-align: center; justify-content:center;">
+
+                        <center>
+                            <div class="user-card"
+                                style="border-radius:30px;background-color: orange;width: 40px;height:40px;text-align: center;">
+                                <h3><i class="fa fa-credit-card" aria-hidden="true" style="color: white;"></i></h3>
+                            </div>
+                            <a href="{{ route('User.Dashboard') }}">
+                                <p
+                                    style="color: white; font-size: 10px;font-weight:bold;line-height:1.1rem !important;">
+                                    Recharge Balance</p>
+                            </a>
+                        </center>
+
+
+                    </div>
+
+                    <div class="col-4" style="text-align: center; justify-content:center;">
+                        <center>
+                            <div class="user-card"
+                                style="border-radius:30px;background-color: pink;width: 40px;height:40px;text-align: center;">
+                                <h3><i class="fa fa-money" aria-hidden="true" style="color: white;"></i></h3>
+                            </div>
+                            <a href="{{ route('User.Dashboard') }}">
+                                <p
+                                    style="color: white; font-size: 10px;font-weight:bold;line-height:1.1rem !important;">
+                                    Withdraw Balance</p>
+                            </a>
+                        </center>
+                    </div>
+
+                    <div class="col-4" style="text-align: center; justify-content:center;">
+                        <center>
+                            <div class="user-card"
+                                style="border-radius:30px;background-color: skyblue;width: 40px;height:40px;text-align: center;">
+                                <h3><i class="fa fa-question-circle" aria-hidden="true" style="color: white;"></i></h3>
+                            </div>
+                            <p style="color: white; font-size: 10px;font-weight:bold;line-height:1.1rem !important;">
+                                Help Center</p>
+                    </div>
+            </center>
+        </div>
+        </center>
+    </div>
+
+
+
+    <div class="section" style="margin-top: -50px;border-bottom: 1px solid black;">
+        <div class="section-heading padding">
+            <h2 class="title" style="color: white;">Hot Selling!</h2>
+        </div>
+
+        <div id="card-container" class="card-container">
+
+            <div class="col-4"
+                style="margin-left: 7px; width:100px;height: 100px;background-image: url('{{ asset('assets/img/img1.jpg') }}');border-radius: 10px !important;">
+                <a href="{{ route('User.Dashboard') }}">
+                    <p class="card-text" style="font-size: 11px;margin-top: 70px;"><span
+                            style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">0$</span><span
+                            style="float: right;padding: 2px 10px;color: white;border-radius: 10px;background-color: red;">Buy</span>
+                    </p>
+                </a>
+            </div>
+
+            <div class="col-4"
+                style="margin-left: 7px;width:100px;height: 100px;background-image: url('{{ asset('assets/img/img1.jpg') }}');border-radius: 10px !important;">
+                <a href="{{ route('User.Dashboard') }}">
+                    <p class="card-text" style="font-size: 11px;margin-top: 70px;"><span
+                            style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">0$</span><span
+                            style="float: right;padding: 2px 10px;color: white;border-radius: 10px;background-color: red;">Buy</span>
+                    </p>
+                </a>
+
+            </div>
+
+
+            <div class="col-4"
+                style="margin-left: 7px;width:100px;height: 100px;background-image: url('{{ asset('assets/img/img1.jpg') }}');border-radius: 10px !important;">
+                <a href="{{ route('User.Dashboard') }}">
+                    <p class="card-text" style="font-size: 11px;margin-top: 70px;"><span
+                            style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">0$</span><span
+                            style="float: right;padding: 2px 10px;color: white;border-radius: 10px;background-color: red;">Buy</span>
+                    </p>
+                </a>
+
+            </div>
+
+            <div class="col-4"
+                style="margin-left: 7px;width:100px;height: 100px;background-image: url('{{ asset('assets/img/img1.jpg') }}');border-radius: 10px !important;">
+                <a href="{{ route('User.Dashboard') }}">
+                    <p class="card-text" style="font-size: 11px;margin-top: 70px;"><span
+                            style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">0$</span><span
+                            style="float: right;padding: 2px 10px;color: white;border-radius: 10px;background-color: red;">Buy</span>
+                    </p>
+                </a>
+
+            </div>
+
+            <div class="col-4"
+                style="margin-left: 7px;width:100px;height: 100px;background-image: url('{{ asset('assets/img/img1.jpg') }}');border-radius: 10px !important;">
+                <a href="{{ route('User.Dashboard') }}">
+                    <p class="card-text" style="font-size: 11px;margin-top: 70px;"><span
+                            style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">0$</span><span
+                            style="float: right;padding: 2px 10px;color: white;border-radius: 10px;background-color: red;">Buy</span>
+                    </p>
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cardContainer = document.getElementById("card-container");
+            let isDragging = false;
+            let startPosition = 0;
+            let currentScrollPosition = 0;
+
+            cardContainer.addEventListener("mousedown", (event) => {
+                isDragging = true;
+                startPosition = event.clientX;
+                currentScrollPosition = cardContainer.scrollLeft;
+                cardContainer.style.cursor = "grabbing";
+            });
+
+            cardContainer.addEventListener("mouseup", () => {
+                isDragging = false;
+                cardContainer.style.cursor = "grab";
+            });
+
+            cardContainer.addEventListener("mousemove", (event) => {
+                if (!isDragging) return;
+                const deltaX = event.clientX - startPosition;
+                cardContainer.scrollLeft = currentScrollPosition - deltaX;
+            });
+        });
+    </script>
+
+    <div class="section full mb-3">
+        <div class="col-12">
+            <div class="row" style="padding:10px;" id="homeProducts">
+                <div class="col-6" style="margin-top:10px;">
+                    <a href="{{ route('User.Dashboard') }}">
+                        <div class="blog-card"
+                            style="width:130px;height: 130px; border-radius: 10px !important;padding: 5px; background-image: url('{{ asset('assets/img/img1.jpg') }}');">
+                            <p class="card-text" style="font-size: 11px;margin-top: 90px;"><span
+                                    style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">0$</span><span
+                                    style="float: right;padding: 2px 12px;color: white;border-radius: 10px;background-color: red;">Buy</span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="appBottomMenu" style="background-color: black;">
+        <a href="{{ route('User.Dashboard') }}" class="item active">
+            <div class="col">
+                <i class="fa fa-home" aria-hidden="true"
+                    style="font-size: 20px;color:rgb(215, 68, 93) !important;"></i>
+                <strong style="color: white;">Home</strong>
+            </div>
+        </a>
+        <a href="{{ route('User.Dashboard') }}" class="item">
+            <div class="col">
+                <i class="fa fa-money" aria-hidden="true" style="font-size: 20px;color:white;"></i>
+                <strong style="color: white;">Income</strong>
+            </div>
+        </a>
+        <a href="{{ route('User.Dashboard') }}" class="item">
+            <div class="col">
+                <i class="fa fa-gamepad" aria-hidden="true" style="font-size: 20px;color:white;"></i>
+                <strong style="color: white;">Games</strong>
+            </div>
+        </a>
+        <a href="{{ route('User.Dashboard') }}" class="item">
+            <div class="col">
+                <i class="fa fa-cog" aria-hidden="true" style="font-size: 20px;color:white;"></i>
+                <strong style="color: white;">Setting</strong>
+            </div>
+        </a>
+        <a href="{{ route('User.Dashboard') }}" class="item">
+            <div class="col">
+                <i class="fa fa-tasks" aria-hidden="true" style="font-size: 20px;color:white;"></i>
+                <strong style="color: white;">Wallet</strong>
+            </div>
+        </a>
+    </div>
+
+
+
+    <script src="{{ asset('assets/js/jquery-3.2.1.min.js') }}"></script>
+    <!-- Bootstrap -->
+    <script src="{{ asset('assets/js/lib/bootstrap.bundle.min.js') }}"></script>
+    <!-- Ionicons -->
+    <script type="module" src="{{ asset('assets/js/ionicons.js') }}"></script>
+    <!-- Splide -->
+    <script src="{{ asset('assets/js/plugins/splide/splide.min.js') }}"></script>
+
+    <script>
+        let slideIndex = [1, 1];
+        let slideId = ["mySlides1", "mySlides2"]
+        showSlides(1, 0);
+        showSlides(1, 1);
+
+        function plusSlides(n, no) {
+            showSlides(slideIndex[no] += n, no);
+        }
+
+        function showSlides(n, no) {
+            let i;
+            let x = document.getElementsByClassName(slideId[no]);
+            if (n > x.length) {
+                slideIndex[no] = 1
+            }
+            if (n < 1) {
+                slideIndex[no] = x.length
+            }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex[no] - 1].style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>
+
+
+
+{{-- <body>
     <div class="row no-gutters vh-100 loader-screen">
         <div class="col align-self-center text-white text-center">
             <img src="{{ asset('asset/img/remove-bg.png') }}" alt="logo">
@@ -37,11 +378,8 @@
             </div>
         </div>
     </div>
-    <!-- Loader ends -->
-
 
     <div class="wrapper">
-        <!-- Swiper intro -->
         <div class="swiper-container introduction pt-5">
             <div class="swiper-wrapper">
                 <div class="swiper-slide overflow-hidden text-center">
@@ -62,7 +400,7 @@
                 <div class="swiper-slide overflow-hidden text-center">
                     <div class="row no-gutters">
                         <div class="col align-self-center px-3">
-                            <img src="{{ asset('assets/img/infomarmation-graphics2.png') }}" alt=""
+                            <img src="{{ asset('{{ asset('assets/img/infomarmation-graphics2.png') }}" alt=""
                                 class="mx-100 my-5">
                             <div class="row">
                                 <div class="container mb-5">
@@ -88,12 +426,8 @@
                     </div>
                 </div>
             </div>
-            <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
         </div>
-        <!-- Swiper intro ends -->
-
-        <!-- login buttons -->
         <div class="row mx-0 bottom-button-container">
             <div class="col">
                 <a href="{{ route('login') }}" class="btn btn-default btn-lg btn-rounded shadow btn-block">Login</a>
@@ -103,12 +437,8 @@
                     class="btn btn-white bg-white btn-lg btn-rounded shadow btn-block">Register</a>
             </div>
         </div>
-        <!-- login buttons -->
     </div>
 
-
-
-    <!-- color chooser menu start -->
     <div class="modal fade " id="colorscheme" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content ">
@@ -186,22 +516,12 @@
             </div>
         </div>
     </div>
-    <!-- color chooser menu ends -->
-
-    <!-- jquery, popper and bootstrap js -->
     <script src="{{ asset('asset/js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ asset('asset/js/popper.min.js') }}"></script>
     <script src="{{ asset('asset/vendor/bootstrap-4.4.1/bootstrap.min.js') }}"></script>
-
-    <!-- swiper js -->
     <script src="{{ asset('asset/vendor/swiper/js/swiper.min.js') }}"></script>
-
-    <!-- cookie js -->
     <script src="{{ asset('asset/vendor/cookie/jquery.cookie.js') }}"></script>
-
-    <!-- template custom js -->
     <script src="{{ asset('asset/js/main.js') }}"></script>
-    <!-- page level script -->
     <script>
         $(window).on('load', function() {
             var swiper = new Swiper('.introduction', {
@@ -209,8 +529,6 @@
                     el: '.swiper-pagination',
                 },
             });
-
-            /* notification view and hide */
             setTimeout(function() {
                 $('.notification').addClass('active');
                 setTimeout(function() {
@@ -222,6 +540,4 @@
             });
         });
     </script>
-</body>
-
-</html>
+</body> --}}
