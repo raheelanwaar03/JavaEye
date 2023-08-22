@@ -86,9 +86,10 @@
                                 style="font-size: 15px;"></i></span></a></p>
                 <hr>
 
-                <p class="card-text" style="margin-top:-10px;"><a href="mailto:"
+                <p class="card-text" style="margin-top:-10px;"><a href="mailto:info@odenfilms.com"
                         style="font-size: 11px; color: white !important;">Customer Services:<span
-                        style="float: right;"><i class="fa fa-arrow-circle-o-right" style="font-size: 15px;"></i></span>
+                            style="float: right;"><i class="fa fa-arrow-circle-o-right"
+                                style="font-size: 15px;"></i></span>
                     </a>
                 </p>
                 <hr>
@@ -101,9 +102,9 @@
                 <hr>
 
                 <p class="card-text" style="margin-top:-10px;"><a href="{{ route('User.Agreement') }}"
-                        style="font-size: 11px; color: white !important;"></a>User Agreement:<span
-                        style="float: right;"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"
-                            style="font-size: 15px;"></i></span></p>
+                        style="font-size: 11px; color: white !important;">User Agreement:<span
+                            style="float: right;"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"
+                                style="font-size: 15px;"></i></span></a></p>
                 <hr>
 
             </div>

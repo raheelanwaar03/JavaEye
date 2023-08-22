@@ -169,7 +169,7 @@
 
                     <div class="col-4" style="text-align: center; justify-content:center;">
                         <center>
-                            <a href="mailto:">
+                            <a href="mailto:info@odenfilms.com">
                                 <div class="user-card"
                                     style="border-radius:30px;background-color: skyblue;width: 40px;height:40px;text-align: center;">
                                     <h3><i class="fa fa-envelope-o" aria-hidden="true" style="color: white;"></i>
