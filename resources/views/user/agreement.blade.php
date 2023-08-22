@@ -43,14 +43,14 @@
 <body>
     <header>
         <h1>User Agreement</h1>
-        <p>Welcome to our Online Investing platform. Please read the following agreement carefully.</p>
+        <p>Welcome to {{ env('APP_NAME') }} platform. Please read the following agreement carefully.</p>
     </header>
     <!-- ... Previous HTML code ... -->
 
     <div class="container">
         <h2>1. Introduction</h2>
-        <p>This User Agreement ("Agreement") is a legal contract between you and [Your Company Name], governing your use
-            of our online investing services.</p>
+        <p>This User Agreement ("Agreement") is a legal contract between you and [{{ env('APP_NAME') }}], governing your use
+            of {{ env('APP_NAME') }} services.</p>
 
         <h2>2. Acceptance of Terms</h2>
         <p>By accessing or using our platform, you agree to be bound by the terms and conditions outlined in this
@@ -81,18 +81,16 @@
             investments carry risks and you assume all responsibility.</p>
 
         <h2>9. Governing Law</h2>
-        <p>This Agreement is governed by and construed in accordance with the laws of [Your Jurisdiction]. Any disputes
-            will be subject to the exclusive jurisdiction of the courts in [Your Jurisdiction].</p>
+        <p>This Agreement is governed by and construed in accordance with the laws of Jurisdiction. Any disputes
+            will be subject to the exclusive jurisdiction of the courts in Jurisdiction.</p>
 
         <h2>10. Changes to the Agreement</h2>
         <p>We reserve the right to modify this Agreement at any time. Any changes will be communicated to you through
             the platform or by email.</p>
 
         <h2>11. Contact Us</h2>
-        <p>If you have any questions about this Agreement, please contact us at [contact@yourcompany.com].</p>
+        <p>If you have any questions about this Agreement, please contact us at [info@OdenFilms.com].</p>
     </div>
-
-    <!-- ... Rest of the HTML code ... -->
 
 </body>
 
