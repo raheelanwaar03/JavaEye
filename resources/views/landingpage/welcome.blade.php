@@ -190,132 +190,74 @@
             <div class="col-4"
                 style="margin-left: 7px; width:100px;height: 100px;background-image: url('{{ asset('assets/img.jpg') }}');border-radius: 10px !important;">
                 <a href="{{ route('User.Dashboard') }}">
-                    <p class="card-text" style="font-size: 11px;margin-top: 70px;"><span
-                            style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">0$</span><span
-                            style="float: right;padding: 2px 10px;color: white;border-radius: 10px;background-color: red;">Buy</span>
-                    </p>
                 </a>
             </div>
 
             <div class="col-4"
                 style="margin-left: 7px;width:100px;height: 100px;background-image: url('{{ asset('assets/img1.jpg') }}');border-radius: 10px !important;">
                 <a href="{{ route('User.Dashboard') }}">
-                    <p class="card-text" style="font-size: 11px;margin-top: 70px;"><span
-                            style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">0$</span><span
-                            style="float: right;padding: 2px 10px;color: white;border-radius: 10px;background-color: red;">Buy</span>
-                    </p>
                 </a>
-
             </div>
 
 
             <div class="col-4"
                 style="margin-left: 7px;width:100px;height: 100px;background-image: url('{{ asset('assets/img2.jpg') }}');border-radius: 10px !important;">
                 <a href="{{ route('User.Dashboard') }}">
-                    <p class="card-text" style="font-size: 11px;margin-top: 70px;"><span
-                            style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">0$</span><span
-                            style="float: right;padding: 2px 10px;color: white;border-radius: 10px;background-color: red;">Buy</span>
-                    </p>
                 </a>
-
             </div>
 
             <div class="col-4"
                 style="margin-left: 7px;width:100px;height: 100px;background-image: url('{{ asset('assets//img3.jpg') }}');border-radius: 10px !important;">
                 <a href="{{ route('User.Dashboard') }}">
-                    <p class="card-text" style="font-size: 11px;margin-top: 70px;"><span
-                            style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">0$</span><span
-                            style="float: right;padding: 2px 10px;color: white;border-radius: 10px;background-color: red;">Buy</span>
-                    </p>
                 </a>
-
             </div>
 
             <div class="col-4"
                 style="margin-left: 7px;width:100px;height: 100px;background-image: url('{{ asset('assets/img4.jpg') }}');border-radius: 10px !important;">
                 <a href="{{ route('User.Dashboard') }}">
-                    <p class="card-text" style="font-size: 11px;margin-top: 70px;"><span
-                            style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">0$</span><span
-                            style="float: right;padding: 2px 10px;color: white;border-radius: 10px;background-color: red;">Buy</span>
-                    </p>
                 </a>
-
             </div>
 
             <div class="col-4"
                 style="margin-left: 7px;width:100px;height: 100px;background-image: url('{{ asset('assets/img5.jpg') }}');border-radius: 10px !important;">
                 <a href="{{ route('User.Dashboard') }}">
-                    <p class="card-text" style="font-size: 11px;margin-top: 70px;"><span
-                            style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">0$</span><span
-                            style="float: right;padding: 2px 10px;color: white;border-radius: 10px;background-color: red;">Buy</span>
-                    </p>
                 </a>
             </div>
 
             <div class="col-4"
                 style="margin-left: 7px;width:100px;height: 100px;background-image: url('{{ asset('assets/img6.jpg') }}');border-radius: 10px !important;">
                 <a href="{{ route('User.Dashboard') }}">
-                    <p class="card-text" style="font-size: 11px;margin-top: 70px;"><span
-                            style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">0$</span><span
-                            style="float: right;padding: 2px 10px;color: white;border-radius: 10px;background-color: red;">Buy</span>
-                    </p>
                 </a>
-
             </div>
 
             <div class="col-4"
                 style="margin-left: 7px;width:100px;height: 100px;background-image: url('{{ asset('assets/img7.jpg') }}');border-radius: 10px !important;">
                 <a href="{{ route('User.Dashboard') }}">
-                    <p class="card-text" style="font-size: 11px;margin-top: 70px;"><span
-                            style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">0$</span><span
-                            style="float: right;padding: 2px 10px;color: white;border-radius: 10px;background-color: red;">Buy</span>
-                    </p>
                 </a>
-
             </div>
 
             <div class="col-4"
                 style="margin-left: 7px;width:100px;height: 100px;background-image: url('{{ asset('assets/img8.jpg') }}');border-radius: 10px !important;">
                 <a href="{{ route('User.Dashboard') }}">
-                    <p class="card-text" style="font-size: 11px;margin-top: 70px;"><span
-                            style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">0$</span><span
-                            style="float: right;padding: 2px 10px;color: white;border-radius: 10px;background-color: red;">Buy</span>
-                    </p>
                 </a>
-
             </div>
 
             <div class="col-4"
                 style="margin-left: 7px;width:100px;height: 100px;background-image: url('{{ asset('assets/img9.jpg') }}');border-radius: 10px !important;">
                 <a href="{{ route('User.Dashboard') }}">
-                    <p class="card-text" style="font-size: 11px;margin-top: 70px;"><span
-                            style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">0$</span><span
-                            style="float: right;padding: 2px 10px;color: white;border-radius: 10px;background-color: red;">Buy</span>
-                    </p>
                 </a>
-
             </div>
 
             <div class="col-4"
                 style="margin-left: 7px;width:100px;height: 100px;background-image: url('{{ asset('assets/img11.jpg') }}');border-radius: 10px !important;">
                 <a href="{{ route('User.Dashboard') }}">
-                    <p class="card-text" style="font-size: 11px;margin-top: 70px;"><span
-                            style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">0$</span><span
-                            style="float: right;padding: 2px 10px;color: white;border-radius: 10px;background-color: red;">Buy</span>
-                    </p>
                 </a>
-
             </div>
 
             <div class="col-4"
                 style="margin-left: 7px;width:100px;height: 100px;background-image: url('{{ asset('assets/img12.jpg') }}');border-radius: 10px !important;">
                 <a href="{{ route('User.Dashboard') }}">
-                    <p class="card-text" style="font-size: 11px;margin-top: 70px;"><span
-                            style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">0$</span><span
-                            style="float: right;padding: 2px 10px;color: white;border-radius: 10px;background-color: red;">Buy</span>
-                    </p>
                 </a>
-
             </div>
 
         </div>
