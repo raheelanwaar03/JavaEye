@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="col-sm-12 d-flex justify-content-center align-items-center">
+    <div class="col-sm-12 d-flex justify-content-center align-items-center my-4">
         <div class="col-sm-8">
-            <div class="card">
+            <div class="card bg-transparent">
                 <div class="card-title">
                     <div class="text-center">
-                        <h3>
+                        <h3 class="text-white">
                             Personal Details
                         </h3>
                     </div>
@@ -28,12 +28,12 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-12 d-flex justify-content-center align-items-center">
+    <div class="col-sm-12 d-flex justify-content-center align-items-center my-4">
         <div class="col-sm-8">
-            <div class="card">
+            <div class="card bg-transparent">
                 <div class="card-title">
                     <div class="text-center">
-                        <h3>
+                        <h3 class="text-white">
                             Password Modification
                         </h3>
                     </div>
@@ -43,28 +43,28 @@
                         @csrf
                         @method('put')
                         <div>
-                            <x-input-label for="current_password" :value="__('Current Password')" />
+                            <x-input-label for="current_password" class="text-white" :value="__('Current Password')" />
                             <x-text-input id="current_password" name="current_password" type="password"
                                 class="mt-1 block w-full form-control" autocomplete="current-password" />
                             <x-input-error :messages="$errors->updatePassword->get('current_password')" class="mt-2" />
                         </div>
 
                         <div>
-                            <x-input-label for="password" :value="__('New Password')" />
+                            <x-input-label for="password" class="text-white" :value="__('New Password')" />
                             <x-text-input id="password" name="password" type="password"
                                 class="mt-1 block w-full form-control" autocomplete="new-password" />
                             <x-input-error :messages="$errors->updatePassword->get('password')" class="mt-2" />
                         </div>
 
                         <div>
-                            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+                            <x-input-label for="password_confirmation" class="text-white" :value="__('Confirm Password')" />
                             <x-text-input id="password_confirmation" name="password_confirmation" type="password"
                                 class="mt-1 block w-full form-control" autocomplete="new-password" />
                             <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" class="mt-2" />
                         </div>
 
                         <div class="flex items-center gap-4">
-                            <x-primary-button class='btn btn-primary mt-3'>{{ __('Save') }}
+                            <x-primary-button class='btn btn-danger mt-3'>{{ __('Save') }}
                             </x-primary-button>
 
                             @if (session('status') === 'password-updated')

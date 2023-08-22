@@ -6,28 +6,22 @@
             <strong style="color: white;">Home</strong>
         </div>
     </a>
-    <a href="{{ route('User.Dashboard') }}" class="item">
+    <a href="{{ route('User.Widthraw.Transcation') }}" class="item">
         <div class="col">
-            <i class="fa fa-money" aria-hidden="true" style="font-size: 20px;color:white;"></i>
-            <strong style="color: white;">Income</strong>
+            <i class="fa fa-exchange" aria-hidden="true" style="font-size: 20px;color:white;"></i>
+            <strong style="color: white;">Transactions</strong>
         </div>
     </a>
     <a href="{{ route('User.Dashboard') }}" class="item">
         <div class="col">
-            <i class="fa fa-gamepad" aria-hidden="true" style="font-size: 20px;color:white;"></i>
-            <strong style="color: white;">Games</strong>
+            <i class="fa fa-film" aria-hidden="true" style="font-size: 20px;color:white;"></i>
+            <strong style="color: white;">Tickets</strong>
         </div>
     </a>
-    <a href="{{ route('User.Dashboard') }}" class="item">
+    <a href="{{ route('profile.edit') }}" class="item">
         <div class="col">
             <i class="fa fa-cog" aria-hidden="true" style="font-size: 20px;color:white;"></i>
             <strong style="color: white;">Setting</strong>
-        </div>
-    </a>
-    <a href="{{ route('User.Dashboard') }}" class="item">
-        <div class="col">
-            <i class="fa fa-tasks" aria-hidden="true" style="font-size: 20px;color:white;"></i>
-            <strong style="color: white;">Wallet</strong>
         </div>
     </a>
 </div>

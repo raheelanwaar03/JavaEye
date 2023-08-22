@@ -89,9 +89,13 @@
             <h4 style="color: white;">{{ env('APP_NAME') }}</h4>
         </div>
         <div class="right">
-            <h4><a href="#"><i class="fa fa-user-circle" aria-hidden="true" style="color: white;"></i></a></h4>
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="bg-transparent" style="border: none">
+                    <i class="fa fa-power-off" aria-hidden="true" style="color: white"></i>
+                </button>
+            </form>
         </div>
-
     </div>
     <div id="appCapsule">
         <div style="padding-left: 3px;padding-right: 3px;margin-top: 5px;">
@@ -99,7 +103,7 @@
                 style="border-radius: 20px; border: 1px solid white;height: 25px; margin-bottom: 10px;">
                 <i class="input-icon"><i class="fa fa-bullhorn" aria-hidden="true" style="color: white;"></i></i>
 
-                <div align="right" style="width:60%;float:right ;">
+                <div align="right" style="width:70%;float:right ;">
                     <marquee direction="left" style="color: white;">Welcome to {{ env('APP_NAME') }}...</marquee>
                 </div>
             </div>
@@ -107,15 +111,18 @@
 
         <div class="slideshow-container">
             <div class="mySlides1">
-                <img src="{{ asset('assets/img/img1.jpg') }}" style="width:100%">
+                <img src="{{ asset('assets/img/img.jpg') }}" style="width:100%">
             </div>
 
             <div class="mySlides1">
-                <img src="{{ asset('assets/img/img1.jpg') }}" style="width:100%">
+                <img src="{{ asset('assets/img/img2.jpg') }}" style="width:100%">
             </div>
 
             <div class="mySlides1">
-                <img src="{{ asset('assets/img/img1.jpg') }}" style="width:100%">
+                <img src="{{ asset('assets/img/img3.jpg') }}" style="width:100%">
+            </div>
+            <div class="mySlides1">
+                <img src="{{ asset('assets/img/img4.jpg') }}" style="width:100%">
             </div>
 
             <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
@@ -163,14 +170,16 @@
                     <div class="col-4" style="text-align: center; justify-content:center;">
                         <center>
                             <a href="#" onclick="copyLink()">
-                            <div class="user-card"
-                                style="border-radius:30px;background-color: skyblue;width: 40px;height:40px;text-align: center;">
-                                <h3><i class="fa fa-share-alt-square" aria-hidden="true" style="color: white;"></i></h3>
-                            </div>
-                            <input type="text" id="linkValue"
-                                value="{{ route('register', ['referral' => auth()->user()->email]) }}" hidden>
-                            <p style="color: white; font-size: 10px;font-weight:bold;line-height:1.1rem !important;">
-                                Share Link</p>
+                                <div class="user-card"
+                                    style="border-radius:30px;background-color: skyblue;width: 40px;height:40px;text-align: center;">
+                                    <h3><i class="fa fa-share-alt-square" aria-hidden="true" style="color: white;"></i>
+                                    </h3>
+                                </div>
+                                <input type="text" id="linkValue"
+                                    value="{{ route('register', ['referral' => auth()->user()->email]) }}" hidden>
+                                <p
+                                    style="color: white; font-size: 10px;font-weight:bold;line-height:1.1rem !important;">
+                                    Share Link</p>
                             </a>
                         </center>
                     </div>

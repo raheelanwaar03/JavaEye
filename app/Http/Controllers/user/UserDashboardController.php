@@ -19,6 +19,12 @@ class UserDashboardController extends Controller
         return view('user.dashboard', compact('tickets'));
     }
 
+    public function tickets()
+    {
+        $tickets = Ticket::paginate(12);
+        return view('user.allTickets', compact('tickets'));
+    }
+
     public function team()
     {
         $users = User::where('referral', auth()->user()->email)->get();
