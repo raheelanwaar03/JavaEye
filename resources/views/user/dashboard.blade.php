@@ -41,7 +41,7 @@
                                     <span><input type="number"
                                         name="qty" min="1" style="width: 50px;border:1px solid white"
                                         class="bg-transparent text-white"></span><span
-                                        style="float: right;padding: 2px 12px;color: white;border-radius: 10px;background-color: red;">Buy</span>
+                                        style="float: right;padding: 2px 12px;color: black;border-radius: 10px;background-color: red;">Buy</span>
                                 </p>
                             </div>
                         </a>
