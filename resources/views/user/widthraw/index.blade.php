@@ -11,21 +11,23 @@
         </center>
         <div class="col-12">
             <div style="border: 1px solid black; border-radius: 5px !important;padding: 15px;">
-                <h3 class="text-center text-white">Widthraw Balance</h3>
-                <p class="card-text" style="margin-top:-10px;"><span style="color: white;">WalletAddress:</span></p>
-                <input placeholder="Enter Your TRC20 Id" type="text" name="trc_id"
-                    style="background: #040e2b;border:none;color:white;">
-                <hr>
+                <form action="{{ route('User.Store.Widthraw.Balance') }}" method="POST">
+                    @csrf
+                    <h3 class="text-center text-white">Widthraw Balance</h3>
+                    <p class="card-text" style="margin-top:-10px;"><span style="color: white;">WalletAddress:</span></p>
+                    <input placeholder="Enter Your TRC20 Id" type="text" name="trc_id"
+                        style="background: #040e2b;border:none;color:white;">
+                    <hr>
 
-                <p class="card-text" style="margin-top:-10px;"><span style="color: white;">Account Title:</span></p>
-                <input placeholder="Your Account Title" type="text" name="account_title"
-                    style="background: #040e2b;border:none;color:white;">
-                <hr>
+                    <p class="card-text" style="margin-top:-10px;"><span style="color: white;">Account Title:</span></p>
+                    <input placeholder="Your Account Title" type="text" name="account_title"
+                        style="background: #040e2b;border:none;color:white;">
+                    <hr>
 
-                <p class="card-text" style="margin-top:-10px;"><span style="color: white;">Withdrawal Amount:</span></p>
-                <input placeholder="Enter Amount You Want to Widthraw" name="amount" type="number"
-                    style="background: #040e2b;border:none;color:white;">
-                <hr>
+                    <p class="card-text" style="margin-top:-10px;"><span style="color: white;">Withdrawal Amount:</span></p>
+                    <input placeholder="Enter Amount You Want to Widthraw" name="amount" type="number"
+                        style="background: #040e2b;border:none;color:white;">
+                    <hr>
 
             </div>
         </div>
@@ -34,6 +36,7 @@
             <div style="padding: 10px;">
                 <button type="submit" class="btn btn-danger">Confirm Withdrawal</button>
             </div>
+            </form>
         </center>
 
     </div>

@@ -78,33 +78,18 @@
         <hr>
 
         <div class="col-12">
+            <h3 class="text-white text-center">Transcations</h3>
             <div style="border: 1px solid black; border-radius: 5px !important;padding: 15px;">
 
-                <p class="card-text" style="margin-top:-10px;"><a href="{{ route('User.Team.Member') }}"
-                        style="font-size: 11px; color: white !important;"> Team Member:<span style="float: right;"><i
-                                class="fa fa-arrow-circle-o-right" aria-hidden="true"
-                                style="font-size: 15px;"></i></span></a></p>
-                <hr>
+                @forelse ($transcations as $transcation)
+                    <p class="card-text" style="margin-top:-10px;"><a style="font-size: 11px; color: white !important;">
+                            {{ $transcation->user_name }}:<span style="float: right;">
+                                {{ $transcation->amount }}
+                            </span></a></p>
+                @empty
+                <h4 class="text-white text-center">No Transcations</h4>
+                @endforelse
 
-                <p class="card-text" style="margin-top:-10px;"><a href="mailto:info@odenfilms.com"
-                        style="font-size: 11px; color: white !important;">Customer Services:<span
-                            style="float: right;"><i class="fa fa-arrow-circle-o-right"
-                                style="font-size: 15px;"></i></span>
-                    </a>
-                </p>
-                <hr>
-
-                <p class="card-text" style="margin-top:-10px;">Share Link: <input type="text"
-                        class="bg-transparent w-75 form-control text-white"
-                        value="{{ route('register', ['referral' => Auth::user()->email]) }}" id="linkValue"
-                        readonly><span style="float: right;"><button onclick="copyLink()" class="btn btn-sm btn-primary"
-                            style="margin-top: -65px">Copy Link</button></p>
-                <hr>
-
-                <p class="card-text" style="margin-top:-10px;"><a href="{{ route('User.Agreement') }}"
-                        style="font-size: 11px; color: white !important;">User Agreement:<span
-                            style="float: right;"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"
-                                style="font-size: 15px;"></i></span></a></p>
                 <hr>
 
             </div>
@@ -115,14 +100,13 @@
     <div class="appBottomMenu" style="background-color: black;">
         <a href="{{ route('User.Dashboard') }}" class="item active">
             <div class="col">
-                <i class="fa fa-home" aria-hidden="true"
-                    style="font-size: 20px;color:rgb(215, 68, 93) !important;"></i>
+                <i class="fa fa-home" aria-hidden="true" style="font-size: 20px;color:rgb(215, 68, 93) !important;"></i>
                 <strong style="color: white;">Home</strong>
             </div>
         </a>
         <a href="{{ route('User.Assets') }}" class="item">
             <div class="col">
-                <i class="fa fa-exchange" aria-hidden="true" style="font-size: 20px;color:white;"></i>
+                <i class="fa fa-file-text-o" aria-hidden="true" style="font-size: 20px;color:white;"></i>
                 <strong style="color: white;">Assets</strong>
             </div>
         </a>
@@ -145,6 +129,8 @@
             </div>
         </a>
     </div>
+
+    <x-alert />
 
 
     <script>

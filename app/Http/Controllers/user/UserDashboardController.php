@@ -77,6 +77,12 @@ class UserDashboardController extends Controller
         return redirect()->back()->with('success', 'You have been successfully requested for deposit. Please wait for admin approvel you will get an email');
     }
 
+    public function assets()
+    {
+        $transcations = Widthrawal::where('user_id',auth()->user()->id)->get();
+        return view('user.asset',compact('transcations'));
+    }
+
     // buy ticket
 
     public function buyTicket(Request $request, $id)
