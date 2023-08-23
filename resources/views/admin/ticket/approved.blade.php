@@ -6,7 +6,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">All Tickets</h4>
+                            <h4 class="card-title">Approved Tickets</h4>
                             <a href="{{ route('Admin.Add.Ticket') }}" class="btn btn-sm btn-primary">Add New</a>
                         </div>
                         <div class="card-body">
