@@ -97,6 +97,20 @@
     <script type="module" src="{{ asset('assets/js/ionicons.js') }}"></script>
     <!-- Splide -->
     <script src="{{ asset('assets/js/plugins/splide/splide.min.js') }}"></script>
+
+    <script>
+        function copy() {
+            // Get the text field
+            var copyText = document.getElementById("myInput");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(copyText.value);
+            // Alert the copied text
+            alert("Copied the text: " + copyText.value);
+        }
+    </script>
+
+
 </body>
 
 </html>
