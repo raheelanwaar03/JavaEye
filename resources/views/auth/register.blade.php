@@ -15,7 +15,7 @@
                             <div class="input-wrapper">
                                 <label class="label">Name</label>
                                 <input type="text" class="form-control" name="name"
-                                    placeholder="Enter your email">
+                                    placeholder="Enter your name">
                                 <i class="clear-input">
                                     <ion-icon name="close-circle"></ion-icon>
                                 </i>
@@ -37,7 +37,7 @@
                             <div class="input-wrapper">
                                 <label class="label">Phone</label>
                                 <input type="number" class="form-control" name="phone"
-                                    placeholder="Enter your email">
+                                    placeholder="Enter your phone">
                                 <i class="clear-input">
                                     <ion-icon name="close-circle"></ion-icon>
                                 </i>

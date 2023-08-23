@@ -13,4 +13,10 @@ class LandingPageController extends Controller
         $tickets = Ticket::paginate(12);
         return view('landingpage.welcome',compact('tickets'));
     }
+
+    public function contact()
+    {
+        return view('user.contactUs');
+    }
+
 }

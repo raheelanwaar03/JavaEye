@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[LandingPageController::class,'home'])->name('LandingPage');
+Route::get('/Contact/Us',[LandingPageController::class,'contact'])->name('LandingPage.Contact');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
