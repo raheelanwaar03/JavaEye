@@ -92,8 +92,14 @@
 
         </div> -->
         <div class="right">
-            <h4><a href="{{ route('login') }}"><i class="fa fa-user-circle" aria-hidden="true"
-                        style="color: white;"></i></a></h4>
+            <h4>
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="bg-transparent" style="border: none">
+                    <i class="fa fa-power-off" aria-hidden="true" style="color: white"></i>
+                </button>
+            </form>
+            </h4>
         </div>
 
     </div>
