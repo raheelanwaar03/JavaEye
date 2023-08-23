@@ -74,7 +74,7 @@ class UserDashboardController extends Controller
         $deposit->trcId = $validated['trcId'];
         $deposit->screen_shot = $imageName;
         $deposit->save();
-        return redirect()->back()->with('success', 'You have been successfully requested for deposit. Please wait for admin approvel you will get an email');
+        return redirect()->route('User.All.Tickets')->with('success', 'You have been successfully requested for deposit. Please wait for admin approvel you will get an email');
     }
 
     public function assets()
@@ -199,7 +199,7 @@ class UserDashboardController extends Controller
             $user_buy_ticket->ticket_title = $ticket_title;
             $user_buy_ticket->ticket_img = $ticket_img;
             $user_buy_ticket->save();
-            return redirect()->back()->with('success', 'You have purchased ticket successfully');
+            return redirect()->route('User.All.Tickets')->with('success', 'You have purchased ticket successfully');
         }
 
         if (auth()->user()->level == 'VIP0') {
@@ -227,7 +227,7 @@ class UserDashboardController extends Controller
                 $user_buy_ticket->ticket_title = $ticket_title;
                 $user_buy_ticket->ticket_img = $ticket_img;
                 $user_buy_ticket->save();
-                return redirect()->back()->with('success', 'You have purchased this ticket successfully');
+                return redirect()->route('User.All.Tickets')->with('success', 'You have purchased this ticket successfully');
             }
         }
 
@@ -246,7 +246,7 @@ class UserDashboardController extends Controller
             $user_buy_ticket->ticket_title = $ticket_title;
             $user_buy_ticket->ticket_img = $ticket_img;
             $user_buy_ticket->save();
-            return redirect()->back()->with('success', 'You have purchased this ticket successfully');
+            return redirect()->route('User.All.Tickets')->with('success', 'You have purchased this ticket successfully');
         }
 
         if (auth()->user()->level == 'VIP2') {
@@ -264,7 +264,7 @@ class UserDashboardController extends Controller
             $user_buy_ticket->ticket_title = $ticket_title;
             $user_buy_ticket->ticket_img = $ticket_img;
             $user_buy_ticket->save();
-            return redirect()->back()->with('success', 'You have purchased this ticket successfully');
+            return redirect()->route('User.All.Tickets')->with('success', 'You have purchased this ticket successfully');
         }
 
         if (auth()->user()->level == 'VIP3') {
@@ -282,7 +282,7 @@ class UserDashboardController extends Controller
             $user_buy_ticket->ticket_title = $ticket_title;
             $user_buy_ticket->ticket_img = $ticket_img;
             $user_buy_ticket->save();
-            return redirect()->back()->with('success', 'You have purchased this ticket successfully');
+            return redirect()->route('User.All.Tickets')->with('success', 'You have purchased this ticket successfully');
         }
 
         if (auth()->user()->level == 'VIP4') {
@@ -300,7 +300,7 @@ class UserDashboardController extends Controller
             $user_buy_ticket->ticket_title = $ticket_title;
             $user_buy_ticket->ticket_img = $ticket_img;
             $user_buy_ticket->save();
-            return redirect()->back()->with('success', 'You have purchased this ticket successfully');
+            return redirect()->route('User.All.Tickets')->with('success', 'You have purchased this ticket successfully');
         }
 
         if (auth()->user()->level == 'VIP5') {
@@ -318,7 +318,7 @@ class UserDashboardController extends Controller
             $user_buy_ticket->ticket_title = $ticket_title;
             $user_buy_ticket->ticket_img = $ticket_img;
             $user_buy_ticket->save();
-            return redirect()->back()->with('success', 'You have purchased this ticket successfully');
+            return redirect()->route('User.All.Tickets')->with('success', 'You have purchased this ticket successfully');
         }
 
         if (auth()->user()->level == 'VIP6') {
@@ -336,7 +336,7 @@ class UserDashboardController extends Controller
             $user_buy_ticket->ticket_title = $ticket_title;
             $user_buy_ticket->ticket_img = $ticket_img;
             $user_buy_ticket->save();
-            return redirect()->back()->with('success', 'You have purchased this ticket successfully');
+            return redirect()->route('User.All.Tickets')->with('success', 'You have purchased this ticket successfully');
         }
     }
 
