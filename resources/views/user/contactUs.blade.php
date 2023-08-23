@@ -64,7 +64,7 @@
 <body>
     <div class="container">
         <h1>Contact Us</h1>
-        <form>
+        <form action="mailto:info@odenfilms.com">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
