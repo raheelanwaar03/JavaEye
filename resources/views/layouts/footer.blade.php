@@ -7,8 +7,8 @@
     </a>
     <a href="{{ route('User.Widthraw.Transcation') }}" class="item">
         <div class="col">
-            <i class="fa fa-exchange" aria-hidden="true" style="font-size: 20px;color:white;"></i>
-            <strong style="color: white;">Transactions</strong>
+            <i class="fa fa-file-text-o" aria-hidden="true" style="font-size: 20px;color:white;"></i>
+            <strong style="color: white;">Assest</strong>
         </div>
     </a>
     <a href="{{ route('User.All.Tickets') }}" class="item">
@@ -17,10 +17,10 @@
             <strong style="color: white;">Tickets</strong>
         </div>
     </a>
-    <a href="{{ route('profile.edit') }}" class="item">
+    <a href="mailto:" class="item">
         <div class="col">
-            <i class="fa fa-cog" aria-hidden="true" style="font-size: 20px;color:white;"></i>
-            <strong style="color: white;">Setting</strong>
+            <i class="fa fa-comment-o" aria-hidden="true" style="font-size: 20px;color:white;"></i>
+            <strong style="color: white;">Service</strong>
         </div>
     </a>
     <a href="{{ route('User.Mine') }}" class="item">
@@ -32,14 +32,14 @@
 </div>
 
 
-
-<script src="{{ asset('assets/js/jquery-3.2.1.min.js') }}"></script>
+<!-- ========= JS Files =========  -->
+<script src="assets/js/jquery-3.2.1.min.js"></script>
 <!-- Bootstrap -->
-<script src="{{ asset('assets/js/lib/bootstrap.bundle.min.js') }}"></script>
+<script src="assets/js/lib/bootstrap.bundle.min.js"></script>
 <!-- Ionicons -->
-<script type="module" src="{{ asset('assets/js/ionicons.js') }}"></script>
+<script type="module" src="assets/js/ionicons.js"></script>
 <!-- Splide -->
-<script src="{{ asset('assets/js/plugins/splide/splide.min.js') }}"></script>
+<script src="assets/js/plugins/splide/splide.min.js"></script>
 
 <script>
     let slideIndex = [1, 1];
@@ -67,28 +67,6 @@
     }
 </script>
 
-<script>
-    function copyLink() {
-        // Get the text field
-        var copyText = document.getElementById("linkValue");
-        copyText.select();
-        copyText.setSelectionRange(0, 99999);
-        navigator.clipboard.writeText(copyText.value);
-        // Alert the copied text
-        alert("Refer Link Copied!");
-    }
-</script>
-<script>
-    function copy() {
-        // Get the text field
-        var copyText = document.getElementById("myInput");
-        copyText.select();
-        copyText.setSelectionRange(0, 99999);
-        navigator.clipboard.writeText(copyText.value);
-        // Alert the copied text
-        alert("TRC20 Id Copied!");
-    }
-</script>
 </body>
 
 </html>
