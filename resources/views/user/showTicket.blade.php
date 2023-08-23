@@ -79,8 +79,6 @@
                                 id="totalPrice">10</span></a></p>
             </div>
 
-
-
             <div class="row" style="padding-left: 2px;margin-top: 10px;">
                 <div class="col-6" style="text-align: center;">
                     <p style="color: white;font-size: 10px;">Purchase quantity</p>
@@ -99,9 +97,9 @@
             <center>
                 <div style="padding: 10px;">
                     <button type="submit" class="btn btn-danger">Confirm Purchase</button>
-                    </form>
                 </div>
             </center>
+            </form>
 
         </div>
     </div>
