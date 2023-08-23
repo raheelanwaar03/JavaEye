@@ -37,8 +37,9 @@
                         <a href="{{ route('User.Dashboard') }}">
                             <div class="blog-card"
                                 style="width:130px;height: 130px; border-radius: 10px !important;padding: 5px; background-image: url('{{ asset('images/' . $ticket->image) }}');">
-                                <p class="card-text" style="font-size: 11px;margin-top: 90px;"><span
-                                        style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">0$</span><span
+                                <p class="card-text" style="font-size: 11px;margin-top: 90px;"><span><input type="number"
+                                            name="qty" min="1" style="width: 50px;border:1px solid white"
+                                            class="bg-transparent text-white"></span><span
                                         style="float: right;padding: 2px 12px;color: white;border-radius: 10px;background-color: red;">Buy</span>
                                 </p>
                             </div>
@@ -52,4 +53,4 @@
         <div>
 
         </div>
-@endsection
+    @endsection

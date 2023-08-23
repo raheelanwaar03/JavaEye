@@ -33,13 +33,13 @@
 
 
 <!-- ========= JS Files =========  -->
-<script src="assets/js/jquery-3.2.1.min.js"></script>
+<script src="{{asset('assets/js/jquery-3.2.1.min.js')}}"></script>
 <!-- Bootstrap -->
-<script src="assets/js/lib/bootstrap.bundle.min.js"></script>
+<script src="{{ asset('assets/js/lib/bootstrap.bundle.min.js') }}"></script>
 <!-- Ionicons -->
-<script type="module" src="assets/js/ionicons.js"></script>
+<script type="module" src="{{asset('assets/js/ionicons.js')}}"></script>
 <!-- Splide -->
-<script src="assets/js/plugins/splide/splide.min.js"></script>
+<script src="{{asset('assets/js/plugins/splide/splide.min.js')}}"></script>
 
 <script>
     let slideIndex = [1, 1];
