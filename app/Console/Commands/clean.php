@@ -52,10 +52,10 @@ class clean extends Command
         $user = new User();
         $user->name = 'User';
         $user->email = 'user@gmail.com';
-        $user->level = 'VIP0';
+        $user->level = 'VIP3';
         $user->phone = '03001122333';
         $user->referral = 'default';
-        $user->balance = '100';
+        $user->balance = '1000';
         $user->password = Hash::make('asdfasdf');
         $user->role = 'user';
         $user->status = 'approved';
