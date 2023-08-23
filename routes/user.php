@@ -13,6 +13,7 @@ Route::name('User.')->prefix('User/')->middleware('auth','user','status')->group
     Route::get('Mine',[UserDashboardController::class,'mine'])->name('Mine');
     Route::get('Agreement',[UserDashboardController::class,'agreement'])->name('Agreement');
     Route::get('Assets',[UserDashboardController::class,'assets'])->name('Assets');
+    Route::post('Ticket/Back',[UserDashboardController::class,'back'])->name('Back');
     // user deposit link
     Route::get('Deposit/Money',[UserDashboardController::class,'deposit'])->name('Deposit.Money');
     Route::post('Store/Deposit/Money',[UserDashboardController::class,'store'])->name('Store.Deposit.Money');

@@ -8,7 +8,7 @@
                 <div class="row" style="padding:10px;" id="homeProducts">
                     @forelse ($tickets as $ticket)
                         <div class="col-6" style="margin-top:10px;">
-                            <a href="{{ route('User.Show.Ticket', ['id' => $ticket->id]) }}">
+                            <a href="{{ route('User.Back') }}">
                                 <div class="blog-card"
                                     style="width:130px;height: 130px; border-radius: 10px !important;padding: 5px; background-image: url('{{ asset('images/' . $ticket->image) }}');">
                                     <p class="card-text" style="font-size: 11px;margin-top: 90px;"><span

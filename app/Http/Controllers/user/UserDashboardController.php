@@ -46,6 +46,12 @@ class UserDashboardController extends Controller
         return view('user.team', compact('users'));
     }
 
+    public function back(Request $request)
+    {
+        return redirect()->back()->with('error','Not open yet')
+    }
+
+
     public function deposit()
     {
         return view('user.deposit');
