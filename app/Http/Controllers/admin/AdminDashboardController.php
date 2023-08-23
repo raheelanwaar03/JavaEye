@@ -38,6 +38,11 @@ class AdminDashboardController extends Controller
         $widthrawal = Widthrawal::find($id);
         $widthrawal->status = 'approved';
         $widthrawal->save();
+
+        $user = User::where('id',$widthrawal->user_id)->first();
+        $user->balance -= $widthrawal->amount;
+        $user->save();
+
         return redirect()->back()->with('success', 'user widthraw approved successfully');
     }
 

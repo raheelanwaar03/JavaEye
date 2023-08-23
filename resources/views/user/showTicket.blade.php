@@ -26,6 +26,14 @@
             <h4 style="color:white">Confirm Purchase</h4>
         </div>
         <div class="right">
+            <h4>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="bg-transparent" style="border: none">
+                        <i class="fa fa-power-off" aria-hidden="true" style="color: white"></i>
+                    </button>
+                </form>
+            </h4>
         </div>
     </div>
     <div id="appCapsule">
@@ -63,8 +71,9 @@
                 <form action="{{ route('User.Buy.Ticket', ['id' => $ticket->id]) }}" method="POST">
                     @csrf
                     <a href="#" style="font-size: 11px; color: white !important;">Quantity:<input
-                            class="bg-transparent text-white" id="quantityInput" name="qty" oninput="updateFromInput()"
-                            style="float: right;width:20px;border: none" value="1"></a></p>
+                            class="bg-transparent text-white" id="quantityInput" name="qty"
+                            oninput="updateFromInput()" style="float: right;width:20px;border: none" value="1"></a>
+                    </p>
                     <p class="card-text" style="margin-top:-10px;"><a href="#"
                             style="font-size: 11px; color: white !important;"> Total Price:<span style="float: right;"
                                 id="totalPrice">10</span></a></p>
@@ -77,12 +86,12 @@
                     <p style="color: white;font-size: 10px;">Purchase quantity</p>
                 </div>
                 <div class="col-1">
-                    <button class="bg-transparent text-white" style="border: 1px solid white"
-                        onclick="decreaseQuantity()">-</button>
+                    <a class="bg-transparent text-white" style="border: 1px solid white;padding:5px;"
+                        onclick="decreaseQuantity()">-</a>
                 </div>
                 <div class="col-1">
-                    <button class="bg-transparent text-white" style="border: 1px solid white"
-                        onclick="increaseQuantity()">+</button>
+                    <a class="bg-transparent text-white" style="border: 1px solid white;padding:5px;"
+                        onclick="increaseQuantity()">+</a>
                 </div>
             </div>
 
@@ -101,7 +110,8 @@
     <div class="appBottomMenu" style="background-color: black;">
         <a href="{{ route('User.Dashboard') }}" class="item active">
             <div class="col">
-                <i class="fa fa-home" aria-hidden="true" style="font-size: 20px;color:rgb(215, 68, 93) !important;"></i>
+                <i class="fa fa-home" aria-hidden="true"
+                    style="font-size: 20px;color:rgb(215, 68, 93) !important;"></i>
                 <strong style="color: white;">Home</strong>
             </div>
         </a>
