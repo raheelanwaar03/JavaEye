@@ -18,6 +18,7 @@
                                             <th>Title</th>
                                             <th>Price</th>
                                             <th>Description</th>
+                                            <th>Item Price</th>
                                             <th>Image</th>
                                             <th>Date</th>
                                             <th>Action</th>
@@ -28,9 +29,9 @@
                                             <tr>
                                                 <td>{{ $ticket->id }}</td>
                                                 <td>{{ $ticket->title }}</td>
-                                                <td>{{ $ticket->total_price }}</td>
                                                 <td>{{ $ticket->price }}</td>
                                                 <td>{{ $ticket->description }}</td>
+                                                <td>{{ $ticket->total_price }}</td>
                                                 <td>
                                                     <img src="{{ asset('images/' . $ticket->image) }}"
                                                         class="img-responsive img-thumbnail" height="80px" width="80px">
