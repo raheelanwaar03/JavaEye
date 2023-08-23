@@ -19,6 +19,7 @@
 </head>
 
 <body>
+    <x-alert />
 
     <div class="appHeader text-light">
         <div class="left">
