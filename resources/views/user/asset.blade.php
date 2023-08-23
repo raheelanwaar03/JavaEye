@@ -78,19 +78,19 @@
         <hr>
 
         <div class="col-12">
-            <h3 class="text-white text-center">Widthrawal Transcations</h3>
+            <h3 class="text-white text-center">Bought Tickets</h3>
             <div style="border: 1px solid black; border-radius: 5px !important;padding: 15px;">
-                @foreach ($transcations as $item)
+                @foreach ($tickets as $item)
                     <div class="col-12" style="margin-top:2px;">
                         <div class="blog-card" style="border-radius: 5px !important;padding: 5px;">
 
                             <p class="card-text" style="font-size: 11px; color: black !important;">
-                                {{ $item->user_name }}<span style="float: right;">{{ $item->status }}</span></p>
+                                <b>{{ $item->ticket_title }}</b><span style="float: right;"><b></b>{{ $item->qty }}</b></span></p>
 
                             <p class="card-text" style="margin-top:-20px;font-size: 11px;color: rgb(64, 64, 151);">
-                                {{ $item->amount }}$
+                                {{ $item->ticket_price }}$
                                 <span
-                                    style="float: right;color: rgb(64, 64, 151);margin-right: -35px;">{{ $item->created_at }}</span>
+                                    style="float: right;color: rgb(64, 64, 151);margin-right: -5px;">{{ $item->created_at }}</span>
                             </p>
 
                         </div>
@@ -100,30 +100,6 @@
                 <hr>
             </div>
         </div>
-
-        <div class="col-12">
-            <h3 class="text-white text-center">Deposit Transcations</h3>
-            <div style="border: 1px solid black; border-radius: 5px !important;padding: 15px;">
-                @foreach ($deposits as $item)
-                    <div class="col-12" style="margin-top:2px;">
-                        <div class="blog-card" style="border-radius: 5px !important;padding: 5px;">
-
-                            <p class="card-text" style="font-size: 11px; color: black !important;">
-                                {{ $item->user_name }}<span style="float: right;">{{ $item->status }}</span></p>
-
-                            <p class="card-text" style="margin-top:-20px;font-size: 11px;color: rgb(64, 64, 151);">
-                                {{ $item->amount }}$
-                                <span
-                                    style="float: right;color: rgb(64, 64, 151);margin-right: -35px;">{{ $item->created_at }}</span>
-                            </p>
-                        </div>
-                    </div>
-                    <hr>
-                @endforeach
-                <hr>
-            </div>
-        </div>
-
     </div>
     </div>
     <div class="appBottomMenu" style="background-color: black;">
