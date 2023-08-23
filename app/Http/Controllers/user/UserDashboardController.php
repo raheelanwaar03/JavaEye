@@ -80,7 +80,8 @@ class UserDashboardController extends Controller
     public function assets()
     {
         $transcations = Widthrawal::where('user_id', auth()->user()->id)->get();
-        return view('user.asset', compact('transcations'));
+        $deposits = UserDeposit::where('user_id', auth()->user()->id)->get();
+        return view('user.asset', compact('transcations','deposits'));
     }
 
     // buy ticket

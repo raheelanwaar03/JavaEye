@@ -78,9 +78,8 @@
         <hr>
 
         <div class="col-12">
-            <h3 class="text-white text-center">Transcations</h3>
+            <h3 class="text-white text-center">Widthrawal Transcations</h3>
             <div style="border: 1px solid black; border-radius: 5px !important;padding: 15px;">
-
                 @foreach ($transcations as $item)
                     <div class="col-12" style="margin-top:2px;">
                         <div class="blog-card" style="border-radius: 5px !important;padding: 5px;">
@@ -98,9 +97,30 @@
                     </div>
                     <hr>
                 @endforeach
-
                 <hr>
+            </div>
+        </div>
 
+        <div class="col-12">
+            <h3 class="text-white text-center">Deposit Transcations</h3>
+            <div style="border: 1px solid black; border-radius: 5px !important;padding: 15px;">
+                @foreach ($deposits as $item)
+                    <div class="col-12" style="margin-top:2px;">
+                        <div class="blog-card" style="border-radius: 5px !important;padding: 5px;">
+
+                            <p class="card-text" style="font-size: 11px; color: black !important;">
+                                {{ $item->user_name }}<span style="float: right;">{{ $item->status }}</span></p>
+
+                            <p class="card-text" style="margin-top:-20px;font-size: 11px;color: rgb(64, 64, 151);">
+                                {{ $item->amount }}$
+                                <span
+                                    style="float: right;color: rgb(64, 64, 151);margin-right: -35px;">{{ $item->created_at }}</span>
+                            </p>
+                        </div>
+                    </div>
+                    <hr>
+                @endforeach
+                <hr>
             </div>
         </div>
 
@@ -109,7 +129,8 @@
     <div class="appBottomMenu" style="background-color: black;">
         <a href="{{ route('User.Dashboard') }}" class="item active">
             <div class="col">
-                <i class="fa fa-home" aria-hidden="true" style="font-size: 20px;color:rgb(215, 68, 93) !important;"></i>
+                <i class="fa fa-home" aria-hidden="true"
+                    style="font-size: 20px;color:rgb(215, 68, 93) !important;"></i>
                 <strong style="color: white;">Home</strong>
             </div>
         </a>
