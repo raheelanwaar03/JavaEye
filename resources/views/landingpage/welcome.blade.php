@@ -30,16 +30,15 @@
 
     <div class="section full mb-5">
         <div class="col-12 my-4">
-            <h3 class="text-center text-white">Tickets [Price:10$]</h3>
+            <h3 class="text-center text-white">Tickets</h3>
             <div class="row" style="padding:10px;" id="homeProducts">
                 @forelse ($tickets as $ticket)
                     <div class="col-6" style="margin-top:10px;">
                         <a href="{{ route('User.Dashboard') }}">
                             <div class="blog-card"
-                                style="width:130px;height: 130px; border-radius: 10px !important;padding: 5px; background-image: url('{{ asset('images/' . $ticket->image) }}');">
-                                <p class="card-text" style="font-size: 11px;margin-top: 90px;"><span><input type="number"
-                                            name="qty" min="1" style="width: 50px;border:1px solid white"
-                                            class="bg-transparent text-white"></span><span
+                                style="width:130px;height: 130px; border-radius: 10px !important;padding: 5px; background-image: url('{{asset('images/'.$ticket->image)}}');">
+                                <p class="card-text" style="font-size: 11px;margin-top: 90px;"><span
+                                        style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">0$</span><span
                                         style="float: right;padding: 2px 12px;color: white;border-radius: 10px;background-color: red;">Buy</span>
                                 </p>
                             </div>

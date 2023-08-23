@@ -45,6 +45,13 @@ class UserDashboardController extends Controller
         return view('user.deposit');
     }
 
+    public function showTicket($id)
+    {
+        $ticket = Ticket::find($id);
+        return view('user.showTicket',compact('ticket'));
+    }
+
+
     public function store(Request $request)
     {
         $validated = $request->validate([

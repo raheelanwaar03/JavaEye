@@ -16,6 +16,7 @@ Route::name('User.')->prefix('User/')->middleware('auth','user','status')->group
     Route::get('Deposit/Money',[UserDashboardController::class,'deposit'])->name('Deposit.Money');
     Route::post('Store/Deposit/Money',[UserDashboardController::class,'store'])->name('Store.Deposit.Money');
     // buy Ticket
+    Route::post('Show/Ticket/{id}',[UserDashboardController::class,'showTicket'])->name('Show.Ticket');
     Route::post('Buy/Ticket/{id}',[UserDashboardController::class,'buyTicket'])->name('Buy.Ticket');
     // widthrawal Routes
     Route::get('Widthraw/Balance',[UserDashboardController::class,'widthrawal'])->name('Widthraw.Balance');
