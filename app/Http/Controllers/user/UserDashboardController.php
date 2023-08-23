@@ -48,7 +48,7 @@ class UserDashboardController extends Controller
 
     public function back(Request $request)
     {
-        return redirect()->back()->with('error','Not open yet')
+        return redirect()->back()->with('error','Not open yet');
     }
 
 
