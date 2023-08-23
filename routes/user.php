@@ -22,6 +22,7 @@ Route::name('User.')->prefix('User/')->middleware('auth','user','status')->group
     // widthrawal Routes
     Route::get('Widthraw/Balance',[UserDashboardController::class,'widthrawal'])->name('Widthraw.Balance');
     Route::get('Widthraw/Transcation',[UserDashboardController::class,'widthrawalTranscation'])->name('Widthraw.Transcation');
+    Route::get('Deposit/Transcation',[UserDashboardController::class,'depositTranscation'])->name('Deposit.Transcation');
     Route::post('Store/Widthraw/Balance',[UserDashboardController::class,'storeWidthrawal'])->name('Store.Widthraw.Balance');
 
 

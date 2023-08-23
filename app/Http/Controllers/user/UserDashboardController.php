@@ -25,6 +25,12 @@ class UserDashboardController extends Controller
         return view('user.allTickets', compact('tickets'));
     }
 
+    public function depositTranscation()
+    {
+        $deposits = UserDeposit::where('user_id', auth()->user()->id)->get();
+        return view('user.depositTranscation',compact('deposits'));
+    }
+
     public function mine()
     {
         return view('user.mine');
@@ -80,8 +86,7 @@ class UserDashboardController extends Controller
     public function assets()
     {
         $transcations = Widthrawal::where('user_id', auth()->user()->id)->get();
-        $deposits = UserDeposit::where('user_id', auth()->user()->id)->get();
-        return view('user.asset', compact('transcations','deposits'));
+        return view('user.asset', compact('transcations'));
     }
 
     // buy ticket

@@ -86,8 +86,16 @@
                                 style="font-size: 15px;"></i></span></a></p>
                 <hr>
 
-                <p class="card-text" style="margin-top:-10px;"><a href="mailto:info@odenfilms.com"
-                        style="font-size: 11px; color: white !important;">Customer Services:<span
+                <p class="card-text" style="margin-top:-10px;"><a href="{{ route('User.Widthraw.Transcation') }}"
+                        style="font-size: 11px; color: white !important;">Widthrawal Transcations:<span
+                            style="float: right;"><i class="fa fa-arrow-circle-o-right"
+                                style="font-size: 15px;"></i></span>
+                    </a>
+                </p>
+                <hr>
+
+                <p class="card-text" style="margin-top:-10px;"><a href="{{ route('User.Deposit.Transcation') }}"
+                        style="font-size: 11px; color: white !important;">Deposit Transcations:<span
                             style="float: right;"><i class="fa fa-arrow-circle-o-right"
                                 style="font-size: 15px;"></i></span>
                     </a>
