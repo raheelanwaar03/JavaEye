@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('qty');
             $table->string('ticket_title');
             $table->string('ticket_price');
+            $table->string('total_price');
             $table->string('ticket_img');
             $table->string('status')->default('pending');
             $table->timestamps();

@@ -48,7 +48,7 @@ class UserDashboardController extends Controller
     public function showTicket($id)
     {
         $ticket = Ticket::find($id);
-        return view('user.showTicket',compact('ticket'));
+        return view('user.showTicket', compact('ticket'));
     }
 
 
@@ -79,8 +79,8 @@ class UserDashboardController extends Controller
 
     public function assets()
     {
-        $transcations = Widthrawal::where('user_id',auth()->user()->id)->get();
-        return view('user.asset',compact('transcations'));
+        $transcations = Widthrawal::where('user_id', auth()->user()->id)->get();
+        return view('user.asset', compact('transcations'));
     }
 
     // buy ticket
@@ -137,7 +137,42 @@ class UserDashboardController extends Controller
                     foreach ($tickets as $ticket) {
                         $quantity += $ticket->qty;
                     }
+                    if ($quantity >= 200) {
+                        return redirect()->back()->with('error', 'Your daily purchase limit is over');
+                    }
+                }
+                if (auth()->user()->level == "VIP3") {
+                    foreach ($tickets as $ticket) {
+                        $quantity += $ticket->qty;
+                    }
                     if ($quantity >= 500) {
+                        return redirect()->back()->with('error', 'Your daily purchase limit is over');
+                    }
+                }
+
+                if (auth()->user()->level == "VIP4") {
+                    foreach ($tickets as $ticket) {
+                        $quantity += $ticket->qty;
+                    }
+                    if ($quantity >= 2000) {
+                        return redirect()->back()->with('error', 'Your daily purchase limit is over');
+                    }
+                }
+
+                if (auth()->user()->level == "VIP5") {
+                    foreach ($tickets as $ticket) {
+                        $quantity += $ticket->qty;
+                    }
+                    if ($quantity >= 5000) {
+                        return redirect()->back()->with('error', 'Your daily purchase limit is over');
+                    }
+                }
+
+                if (auth()->user()->level == "VIP6") {
+                    foreach ($tickets as $ticket) {
+                        $quantity += $ticket->qty;
+                    }
+                    if ($quantity >= 10000) {
                         return redirect()->back()->with('error', 'Your daily purchase limit is over');
                     }
                 }
@@ -158,7 +193,8 @@ class UserDashboardController extends Controller
             $user_buy_ticket->user_email = auth()->user()->email;
             $user_buy_ticket->user_name = auth()->user()->name;
             $user_buy_ticket->qty = $request->qty;
-            $user_buy_ticket->ticket_price = $qty_price;
+            $user_buy_ticket->ticket_price = $ticket_price;
+            $user_buy_ticket->total_price = $qty_price;
             $user_buy_ticket->ticket_title = $ticket_title;
             $user_buy_ticket->ticket_img = $ticket_img;
             $user_buy_ticket->save();
@@ -185,12 +221,121 @@ class UserDashboardController extends Controller
                 $user_buy_ticket->user_email = auth()->user()->email;
                 $user_buy_ticket->user_name = auth()->user()->name;
                 $user_buy_ticket->qty = $request->qty;
-                $user_buy_ticket->ticket_price = $qty_price;
+                $user_buy_ticket->ticket_price = $ticket_price;
+                $user_buy_ticket->total_price = $qty_price;
                 $user_buy_ticket->ticket_title = $ticket_title;
                 $user_buy_ticket->ticket_img = $ticket_img;
                 $user_buy_ticket->save();
                 return redirect()->back()->with('success', 'You have purchased this ticket successfully');
             }
+        }
+
+        if (auth()->user()->level == 'VIP1') {
+            $user = User::where('id', auth()->user()->id)->first();
+            $user->balance -= $qty_price;
+            $user->save();
+            // purchasing ticket
+            $user_buy_ticket = new BuyTicket();
+            $user_buy_ticket->user_id = auth()->user()->id;
+            $user_buy_ticket->user_email = auth()->user()->email;
+            $user_buy_ticket->user_name = auth()->user()->name;
+            $user_buy_ticket->qty = $request->qty;
+            $user_buy_ticket->ticket_price = $ticket_price;
+            $user_buy_ticket->total_price = $qty_price;
+            $user_buy_ticket->ticket_title = $ticket_title;
+            $user_buy_ticket->ticket_img = $ticket_img;
+            $user_buy_ticket->save();
+            return redirect()->back()->with('success', 'You have purchased this ticket successfully');
+        }
+
+        if (auth()->user()->level == 'VIP2') {
+            $user = User::where('id', auth()->user()->id)->first();
+            $user->balance -= $qty_price;
+            $user->save();
+            // purchasing ticket
+            $user_buy_ticket = new BuyTicket();
+            $user_buy_ticket->user_id = auth()->user()->id;
+            $user_buy_ticket->user_email = auth()->user()->email;
+            $user_buy_ticket->user_name = auth()->user()->name;
+            $user_buy_ticket->qty = $request->qty;
+            $user_buy_ticket->ticket_price = $ticket_price;
+            $user_buy_ticket->total_price = $qty_price;
+            $user_buy_ticket->ticket_title = $ticket_title;
+            $user_buy_ticket->ticket_img = $ticket_img;
+            $user_buy_ticket->save();
+            return redirect()->back()->with('success', 'You have purchased this ticket successfully');
+        }
+
+        if (auth()->user()->level == 'VIP3') {
+            $user = User::where('id', auth()->user()->id)->first();
+            $user->balance -= $qty_price;
+            $user->save();
+            // purchasing ticket
+            $user_buy_ticket = new BuyTicket();
+            $user_buy_ticket->user_id = auth()->user()->id;
+            $user_buy_ticket->user_email = auth()->user()->email;
+            $user_buy_ticket->user_name = auth()->user()->name;
+            $user_buy_ticket->qty = $request->qty;
+            $user_buy_ticket->ticket_price = $ticket_price;
+            $user_buy_ticket->total_price = $qty_price;
+            $user_buy_ticket->ticket_title = $ticket_title;
+            $user_buy_ticket->ticket_img = $ticket_img;
+            $user_buy_ticket->save();
+            return redirect()->back()->with('success', 'You have purchased this ticket successfully');
+        }
+
+        if (auth()->user()->level == 'VIP4') {
+            $user = User::where('id', auth()->user()->id)->first();
+            $user->balance -= $qty_price;
+            $user->save();
+            // purchasing ticket
+            $user_buy_ticket = new BuyTicket();
+            $user_buy_ticket->user_id = auth()->user()->id;
+            $user_buy_ticket->user_email = auth()->user()->email;
+            $user_buy_ticket->user_name = auth()->user()->name;
+            $user_buy_ticket->qty = $request->qty;
+            $user_buy_ticket->ticket_price = $ticket_price;
+            $user_buy_ticket->total_price = $qty_price;
+            $user_buy_ticket->ticket_title = $ticket_title;
+            $user_buy_ticket->ticket_img = $ticket_img;
+            $user_buy_ticket->save();
+            return redirect()->back()->with('success', 'You have purchased this ticket successfully');
+        }
+
+        if (auth()->user()->level == 'VIP5') {
+            $user = User::where('id', auth()->user()->id)->first();
+            $user->balance -= $qty_price;
+            $user->save();
+            // purchasing ticket
+            $user_buy_ticket = new BuyTicket();
+            $user_buy_ticket->user_id = auth()->user()->id;
+            $user_buy_ticket->user_email = auth()->user()->email;
+            $user_buy_ticket->user_name = auth()->user()->name;
+            $user_buy_ticket->qty = $request->qty;
+            $user_buy_ticket->ticket_price = $ticket_price;
+            $user_buy_ticket->total_price = $qty_price;
+            $user_buy_ticket->ticket_title = $ticket_title;
+            $user_buy_ticket->ticket_img = $ticket_img;
+            $user_buy_ticket->save();
+            return redirect()->back()->with('success', 'You have purchased this ticket successfully');
+        }
+
+        if (auth()->user()->level == 'VIP6') {
+            $user = User::where('id', auth()->user()->id)->first();
+            $user->balance -= $qty_price;
+            $user->save();
+            // purchasing ticket
+            $user_buy_ticket = new BuyTicket();
+            $user_buy_ticket->user_id = auth()->user()->id;
+            $user_buy_ticket->user_email = auth()->user()->email;
+            $user_buy_ticket->user_name = auth()->user()->name;
+            $user_buy_ticket->qty = $request->qty;
+            $user_buy_ticket->ticket_price = $ticket_price;
+            $user_buy_ticket->total_price = $qty_price;
+            $user_buy_ticket->ticket_title = $ticket_title;
+            $user_buy_ticket->ticket_img = $ticket_img;
+            $user_buy_ticket->save();
+            return redirect()->back()->with('success', 'You have purchased this ticket successfully');
         }
     }
 
