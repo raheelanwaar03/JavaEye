@@ -5,7 +5,7 @@
             <strong style="color: white;">Home</strong>
         </div>
     </a>
-    <a href="{{ route('User.Widthraw.Transcation') }}" class="item">
+    <a href="{{ route('User.Assets') }}" class="item">
         <div class="col">
             <i class="fa fa-file-text-o" aria-hidden="true" style="font-size: 20px;color:white;"></i>
             <strong style="color: white;">Assest</strong>

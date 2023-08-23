@@ -81,14 +81,23 @@
             <h3 class="text-white text-center">Transcations</h3>
             <div style="border: 1px solid black; border-radius: 5px !important;padding: 15px;">
 
-                @forelse ($transcations as $transcation)
-                    <p class="card-text" style="margin-top:-10px;"><a style="font-size: 11px; color: white !important;">
-                            {{ $transcation->user_name }}:<span style="float: right;">
-                                {{ $transcation->amount }}
-                            </span></a></p>
-                @empty
-                <h4 class="text-white text-center">No Transcations</h4>
-                @endforelse
+                @foreach ($transcations as $item)
+                    <div class="col-12" style="margin-top:2px;">
+                        <div class="blog-card" style="border-radius: 5px !important;padding: 5px;">
+
+                            <p class="card-text" style="font-size: 11px; color: black !important;">
+                                {{ $item->user_name }}<span style="float: right;">{{ $item->status }}</span></p>
+
+                            <p class="card-text" style="margin-top:-20px;font-size: 11px;color: rgb(64, 64, 151);">
+                                {{ $item->amount }}$
+                                <span
+                                    style="float: right;color: rgb(64, 64, 151);margin-right: -35px;">{{ $item->created_at }}</span>
+                            </p>
+
+                        </div>
+                    </div>
+                    <hr>
+                @endforeach
 
                 <hr>
 
