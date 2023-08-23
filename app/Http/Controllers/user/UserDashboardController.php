@@ -28,7 +28,7 @@ class UserDashboardController extends Controller
     public function depositTranscation()
     {
         $deposits = UserDeposit::where('user_id', auth()->user()->id)->get();
-        return view('user.depositTranscation',compact('deposits'));
+        return view('user.depositTranscation', compact('deposits'));
     }
 
     public function mine()
@@ -131,6 +131,7 @@ class UserDashboardController extends Controller
                     }
                 }
                 if (auth()->user()->level ==  "VIP1") {
+                    $quantity = 0;
                     foreach ($tickets as $ticket) {
                         $quantity += $ticket->qty;
                     }
@@ -139,6 +140,7 @@ class UserDashboardController extends Controller
                     }
                 }
                 if (auth()->user()->level == "VIP2") {
+                    $quantity = 0;
                     foreach ($tickets as $ticket) {
                         $quantity += $ticket->qty;
                     }
@@ -147,6 +149,7 @@ class UserDashboardController extends Controller
                     }
                 }
                 if (auth()->user()->level == "VIP3") {
+                    $quantity = 0;
                     foreach ($tickets as $ticket) {
                         $quantity += $ticket->qty;
                     }
@@ -156,6 +159,7 @@ class UserDashboardController extends Controller
                 }
 
                 if (auth()->user()->level == "VIP4") {
+                    $quantity = 0;
                     foreach ($tickets as $ticket) {
                         $quantity += $ticket->qty;
                     }
@@ -165,6 +169,7 @@ class UserDashboardController extends Controller
                 }
 
                 if (auth()->user()->level == "VIP5") {
+                    $quantity = 0;
                     foreach ($tickets as $ticket) {
                         $quantity += $ticket->qty;
                     }
@@ -174,6 +179,7 @@ class UserDashboardController extends Controller
                 }
 
                 if (auth()->user()->level == "VIP6") {
+                    $quantity = 0;
                     foreach ($tickets as $ticket) {
                         $quantity += $ticket->qty;
                     }
