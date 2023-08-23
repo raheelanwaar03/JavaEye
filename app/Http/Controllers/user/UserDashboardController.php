@@ -117,7 +117,6 @@ class UserDashboardController extends Controller
             }
         }
 
-
         $user = BuyTicket::where('user_id', auth()->user()->id)->latest()->first();
         if ($user != null) {
             $tickets = BuyTicket::where('user_id', auth()->user()->id)->whereDate('created_at', Carbon::today())->get();
