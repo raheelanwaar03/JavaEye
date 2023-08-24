@@ -39,8 +39,13 @@ function Total_deposit()
 
 function sold_tickets()
 {
-    $tickets = BuyTicket::where('user_id',auth()->user()->id)->get()->count();
-    return $tickets;
+    $tickets = BuyTicket::where('user_id',auth()->user()->id)->get();
+    $total_tickets = 0;
+    foreach($tickets as $ticket)
+    {
+        $total_tickets += $ticket->qty;
+    }
+    return $total_tickets;
 }
 
 
