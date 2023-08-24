@@ -78,7 +78,7 @@
         <hr>
 
         <div class="col-12">
-            <h3 class="text-white text-center">Bought Tickets</h3>
+            <h3 class="text-white text-center">Purchased Tickets</h3>
             <div style="border: 1px solid black; border-radius: 5px !important;padding: 15px;">
                 @foreach ($tickets as $item)
                     <div class="col-12" style="margin-top:2px;">
