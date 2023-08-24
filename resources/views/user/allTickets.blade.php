@@ -20,6 +20,9 @@
 </head>
 
 <body>
+
+    <x-alert />
+
     <div class="appHeader text-light">
         <div class="left">
             <h4 style="color: white;">{{ env('APP_NAME') }}</h4>
