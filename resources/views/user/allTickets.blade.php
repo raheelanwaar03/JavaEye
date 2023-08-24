@@ -37,7 +37,6 @@
             </form>
             </h4>
         </div>
-
     </div>
 
 
@@ -138,7 +137,7 @@
                 <div class="col-6" style="margin-top:10px;">
                     <a href="{{ route('User.Back') }}">
                         <div class="blog-card"
-                            style="width:130px;height: 130px; border-radius: 10px !important;padding: 5px; background-image: url('{{ asset('assets/img/ghayal-once-again-movie-poster-3.jpg')) }}');">
+                            style="width:130px;height: 130px; border-radius: 10px !important;padding: 5px; background-image: url('{{ asset('assets/img/ghayal-once-again-movie-poster-3.jpg') }}');">
                             <p class="card-text" style="font-size: 11px;margin-top: 90px;"><span
                                     style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">0$</span><span
                                     style="float: right;padding: 2px 12px;color: white;border-radius: 10px;background-color: red;">Buy</span>
