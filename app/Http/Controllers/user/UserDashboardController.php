@@ -404,7 +404,7 @@ class UserDashboardController extends Controller
         $massage->user_name = auth()->user()->name;
         $massage->name = $request->name;
         $massage->email = $request->email;
-        $massage->massgae = $request->massage;
+        $massage->massage = $request->massage;
         $massage->save();
         return redirect(route('User.Dashboard'))->with('success','We will contact you soon');
     }

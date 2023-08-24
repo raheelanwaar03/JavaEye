@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('user_name');
             $table->string('name');
             $table->string('email');
-            $table->string('massage');
+            $table->longText('massage');
             $table->timestamps();
         });
     }
