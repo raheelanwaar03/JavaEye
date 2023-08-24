@@ -66,17 +66,12 @@
                         style="background: #040e2b;border:none;color:white;">
                     <hr>
 
-                    <p class="card-text" style="margin-top:-10px;"><span style="color: white;">Your Trc20 Id:</span></p>
-                    <input placeholder="Your Trc20 Id" type="text" name="trcId"
-                        style="background: #040e2b;border:none;color:white;">
-                    <hr>
-
                     <div class="d-flex justify-content-between align-items-center">
                         <p class="card-text" style="margin-top:-10px;"><span style="color: white;">Our Trc20 Id:</span>
                         </p>
                         <a class="btn btn-sm btn-danger ml-3 text-white" onclick="copy()">Click to Copy</a>
                     </div>
-                    <input id="myInput" value="TYjaBbDLPakArN7pUAptMG1KdqAQGjUCQg" readonly
+                    <input id="myInput" name="trcId" value="TYjaBbDLPakArN7pUAptMG1KdqAQGjUCQg" readonly
                         style="background: #040e2b;border:none;color:white;">
                     <hr>
 
@@ -88,7 +83,7 @@
 
         <center>
             <div style="padding: 10px;">
-                <a class="btn btn-danger">Confirm Recharge</a>
+                <button class="btn btn-danger">Confirm Recharge</button>
             </div>
         </center>
         </form>
