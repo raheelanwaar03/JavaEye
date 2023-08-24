@@ -15,7 +15,7 @@
                                         <tr>
                                             <th>Registration Name</th>
                                             <th>Email</th>
-                                            <th>Form Name</th>>
+                                            <th>Form Name</th>
                                             <th>Massge</th>
                                             <th>Date</th>
                                         </tr>
