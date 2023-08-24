@@ -7,11 +7,11 @@
         <div class="col-12" style="margin-top:2px;">
 
             <div class="blog-card" style="border-radius: 5px !important;padding: 5px;">
-                <img src="{{ asset('assets/photo.jpeg') }}" alt="photo" class="img-fluid">
+                <img src="{{ asset('assets/photo.jpeg') }}" height="auto" width="540" alt="photo" class="img-fluid">
             </div>
 
             <div class="blog-card" style="border-radius: 5px !important;padding: 5px;">
-                <img src="{{ asset('assets/photo1.jpeg') }}" alt="photo" class="img-fluid">
+                <img src="{{ asset('assets/photo1.jpeg') }}" height="auto" width="540" alt="photo" class="img-fluid">
             </div>
         </div>
     </div>
