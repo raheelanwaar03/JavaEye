@@ -15,6 +15,21 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/icon/192x192.png') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('font-awesome/css/font-awesome.min.css') }}">
+
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/64e7ca1ecc26a871b03132ee/1h8kmr31k';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+
 </head>
 
 <body>
@@ -78,7 +93,8 @@
                     <hr>
 
                     <p class="card-text" style="margin-top:-10px;"><span style="color: white;">Screen Shot:</span></p>
-                    <input type="file" name="screen_shot" required style="background: #040e2b;border:none;color:white;">
+                    <input type="file" name="screen_shot" required
+                        style="background: #040e2b;border:none;color:white;">
                     <hr>
             </div>
         </div>
