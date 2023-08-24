@@ -41,7 +41,8 @@
         <div class="col-12" style="margin-top:2px;">
             <p class="card-text text-center" style="font-size: 11px; color: white !important;font-weight: bold;">
                 {{ auth()->user()->email }}<span style="float: right;"></span></p>
-            <p class="card-text text-center" style="margin-top:-20px;font-size: 11px;color:rgb(215, 68, 93) !important;">
+            <p class="card-text text-center"
+                style="margin-top:-20px;font-size: 11px;color:rgb(215, 68, 93) !important;">
                 Level:{{ auth()->user()->level }}
             </p>
         </div>
@@ -81,8 +82,8 @@
             <div style="border: 1px solid black; border-radius: 5px !important;padding: 15px;">
 
                 <p class="card-text" style="margin-top:-10px;"><a href="{{ route('User.Widthraw.Transcation') }}"
-                        style="font-size: 20px; color: white !important;">Account Record:<span
-                            style="float: right;"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"
+                        style="font-size: 20px; color: white !important;">Account Record:<span style="float: right;"><i
+                                class="fa fa-arrow-circle-o-right" aria-hidden="true"
                                 style="font-size: 15px;"></i></span></a></p>
                 <hr>
 
@@ -93,16 +94,16 @@
                 <hr>
 
                 <p class="card-text" style="margin-top:-10px;"><a href="{{ route('User.Box.Office') }}"
-                    style="font-size: 20px; color: white !important;">Box office Guide:<span
-                        style="float: right;"><i class="fa fa-arrow-circle-o-right"
-                            style="font-size: 15px;"></i></span>
-                </a>
-            </p>
-            <hr>
+                        style="font-size: 20px; color: white !important;">Box office Guide:<span
+                            style="float: right;"><i class="fa fa-arrow-circle-o-right"
+                                style="font-size: 15px;"></i></span>
+                    </a>
+                </p>
+                <hr>
 
                 <p class="card-text" style="margin-top:-10px;"><a href="{{ route('User.Agreement') }}"
-                        style="font-size: 20px; color: white !important;">User Agreement:<span
-                            style="float: right;"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"
+                        style="font-size: 20px; color: white !important;">User Agreement:<span style="float: right;"><i
+                                class="fa fa-arrow-circle-o-right" aria-hidden="true"
                                 style="font-size: 15px;"></i></span></a></p>
                 <hr>
 
@@ -118,38 +119,40 @@
     </div>
     </div>
     <div class="appBottomMenu" style="background-color: black;">
-        <a href="{{ route('User.Dashboard') }}" class="item active">
+        <a href="{{ route('User.Dashboard') }}" class="item {{ request()->is('User/Dashboard') ? 'active' : '' }}">
             <div class="col">
                 <i class="fa fa-home" aria-hidden="true"
                     style="font-size: 20px;color:rgb(215, 68, 93) !important;"></i>
                 <strong style="color: white;">Home</strong>
             </div>
         </a>
-        <a href="{{ route('User.Assets') }}" class="item">
+        <a href="{{ route('User.Assets') }}" class="item {{ request()->is('User/Assets') ? 'active' : '' }}">
             <div class="col">
-                <i class="fa fa-exchange" aria-hidden="true" style="font-size: 20px;color:white;"></i>
-                <strong style="color: white;">Assets</strong>
+                <i class="fa fa-file-text-o" aria-hidden="true" style="font-size: 20px;color:white;"></i>
+                <strong style="color: white;">Assest</strong>
             </div>
         </a>
-        <a href="{{ route('User.All.Tickets') }}" class="item">
+        <a href="{{ route('User.All.Tickets') }}"
+            class="item {{ request()->is('User/All/Tickets') ? 'active' : '' }}">
             <div class="col">
                 <i class="fa fa-film" aria-hidden="true" style="font-size: 20px;color:white;"></i>
-                <strong style="color: white;">Tickets</strong>
+                <strong style="color: white;">Movies</strong>
             </div>
         </a>
-        <a href="{{ route('User.Contact') }}" class="item">
+        <a href="{{ route('User.Contact') }}" class="item {{ request()->is('User/Contact') ? 'active' : '' }}">
             <div class="col">
-                <i class="fa fa-cog" aria-hidden="true" style="font-size: 20px;color:white;"></i>
+                <i class="fa fa-comment-o" aria-hidden="true" style="font-size: 20px;color:white;"></i>
                 <strong style="color: white;">Service</strong>
             </div>
         </a>
-        <a href="{{ route('User.Mine') }}" class="item">
+        <a href="{{ route('User.Mine') }}" class="item {{ request()->is('User/Mine') ? 'active' : '' }}">
             <div class="col">
                 <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 20px;color:white;"></i>
                 <strong style="color: white;">Mine</strong>
             </div>
         </a>
     </div>
+
 
 
     <script>

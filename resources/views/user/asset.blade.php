@@ -56,7 +56,8 @@
 
             </div>
             <div class="col-6" style="text-align: center;">
-                <p class="card-text" style="font-size: 11px;color:rgb(215, 68, 93) !important;">{{ Total_widthrawal() }}
+                <p class="card-text" style="font-size: 11px;color:rgb(215, 68, 93) !important;">
+                    {{ Total_widthrawal() }}
                 </p>
                 <p class="card-text" style="margin-top:-5px;font-size: 11px;color: white;">Withdrawal Amount</p>
             </div>
@@ -66,12 +67,10 @@
 
         <div class="row">
             <div class="col-6" style="text-align: center;">
-                <a class="btn btn-success"
-                    style="padding: 10px 10px;">Locked asset ( {{ sold_tickets() }} )</a>
+                <a class="btn btn-success" style="padding: 10px 10px;">Locked asset ( {{ sold_tickets() }} )</a>
             </div>
             <div class="col-6" style="text-align: center;">
-                <a  class="btn btn-info"
-                    style="padding: 10px 10px;">Freeze Amount ( {{ locked_asset_balance() }} )</a>
+                <a class="btn btn-info" style="padding: 10px 10px;">Freeze Amount ( {{ locked_asset_balance() }} )</a>
             </div>
         </div>
 
@@ -85,7 +84,9 @@
                         <div class="blog-card" style="border-radius: 5px !important;padding: 5px;">
 
                             <p class="card-text" style="font-size: 11px; color: black !important;">
-                                <b>{{ $item->ticket_title }}</b><span style="float: right;"><b></b>{{ $item->qty }}</b></span></p>
+                                <b>{{ $item->ticket_title }}</b><span
+                                    style="float: right;"><b></b>{{ $item->qty }}</b></span>
+                            </p>
 
                             <p class="card-text" style="margin-top:-20px;font-size: 11px;color: rgb(64, 64, 151);">
                                 {{ $item->ticket_price }}$
@@ -102,39 +103,42 @@
         </div>
     </div>
     </div>
+
+
     <div class="appBottomMenu" style="background-color: black;">
-        <a href="{{ route('User.Dashboard') }}" class="item active">
+        <a href="{{ route('User.Dashboard') }}" class="item {{ request()->is('User/Dashboard') ? 'active' : '' }}">
             <div class="col">
-                <i class="fa fa-home" aria-hidden="true"
-                    style="font-size: 20px;color:rgb(215, 68, 93) !important;"></i>
+                <i class="fa fa-home" aria-hidden="true" style="font-size: 20px;color:rgb(215, 68, 93) !important;"></i>
                 <strong style="color: white;">Home</strong>
             </div>
         </a>
-        <a href="{{ route('User.Assets') }}" class="item">
+        <a href="{{ route('User.Assets') }}" class="item {{ request()->is('User/Assets') ? 'active' : '' }}">
             <div class="col">
                 <i class="fa fa-file-text-o" aria-hidden="true" style="font-size: 20px;color:white;"></i>
-                <strong style="color: white;">Assets</strong>
+                <strong style="color: white;">Assest</strong>
             </div>
         </a>
-        <a href="{{ route('User.All.Tickets') }}" class="item">
+        <a href="{{ route('User.All.Tickets') }}"
+            class="item {{ request()->is('User/All/Tickets') ? 'active' : '' }}">
             <div class="col">
                 <i class="fa fa-film" aria-hidden="true" style="font-size: 20px;color:white;"></i>
-                <strong style="color: white;">Tickets</strong>
+                <strong style="color: white;">Movies</strong>
             </div>
         </a>
-        <a href="{{ route('User.Assets') }}" class="item">
+        <a href="{{ route('User.Contact') }}" class="item {{ request()->is('User/Contact') ? 'active' : '' }}">
             <div class="col">
-                <i class="fa fa-cog" aria-hidden="true" style="font-size: 20px;color:white;"></i>
+                <i class="fa fa-comment-o" aria-hidden="true" style="font-size: 20px;color:white;"></i>
                 <strong style="color: white;">Service</strong>
             </div>
         </a>
-        <a href="{{ route('User.Mine') }}" class="item">
+        <a href="{{ route('User.Mine') }}" class="item {{ request()->is('User/Mine') ? 'active' : '' }}">
             <div class="col">
                 <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 20px;color:white;"></i>
                 <strong style="color: white;">Mine</strong>
             </div>
         </a>
     </div>
+
 
     <x-alert />
 
