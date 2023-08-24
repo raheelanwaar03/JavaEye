@@ -108,6 +108,64 @@ class UserMangementController extends Controller
         $deposit = UserDeposit::find($id);
         $deposit->status = 'approved';
         $deposit->save();
+
+        $depositBalance = $deposit->amount;
+        $user = User::where('id',$deposit->user_id)->first();
+        $user->balance = $depositBalance;
+        $user->save();
+
+        // storing in reward \
+
+        $reward = new Reward();
+        $reward->user_id = auth()->user()->id;
+        $reward->amount = $depositBalance;
+        $reward->type = 'deposit';
+        $reward->status = 'approved';
+        $reward->save();
+
+
+        $userDeposit = Reward::where('user_id',$deposit->user_id)->where('type','deposit')->where('status','approved')->get();
+        $total_deposit = 0;
+        foreach ($userDeposit as $deposit )
+        {
+            $total_deposit += $deposit->amount;
+        }
+        if($total_deposit >= 500)
+        {
+            $user = User::where('id',$deposit->user_id)->first();
+            $user->level = 'VIP1';
+            $user->save();
+        }
+
+        if($total_deposit >= 1500)
+        {
+            $user = User::where('id',$deposit->user_id)->first();
+            $user->level = 'VIP2';
+            $user->save();
+        }
+
+        if($total_deposit >= 4000)
+        {
+            $user = User::where('id',$deposit->user_id)->first();
+            $user->level = 'VIP3';
+            $user->save();
+        }
+
+        if($total_deposit >= 15000)
+        {
+            $user = User::where('id',$deposit->user_id)->first();
+            $user->level = 'VIP4';
+            $user->save();
+        }
+
+        if($total_deposit >= 40000)
+        {
+            $user = User::where('id',$deposit->user_id)->first();
+            $user->level = 'VIP5';
+            $user->save();
+        }
+
+
         return redirect()->back()->with('success', 'Deposit request approved successfully');
     }
     public function rejectedDepositAmount($id)

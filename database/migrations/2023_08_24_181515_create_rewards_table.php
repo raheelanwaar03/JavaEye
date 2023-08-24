@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('user_id');
             $table->string('amount');
             $table->string('type');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }
