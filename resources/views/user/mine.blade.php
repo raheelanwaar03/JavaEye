@@ -92,7 +92,7 @@
                                 style="font-size: 15px;"></i></span></a></p>
                 <hr>
 
-                <p class="card-text" style="margin-top:-10px;"><a href="{{ route('User.Deposit.Transcation') }}"
+                <p class="card-text" style="margin-top:-10px;"><a href="{{ route('User.Box.Office') }}"
                     style="font-size: 20px; color: white !important;">Box office Guide:<span
                         style="float: right;"><i class="fa fa-arrow-circle-o-right"
                             style="font-size: 15px;"></i></span>

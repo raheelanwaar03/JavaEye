@@ -385,6 +385,12 @@ class UserDashboardController extends Controller
         return redirect()->back()->with('success', 'You have been request for widthraw successfully');
     }
 
+    public function boxOffice()
+    {
+        return view('user.boxOffice');
+    }
+
+
     public function widthrawalTranscation()
     {
         $transcations = Widthrawal::where('user_id',auth()->user()->id)->get();
