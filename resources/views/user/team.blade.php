@@ -40,7 +40,7 @@
     <div id="appCapsule">
 
         <img src="{{ asset('assets/photo.jpeg') }}" alt="Phote" class="img-fluid" height="auto" width="auto">
-        <img src="{{ asset('assets/photo.jpeg') }}" alt="Phote" class="img-fluid" height="auto" width="auto">
+        <img src="{{ asset('assets/photo1.jpeg') }}" alt="Phote" class="img-fluid" height="auto" width="auto">
 
     </div>
 
