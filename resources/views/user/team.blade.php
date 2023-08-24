@@ -13,9 +13,7 @@
             <div class="blog-card" style="border-radius: 5px !important;padding: 5px;">
                 <img src="{{ asset('assets/photo1.jpeg') }}" alt="photo" class="img-fluid">
             </div>
-
         </div>
-
     </div>
 
 

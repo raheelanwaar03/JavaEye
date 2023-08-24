@@ -373,7 +373,6 @@ class UserDashboardController extends Controller
             return redirect()->back()->with('error', 'You have not enough balance');
         }
 
-
         $widthrawal = new Widthrawal();
         $widthrawal->user_id = auth()->user()->id;
         $widthrawal->user_name = auth()->user()->name;
@@ -395,6 +394,6 @@ class UserDashboardController extends Controller
     {
         $transcations = Widthrawal::where('user_id',auth()->user()->id)->get();
         $deposits = UserDeposit::where('user_id',auth()->user()->id)->get();
-        return view('user.widthraw.transcation', compact('transcations'));
+        return view('user.widthraw.transcation', compact('transcations','deposits'));
     }
 }
