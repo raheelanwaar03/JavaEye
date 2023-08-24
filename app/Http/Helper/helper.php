@@ -39,7 +39,7 @@ function Total_deposit()
 
 function sold_tickets()
 {
-    $tickets = BuyTicket::get()->count();
+    $tickets = BuyTicket::where('user_id',auth()->user()->id)->get()->count();
     return $tickets;
 }
 
@@ -54,5 +54,17 @@ function Total_widthrawal()
     }
     return $total_widthraw;
 }
+
+function locked_asset_balance()
+{
+    $tickets = BuyTicket::where('user_id',auth()->user()->id)->get();
+    $total_price = 0;
+    foreach ($tickets as $ticket)
+    {
+        $total_price += $ticket->ticket_price;
+    }
+    return $total_price;
+}
+
 
 

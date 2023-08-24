@@ -66,12 +66,12 @@
 
         <div class="row">
             <div class="col-6" style="text-align: center;">
-                <a href="{{ route('User.Deposit.Money') }}" class="btn btn-success"
-                    style="padding: 10px 10px;">Recharge</a>
+                <a class="btn btn-success"
+                    style="padding: 10px 10px;">Locked asset ( {{ sold_tickets() }} )</a>
             </div>
             <div class="col-6" style="text-align: center;">
-                <a href="{{ route('User.Widthraw.Balance') }}" class="btn btn-info"
-                    style="padding: 10px 10px;">Withdraw</a>
+                <a  class="btn btn-info"
+                    style="padding: 10px 10px;">Freeze Amount ( {{ locked_asset_balance() }} )</a>
             </div>
         </div>
 
