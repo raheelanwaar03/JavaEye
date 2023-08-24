@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="level">Level</label>
-                                    <input type="text" name="level" class="form-control" value="{{ $user->level }}">
+                                    <input type="text" name="level" class="form-control" value="{{ $user->level }}" readonly>
                                 </div>
                                 <div class="">
                                     <button class="btn btn-primary">Submit</button>
