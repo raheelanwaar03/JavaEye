@@ -19,6 +19,8 @@
 
 <body>
 
+    <x-alert />
+
     <!-- App Header -->
     <div class="appHeader text-light">
         <div class="left">
