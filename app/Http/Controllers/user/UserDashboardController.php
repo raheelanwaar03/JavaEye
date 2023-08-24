@@ -387,7 +387,8 @@ class UserDashboardController extends Controller
 
     public function widthrawalTranscation()
     {
-        $transcations = Widthrawal::get();
+        $transcations = Widthrawal::where('user_id',auth()->user()->id)->get();
+        $deposits = UserDeposit::where('user_id',auth()->user()->id)->get();
         return view('user.widthraw.transcation', compact('transcations'));
     }
 }

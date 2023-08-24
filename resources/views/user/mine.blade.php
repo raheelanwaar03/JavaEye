@@ -80,7 +80,7 @@
         <div class="col-12">
             <div style="border: 1px solid black; border-radius: 5px !important;padding: 15px;">
 
-                <p class="card-text" style="margin-top:-10px;"><a href="{{ route('User.Team.Member') }}"
+                <p class="card-text" style="margin-top:-10px;"><a href="{{ route('User.Widthraw.Transcation') }}"
                         style="font-size: 20px; color: white !important;">Account Record:<span
                             style="float: right;"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"
                                 style="font-size: 15px;"></i></span></a></p>
@@ -90,22 +90,6 @@
                         style="font-size: 20px; color: white !important;">Membership level:<span
                             style="float: right;"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"
                                 style="font-size: 15px;"></i></span></a></p>
-                <hr>
-
-                <p class="card-text" style="margin-top:-10px;"><a href="{{ route('User.Widthraw.Transcation') }}"
-                        style="font-size: 20px; color: white !important;">Widthrawal Transcations:<span
-                            style="float: right;"><i class="fa fa-arrow-circle-o-right"
-                                style="font-size: 15px;"></i></span>
-                    </a>
-                </p>
-                <hr>
-
-                <p class="card-text" style="margin-top:-10px;"><a href="{{ route('User.Deposit.Transcation') }}"
-                        style="font-size: 20px; color: white !important;">Deposit Transcations:<span
-                            style="float: right;"><i class="fa fa-arrow-circle-o-right"
-                                style="font-size: 15px;"></i></span>
-                    </a>
-                </p>
                 <hr>
 
                 <p class="card-text" style="margin-top:-10px;"><a href="{{ route('User.Deposit.Transcation') }}"
