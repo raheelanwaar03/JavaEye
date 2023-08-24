@@ -48,48 +48,81 @@
     <!-- ... Previous HTML code ... -->
 
     <div class="container">
-        <h2>1. Introduction</h2>
-        <p>This User Agreement ("Agreement") is a legal contract between you and [{{ env('APP_NAME') }}], governing your use
-            of {{ env('APP_NAME') }} services.</p>
+        <h2>1. PRIVACY POLICY </h2>
+        <p>The Privacy Policy helps you understand how ODEN may collect and use your personal information, and the
+            choices you can make about how your personal information is used.</p>
 
-        <h2>2. Acceptance of Terms</h2>
-        <p>By accessing or using our platform, you agree to be bound by the terms and conditions outlined in this
-            Agreement.</p>
+        <h2>2. COOKIE POLICY</h2>
+        <p>The Cookie Policy helps you understand how cookies and similar technologies are used on the ODEN website, and
+            the choices you can make about this.</p>
 
-        <h2>3. Eligibility</h2>
-        <p>You must be at least 18 years old and have the legal capacity to enter into this Agreement. You also agree to
-            provide accurate and truthful information.</p>
+        <h2>3. PRIVACY SUMMARY </h2>
+        <p>The Privacy Summary sets out a summary of how ODEN may collect and use your personal information.</p>
 
-        <h2>4. Investment Risks</h2>
-        <p>Investing in financial markets carries inherent risks. You acknowledge that the value of investments can both
-            rise and fall, and you are solely responsible for your investment decisions.</p>
+        <h2>4. MY LIMITLESS TERMS AND CONDITIONS</h2>
+        <p>The myLIMITLESS Terms and Conditions set out the legally binding terms which apply to everyone who joins
+            myLIMITLESS..</p>
 
-        <h2>5. Account Security</h2>
-        <p>You are responsible for maintaining the security of your account credentials. Notify us immediately of any
-            unauthorized access or suspicious activities.</p>
+        <h2>5. ONLINE PURCHASE TERMS AND CONDITIONS </h2>
+        <p>The Online Purchase Terms and Conditions set out the legally binding terms which apply to the purchase of
+            tickets.</p>
 
-        <h2>6. Fees and Charges</h2>
-        <p>Our platform may charge fees for certain transactions and services. These fees will be clearly communicated
-            to you before you proceed.</p>
+        <h2>6. WEBSITE TERMS OF USE</h2>
+        <p>The Website Terms of Use set out the legally binding terms which apply to everyone who accesses or uses our
+            website or our app.</p>
 
-        <h2>7. Termination</h2>
-        <p>We reserve the right to suspend or terminate your account if you violate the terms of this Agreement or
-            engage in fraudulent or harmful activities.</p>
+        <h2>7. GENERAL ADMISSION TERMS </h2>
+        <p>The General Admission Terms set out the legally binding terms generally applicable to the issue of a ticket
+            and to your subsequent access to an ODEN Cinema.</p>
 
-        <h2>8. Limitation of Liability</h2>
-        <p>We are not liable for any losses or damages arising from your use of our platform. You acknowledge that
-            investments carry risks and you assume all responsibility.</p>
+        <h2>8. ODEN UK GIFT CARD TERMS OF USE </h2>
+        <p>The ODEN Gift Card Terms of Use set out the legally binding terms and conditions of use for an ODEN gift
+            card.</p>
 
-        <h2>9. Governing Law</h2>
-        <p>This Agreement is governed by and construed in accordance with the laws of Jurisdiction. Any disputes
-            will be subject to the exclusive jurisdiction of the courts in Jurisdiction.</p>
+        <h2>9. ODEN SOCIAL MEDIA PRIZE DRAW TERMS AND CONDITIONS </h2>
+        <p>These terms set out the legally binding terms and conditions which apply to the competitions and prize draws
+            we run on our social media channels unless otherwise stated.</p>
 
-        <h2>10. Changes to the Agreement</h2>
-        <p>We reserve the right to modify this Agreement at any time. Any changes will be communicated to you through
-            the platform or by email.</p>
+        <h2>10. myLIMITLESS GIFT MEMBERSHIP CARD & VOUCHER CODE TERMS OF USE</h2>
+        <p>The myLIMITLESS Gift Membership Card & Voucher Code Terms of Use set out the legally binding terms which
+            apply to everyone who uses a myLIMITLESS gift membership card or voucher code.</p>
 
-        <h2>11. Contact Us</h2>
-        <p>If you have any questions about this Agreement, please contact us at [info@OdenFilms.com].</p>
+        <h2>11. MYODEN UK & REPUBLIC OF IRELAND PRIZE DRAW TERMS </h2>
+        <p>The MyODEN Prize Draw Terms and Conditions set out the legally binding terms and conditions which apply to
+            the MyODEN prize draw.
+        </p>
+
+        <h2>12. myLIMITLESS RESTAURANT OFFER TERMS AND CONDITIONS
+        </h2>
+        <p>The myLIMITLESS Restaurant Offer Terms and Conditions set out the legally binding terms and conditions which
+            apply to the myLIMITLESS Restaurant Offer.
+        </p>
+
+        <h2>13. TELL ODEN UK & REPUBLIC OF IRELAND PRIZE DRAW TERMS AND CONDITIONS
+        </h2>
+        <p>The Tell ODEN Prize Draw Terms and Conditions set out the legally binding terms and conditions which apply to
+            our Tell ODEN prize draw.
+        </p>
+
+        <h2>14. MEERKAT MOVIES AT ODEN TERMS AND CONDITIONS
+        </h2>
+        <p>The Meerkat Movies at ODEN Terms and Conditions supplement the Meerkat Movies 240offer, by setting out how
+            you can use your Meerkat Movies 240code at an ODEN cinema.
+        </p>
+
+        <h2>15. myODEN MEMBER MONDAY AND SAVER TICKET TERMS
+        </h2>
+        <p>These terms set out the Saver and Member Monday tickets available to myODEN members.
+        </p>
+
+        <h2>16. INTERNATIONAL CONTRACT LAW
+        </h2>
+        <p>Subject to the provisions of the International Contract Law,
+            80% of the commission income from the services provided by
+            Oden films under this Agreement shall accrue to the Member and 20% shall be used to maintain the platform
+            the "Service Fee"
+        </p>
+
     </div>
 
 </body>

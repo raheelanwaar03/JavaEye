@@ -81,8 +81,14 @@
             <div style="border: 1px solid black; border-radius: 5px !important;padding: 15px;">
 
                 <p class="card-text" style="margin-top:-10px;"><a href="{{ route('User.Team.Member') }}"
-                        style="font-size: 20px; color: white !important;"> Team Member:<span style="float: right;"><i
-                                class="fa fa-arrow-circle-o-right" aria-hidden="true"
+                        style="font-size: 20px; color: white !important;">Account Record:<span
+                            style="float: right;"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"
+                                style="font-size: 15px;"></i></span></a></p>
+                <hr>
+
+                <p class="card-text" style="margin-top:-10px;"><a href="{{ route('User.Team.Member') }}"
+                        style="font-size: 20px; color: white !important;">Membership level:<span
+                            style="float: right;"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"
                                 style="font-size: 15px;"></i></span></a></p>
                 <hr>
 
@@ -102,12 +108,13 @@
                 </p>
                 <hr>
 
-                <p class="card-text" style="margin-top:-10px;font-size:20px">Share Link: <input type="text"
-                        class="bg-transparent w-75 form-control text-white"
-                        value="{{ route('register', ['referral' => Auth::user()->email]) }}" id="linkValue"
-                        readonly><span style="float: right;"><button onclick="copyLink()"
-                            class="btn btn-sm btn-primary" style="margin-top: -65px">Copy Link</button></p>
-                <hr>
+                <p class="card-text" style="margin-top:-10px;"><a href="{{ route('User.Deposit.Transcation') }}"
+                    style="font-size: 20px; color: white !important;">Box office Guide:<span
+                        style="float: right;"><i class="fa fa-arrow-circle-o-right"
+                            style="font-size: 15px;"></i></span>
+                </a>
+            </p>
+            <hr>
 
                 <p class="card-text" style="margin-top:-10px;"><a href="{{ route('User.Agreement') }}"
                         style="font-size: 20px; color: white !important;">User Agreement:<span
@@ -115,6 +122,12 @@
                                 style="font-size: 15px;"></i></span></a></p>
                 <hr>
 
+                <p class="card-text" style="margin-top:-10px;font-size:20px">Share Code: <input type="text"
+                        class="bg-transparent w-75 form-control text-white"
+                        value="{{ route('register', ['referral' => Auth::user()->email]) }}" id="linkValue"
+                        readonly><span style="float: right;"><button onclick="copyLink()"
+                            class="btn btn-sm btn-primary" style="margin-top: -65px">Copy Link</button></p>
+                <hr>
             </div>
         </div>
 
