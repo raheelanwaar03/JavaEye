@@ -36,7 +36,6 @@ function Total_deposit()
 //     return $total_deposit;
 // }
 
-
 function sold_tickets()
 {
     $tickets = BuyTicket::where('user_id',auth()->user()->id)->get();
@@ -66,7 +65,7 @@ function locked_asset_balance()
     $total_price = 0;
     foreach ($tickets as $ticket)
     {
-        $total_price += $ticket->ticket_price;
+        $total_price += $ticket->total_price;
     }
     return $total_price;
 }
