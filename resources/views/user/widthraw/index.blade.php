@@ -87,7 +87,7 @@
     <div class="appBottomMenu" style="background-color: black;">
         <a href="{{ route('User.Dashboard') }}" class="item {{ request()->is('User/Dashboard') ? 'active' : '' }}">
             <div class="col">
-                <i class="fa fa-home" aria-hidden="true" style="font-size: 20px;color:rgb(215, 68, 93) !important;"></i>
+                <i class="fa fa-home" aria-hidden="true" style="font-size: 20px;"></i>
                 <strong style="color: white;">Home</strong>
             </div>
         </a>
