@@ -5,6 +5,7 @@ namespace App\Http\Controllers\user;
 use App\Http\Controllers\Controller;
 use App\Models\admin\Ticket;
 use App\Models\User;
+use App\Models\Reward;
 use App\Models\Massage;
 use App\Models\user\BuyTicket;
 use App\Models\user\UserDeposit;
@@ -394,7 +395,8 @@ class UserDashboardController extends Controller
     {
         $transcations = Widthrawal::where('user_id', auth()->user()->id)->get();
         $deposits = UserDeposit::where('user_id', auth()->user()->id)->get();
-        return view('user.widthraw.transcation', compact('transcations', 'deposits'));
+        $rewards = Reward::where('user_id',auth()->user()->id)->where('type','reward')->get();
+        return view('user.widthraw.transcation', compact('transcations', 'deposits','rewards'));
     }
 
     public function massage(Request $request)

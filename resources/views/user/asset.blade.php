@@ -57,9 +57,9 @@
             </div>
             <div class="col-6" style="text-align: center;">
                 <p class="card-text" style="font-size: 11px;color:rgb(215, 68, 93) !important;">
-                    {{ Total_widthrawal() }}
+                    {{ team_income() }}
                 </p>
-                <p class="card-text" style="margin-top:-5px;font-size: 11px;color: white;">Withdrawal Amount</p>
+                <p class="card-text" style="margin-top:-5px;font-size: 11px;color: white;">Team Income</p>
             </div>
         </div>
 
