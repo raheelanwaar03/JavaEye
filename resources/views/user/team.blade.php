@@ -16,7 +16,6 @@
         </div>
     </div>
 
-
     <div id="appCapsule">
         <h3 class="text-center text-white">Team Members</h3>
         @foreach ($users as $user)
