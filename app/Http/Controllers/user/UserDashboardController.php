@@ -88,7 +88,7 @@ class UserDashboardController extends Controller
         $deposit->trcId = $validated['trcId'];
         $deposit->screen_shot = $imageName;
         $deposit->save();
-        return redirect()->route('User.All.Tickets')->with('success', 'You have been successfully requested for deposit. Please wait for admin approvel you will get an email');
+        return redirect()->route('User.Dashboard')->with('success', 'You have been successfully requested for deposit. Please wait for admin approvel you will get an email');
     }
 
     public function assets()
