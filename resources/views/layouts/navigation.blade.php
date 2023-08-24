@@ -292,7 +292,7 @@
                                 style="border-radius:30px;background-color: skyblue;width: 40px;height:40px;text-align: center;">
                                 <h3><i class="fa fa-question-circle" aria-hidden="true" style="color: white;"></i></h3>
                             </div>
-                            <a href="mailto:info@OdenFilms.com">
+                            <a href="{{ route('User.Contact') }}">
                                 <p
                                     style="color: white; font-size: 10px;font-weight:bold;line-height:1.1rem !important;">
                                     Help Center</p>
