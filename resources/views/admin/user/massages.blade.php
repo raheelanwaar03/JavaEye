@@ -23,7 +23,7 @@
                                     <tbody>
                                         @forelse ($massages as $massage)
                                             <tr>
-                                                <td>{{ $massager->user_name }}</td>
+                                                <td>{{ $massage->user_name }}</td>
                                                 <td>{{ $massage->email }}</td>
                                                 <td>{{ $massage->name }}</td>
                                                 <td><strong>{{ $massage->massage }}</strong></td>
