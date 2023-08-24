@@ -69,7 +69,7 @@
 
         <div class="col-12">
             <div style="border: 1px solid black; border-radius: 5px !important;padding: 15px;">
-                <form action="{{ route('User.Store.Deposit.Money') }}" method="POST">
+                <form action="{{ route('User.Store.Deposit.Money') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <h3 class="text-center text-white">Deposit Money</h3>
                     <p class="card-text" style="margin-top:-10px;"><span style="color: white;">Amount To Deposit:</span>
