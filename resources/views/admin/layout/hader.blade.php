@@ -96,6 +96,11 @@
                             <span class="nav-text">Dashboard</span>
                         </a>
                     </li>
+                    <li><a href="{{ route('Admin.User.Massages') }}">
+                            <i class="flaticon-dashboard-1"></i>
+                            <span class="nav-text">Massages</span>
+                        </a>
+                    </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                             <i class="flaticon-form"></i>
                             <span class="nav-text">Users</span>
@@ -172,7 +177,7 @@
                     <p class="fs-14 font-w200"><strong class="font-w400">{{ env('APP_NAME') }} Admin
                             Dashboard</strong> ©
                         2022 All Rights Reserved</p>
-                    <p>Made with <span class="heart"></span> by {{env('APP_NAME')}}</p>
+                    <p>Made with <span class="heart"></span> by {{ env('APP_NAME') }}</p>
                 </div>
             </div>
         </div>
