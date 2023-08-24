@@ -198,7 +198,7 @@
                     <strong style="color: white;">Movies</strong>
                 </div>
             </a>
-            <a href="{{ route('LandingPage.Contact') }}" class="item">
+            <a href="{{ route('User.Contact') }}" class="item">
                 <div class="col">
                     <i class="fa fa-comment-o" aria-hidden="true" style="font-size: 20px;color:white;"></i>
                     <strong style="color: white;">Service</strong>

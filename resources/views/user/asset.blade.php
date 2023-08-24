@@ -122,10 +122,10 @@
                 <strong style="color: white;">Tickets</strong>
             </div>
         </a>
-        <a href="{{ route('profile.edit') }}" class="item">
+        <a href="{{ route('User.Assets') }}" class="item">
             <div class="col">
                 <i class="fa fa-cog" aria-hidden="true" style="font-size: 20px;color:white;"></i>
-                <strong style="color: white;">Setting</strong>
+                <strong style="color: white;">Service</strong>
             </div>
         </a>
         <a href="{{ route('User.Mine') }}" class="item">
