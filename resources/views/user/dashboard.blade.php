@@ -30,7 +30,6 @@
 
     <div class="section full mb-5">
         <div class="col-12 my-4">
-            <h3 class="text-center text-white">Film Investment</h3>
             <div class="row" style="padding:10px;" id="homeProducts">
                 @forelse ($tickets as $ticket)
                     <div class="col-6" style="margin-top:10px;">

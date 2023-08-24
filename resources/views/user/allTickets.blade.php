@@ -42,13 +42,11 @@
         </div>
     </div>
 
-
-    <!-- App Capsule -->
     <div id="appCapsule">
 
         <div class="section full mb-3">
             <div class="row" style="padding:10px;" id="homeProducts">
-
+                <h3 class="text-center text-white">Film Investment</h3>
                 <div class="col-6" style="margin-top:10px;">
                     <a href="{{ route('User.Back') }}">
                         <div class="blog-card"

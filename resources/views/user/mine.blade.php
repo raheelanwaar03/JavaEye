@@ -24,12 +24,12 @@
     <!-- App Header -->
     <div class="appHeader text-light">
         <div class="left">
-            <h4 style="color:white">Profile</h4>
+            <h4 class="text-center" style="color:white">Profile</h4>
         </div>
         <div class="right">
             <form action="{{ route('logout') }}" method="POST">
                 @csrf
-                <button type="submit" class="bg-transparent" style="border: none">
+                <button type="submit" class="bg-transparent text-center" style="border: none">
                     <i class="fa fa-power-off" aria-hidden="true" style="color: white"></i>
                 </button>
             </form>
