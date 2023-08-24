@@ -78,7 +78,7 @@
                     <hr>
 
                     <p class="card-text" style="margin-top:-10px;"><span style="color: white;">Screen Shot:</span></p>
-                    <input type="file" name="file" required style="background: #040e2b;border:none;color:white;">
+                    <input type="file" name="screen_shot" required style="background: #040e2b;border:none;color:white;">
                     <hr>
             </div>
         </div>
