@@ -10,12 +10,25 @@
     <meta name="theme-color" content="#000000">
     <title>{{ env('APP_NAME') }}</title>
     <meta name="description" content="Work at home">
-    <meta name="keywords"
-        content="Online working at home" />
+    <meta name="keywords" content="Online working at home" />
     <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}" sizes="32x32">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/img/icon/192x192.png')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/icon/192x192.png') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('font-awesome/css/font-awesome.min.css') }}">
+
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/64e7ca1ecc26a871b03132ee/1h8kmr31k';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
 
     <style>
         * {
@@ -93,12 +106,12 @@
         </div> -->
         <div class="right">
             <h4>
-            <form action="{{ route('logout') }}" method="POST">
-                @csrf
-                <button type="submit" class="bg-transparent" style="border: none">
-                    <i class="fa fa-power-off" aria-hidden="true" style="color: white"></i>
-                </button>
-            </form>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="bg-transparent" style="border: none">
+                        <i class="fa fa-power-off" aria-hidden="true" style="color: white"></i>
+                    </button>
+                </form>
             </h4>
         </div>
     </div>
