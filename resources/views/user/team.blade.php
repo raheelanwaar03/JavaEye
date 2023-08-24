@@ -1,38 +1,90 @@
-@extends('layouts.app')
+<!doctype html>
+<html lang="en">
 
-@section('content')
-    <div id="appCapsule">
-        <h3 class="text-center text-white">Team Level Working</h3>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>{{ env('APP_NAME') }}</title>
+    <meta name="description" content="Work at home">
+    <meta name="keywords" content="Online working at home" />
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/icon/192x192.png') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('font-awesome/css/font-awesome.min.css') }}">
 
-        <div class="col-12" style="margin-top:2px;">
+</head>
 
-            <div class="blog-card" style="border-radius: 5px !important;padding: 5px;">
-                <img src="{{ asset('assets/photo.jpeg') }}" height="auto" width="540" alt="photo" class="img-fluid">
-            </div>
+<body>
+    <div class="appHeader text-light">
+        <div class="left">
+            <h4 style="color: white;">{{ env('APP_NAME') }}</h4>
+        </div>
+        <!-- <div class="pageTitle">
 
-            <div class="blog-card" style="border-radius: 5px !important;padding: 5px;">
-                <img src="{{ asset('assets/photo1.jpeg') }}" height="auto" width="540" alt="photo" class="img-fluid">
-            </div>
+        </div> -->
+        <div class="right">
+            <h4>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="bg-transparent" style="border: none">
+                        <i class="fa fa-power-off" aria-hidden="true" style="color: white"></i>
+                    </button>
+                </form>
+            </h4>
         </div>
     </div>
-
     <div id="appCapsule">
-        <h3 class="text-center text-white">Team Members</h3>
-        @foreach ($users as $user)
-            <div class="col-12" style="margin-top:2px;">
-                <div class="blog-card" style="border-radius: 5px !important;padding: 5px;">
 
-                    <p class="card-text" style="font-size: 11px; color: black !important;">{{ $user->user_name }}<span
-                            style="float: right;">{{ $user->status }}</span></p>
+        <img src="{{ asset('assets/photo.jpeg') }}" alt="Phote" class="img-fluid" height="auto" width="auto">
+        <img src="{{ asset('assets/photo.jpeg') }}" alt="Phote" class="img-fluid" height="auto" width="auto">
 
-                    <p class="card-text" style="margin-top:-20px;font-size: 11px;color: rgb(64, 64, 151);">
-                        {{ $user->balance }}$
-                        <span
-                            style="float: right;color: rgb(64, 64, 151);margin-right: -60px;">{{ $user->created_at }}</span>
-                    </p>
-                </div>
-            </div>
-            <hr>
-        @endforeach
     </div>
-@endsection
+
+    <div class="appBottomMenu" style="background-color: black;">
+        <a href="{{ route('User.Dashboard') }}" class="item active">
+            <div class="col">
+                <i class="fa fa-home" aria-hidden="true" style="font-size: 20px;color:rgb(215, 68, 93) !important;"></i>
+                <strong style="color: white;">Home</strong>
+            </div>
+        </a>
+        <a href="{{ route('User.Assets') }}" class="item">
+            <div class="col">
+                <i class="fa fa-file-text-o" aria-hidden="true" style="font-size: 20px;color:white;"></i>
+                <strong style="color: white;">Assest</strong>
+            </div>
+        </a>
+        <a href="{{ route('User.All.Tickets') }}" class="item">
+            <div class="col">
+                <i class="fa fa-film" aria-hidden="true" style="font-size: 20px;color:white;"></i>
+                <strong style="color: white;">Movies</strong>
+            </div>
+        </a>
+        <a href="{{ route('LandingPage.Contact') }}" class="item">
+            <div class="col">
+                <i class="fa fa-comment-o" aria-hidden="true" style="font-size: 20px;color:white;"></i>
+                <strong style="color: white;">Service</strong>
+            </div>
+        </a>
+        <a href="{{ route('User.Mine') }}" class="item">
+            <div class="col">
+                <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 20px;color:white;"></i>
+                <strong style="color: white;">Mine</strong>
+            </div>
+        </a>
+    </div>
+
+
+    <script src="{{ asset('assets/js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ asset('assets/js/lib/bootstrap.bundle.min.js') }}"></script>
+    <script type="module" src="{{ asset('assets/js/ionicons.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/splide/splide.min.js') }}"></script>
+
+
+
+</body>
+
+</html>
