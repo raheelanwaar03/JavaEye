@@ -24,7 +24,7 @@
     <!-- App Header -->
     <div class="appHeader text-light">
         <div class="left">
-            <h4 class="text-center" style="color:white">Profile</h4>
+            <h4 class="text-center" style="color:white">Personal Center</h4>
         </div>
         <div class="right">
             <form action="{{ route('logout') }}" method="POST">
