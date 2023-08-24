@@ -39,9 +39,9 @@
     <div id="appCapsule">
 
         <div class="col-12" style="margin-top:2px;">
-            <p class="card-text" style="font-size: 11px; color: white !important;font-weight: bold;">
+            <p class="card-text text-center" style="font-size: 11px; color: white !important;font-weight: bold;">
                 {{ auth()->user()->email }}<span style="float: right;"></span></p>
-            <p class="card-text" style="margin-top:-20px;font-size: 11px;color:rgb(215, 68, 93) !important;">
+            <p class="card-text text-center" style="margin-top:-20px;font-size: 11px;color:rgb(215, 68, 93) !important;">
                 Level:{{ auth()->user()->level }}
             </p>
         </div>
