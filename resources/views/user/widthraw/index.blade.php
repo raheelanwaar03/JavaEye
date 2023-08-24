@@ -21,7 +21,7 @@
 <body>
     <div class="appHeader text-light">
         <div class="left">
-            <h4 style="color: white;">Widthraw Balance</h4>
+            <h4 style="color: white;">{{ env('APP_NAME') }}</h4>
         </div>
         <div class="right">
             <h4>
