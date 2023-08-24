@@ -101,8 +101,8 @@
             </form>
             </h4>
         </div>
-
     </div>
+
     <div id="appCapsule">
         <div style="padding-left: 3px;padding-right: 3px;margin-top: 5px;">
             <div class="col-md-12 col-12"
