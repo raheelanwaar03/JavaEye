@@ -49,7 +49,7 @@ class UserDashboardController extends Controller
 
     public function back(Request $request)
     {
-        return redirect()->back()->with('error','Not open yet');
+        return redirect()->back()->with('error', 'Not open yet');
     }
 
 
@@ -392,9 +392,9 @@ class UserDashboardController extends Controller
 
     public function widthrawalTranscation()
     {
-        $transcations = Widthrawal::where('user_id',auth()->user()->id)->get();
-        $deposits = UserDeposit::where('user_id',auth()->user()->id)->get();
-        return view('user.widthraw.transcation', compact('transcations','deposits'));
+        $transcations = Widthrawal::where('user_id', auth()->user()->id)->get();
+        $deposits = UserDeposit::where('user_id', auth()->user()->id)->get();
+        return view('user.widthraw.transcation', compact('transcations', 'deposits'));
     }
 
     public function massage(Request $request)
@@ -406,8 +406,11 @@ class UserDashboardController extends Controller
         $massage->email = $request->email;
         $massage->massage = $request->massage;
         $massage->save();
-        return redirect(route('User.Dashboard'))->with('success','We will contact you soon');
+        return redirect(route('User.Dashboard'))->with('success', 'We will contact you soon');
     }
 
-
+    public function contact()
+    {
+        return view('user.contactUs');
+    }
 }

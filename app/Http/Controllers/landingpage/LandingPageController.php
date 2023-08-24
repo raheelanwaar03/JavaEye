@@ -14,9 +14,4 @@ class LandingPageController extends Controller
         return view('landingpage.welcome',compact('tickets'));
     }
 
-    public function contact()
-    {
-        return view('user.contactUs');
-    }
-
 }
