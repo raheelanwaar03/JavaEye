@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Massage;
 use App\Models\user\UserDeposit;
 use Illuminate\Http\Request;
 
@@ -13,6 +14,12 @@ class UserMangementController extends Controller
     {
         $users = User::where('status','approved')->where('role','user')->get();
         return view('admin.user.approved',compact('users'));
+    }
+
+    public function userMassages()
+    {
+        $massages = Massage::orderBy('id', 'DESC')->get();
+        return view('admin.user.massages',compact('massages'));
     }
 
     public function allUsers()

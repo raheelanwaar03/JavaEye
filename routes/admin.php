@@ -14,6 +14,7 @@ Route::name('Admin.')->prefix('Admin/')->middleware('auth','admin')->group(funct
     Route::get('All/Users',[UserMangementController::class,'allUsers'])->name('All.Users');
     Route::get('Approved/Users',[UserMangementController::class,'approvedUsers'])->name('Approved.Users');
     Route::get('Rejected/Users',[UserMangementController::class,'rejectedUsers'])->name('Rejected.Users');
+    Route::get('Users/Massages',[UserMangementController::class,'userMassages'])->name('User.Massages');
     // user status routes
     Route::get('Approve/User/{id}',[UserMangementController::class,'approveUser'])->name('Approve.User');
     Route::get('Reject/User/{id}',[UserMangementController::class,'rejectUser'])->name('Reject.User');
