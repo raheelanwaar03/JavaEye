@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Reward;
 use App\Models\User;
 use App\Models\user\BuyTicket;
 use App\Models\user\Widthrawal;
@@ -39,7 +40,7 @@ class AdminDashboardController extends Controller
         $widthrawal->status = 'approved';
         $widthrawal->save();
 
-        $user = User::where('id',$widthrawal->user_id)->first();
+        $user = User::where('id', $widthrawal->user_id)->first();
         $user->balance -= $widthrawal->amount;
         $user->save();
 
@@ -70,6 +71,13 @@ class AdminDashboardController extends Controller
             $user = User::where('id', $user_id)->first();
             $user->balance += $commission;
             $user->save();
+
+            $bouns = new Reward();
+            $bouns->user_id = $user->id;
+            $bouns->amount = $commission;
+            $bouns->type = 'team';
+            $bouns->save();
+
             // referls commission
 
             $first_commission = $commission * 8 / 100;
@@ -82,18 +90,38 @@ class AdminDashboardController extends Controller
             if ($first_user != '') {
                 $first_user->balance += $first_commission;
                 $first_user->save();
+                // storing in reward tabel
+                $bouns = new Reward();
+                $bouns->user_id = $user->id;
+                $bouns->amount = $commission;
+                $bouns->type = 'team';
+                $bouns->save();
+
                 // Second Commision
                 $second_referral = $first_user->referral;
                 $second_user = User::where('email', $second_referral)->first();
                 if ($second_user != '') {
                     $second_user->balance += $second_commission;
                     $second_user->save();
+                    // storing in reward tabel
+                    $bouns = new Reward();
+                    $bouns->user_id = $user->id;
+                    $bouns->amount = $commission;
+                    $bouns->type = 'team';
+                    $bouns->save();
+
                     // third commission
                     $third_referral = $second_user->referral;
                     $third_user = User::where('email', $third_referral)->first();
                     if ($third_user != '') {
                         $third_user->balance += $third_commission;
                         $third_user->save();
+                        // storing in reward tabel
+                        $bouns = new Reward();
+                        $bouns->user_id = $user->id;
+                        $bouns->amount = $commission;
+                        $bouns->type = 'team';
+                        $bouns->save();
                     }
                 }
             }
