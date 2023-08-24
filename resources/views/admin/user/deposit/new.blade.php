@@ -37,7 +37,10 @@
                                                 </td>
                                                 <td>{{ $deposit->created_at }}</td>
                                                 <td>
-                                                    <a href="{{ route('Admin.Rejected.Deposit',$deposit->id) }}" class="btn btn-sm btn-primary">Rejected</a>
+                                                    <a href="{{ route('Admin.Approve.Deposit', ['id' => $deposit->id]) }}"
+                                                        class="btn btn-sm btn-success">Approved</a>
+                                                    <a href="{{ route('Admin.Rejected.Deposit', $deposit->id) }}"
+                                                        class="btn btn-sm btn-danger">Rejected</a>
                                                     <a href="{{ route('Admin.Deposit.Amount', ['id' => $deposit->id]) }}"
                                                         class="btn btn-sm btn-warning">Edit</a>
                                                 </td>

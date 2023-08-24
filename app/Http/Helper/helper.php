@@ -15,7 +15,7 @@ function allUser()
 
 function Total_deposit()
 {
-    $deposits = UserDeposit::get();
+    $deposits = UserDeposit::where('status','approved')->get();
     $total_deposit = 0;
     foreach ($deposits as $deposit) {
         $total_deposit += $deposit->amount;
@@ -24,17 +24,17 @@ function Total_deposit()
     return $total_deposit;
 }
 
-// function Total_widthrawal()
-// {
-//     $deposits = UserDeposit::get();
-//     $total_deposit = 0;
-//     foreach($deposits as $deposit)
-//     {
-//         $total_deposit += $deposit->amount;
-//     }
+function Admin_Total_Widtraw()
+{
+    $deposits = Widthrawal::where('status','apporoved');
+    $total_deposit = 0;
+    foreach($deposits as $deposit)
+    {
+        $total_deposit += $deposit->amount;
+    }
 
-//     return $total_deposit;
-// }
+    return $total_deposit;
+}
 
 function sold_tickets()
 {
