@@ -5,6 +5,7 @@ namespace App\Http\Controllers\user;
 use App\Http\Controllers\Controller;
 use App\Models\admin\Ticket;
 use App\Models\User;
+use App\Models\Massage;
 use App\Models\user\BuyTicket;
 use App\Models\user\UserDeposit;
 use App\Models\user\Widthrawal;
@@ -389,11 +390,24 @@ class UserDashboardController extends Controller
         return view('user.boxOffice');
     }
 
-
     public function widthrawalTranscation()
     {
         $transcations = Widthrawal::where('user_id',auth()->user()->id)->get();
         $deposits = UserDeposit::where('user_id',auth()->user()->id)->get();
         return view('user.widthraw.transcation', compact('transcations','deposits'));
     }
+
+    public function massage(Request $request)
+    {
+        $massage = new Massage();
+        $massage->user_id = auth()->user()->id;
+        $massage->user_name = auth()->user()->name;
+        $massage->name = $request->name;
+        $massage->email = $request->email;
+        $massage->massgae = $request->massage;
+        $massage->save();
+        return redirect(route('User.Dashboard'))->with('success','We will contact you soon');
+    }
+
+
 }

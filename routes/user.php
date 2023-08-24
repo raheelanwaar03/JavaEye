@@ -16,6 +16,7 @@ Route::name('User.')->prefix('User/')->middleware('auth','user','status')->group
     Route::get('Ticket/Back',[UserDashboardController::class,'back'])->name('Back');
     Route::get('Account/Report',[UserDashboardController::class,'report'])->name('Account.Report');
     Route::get('Box/Office',[UserDashboardController::class,'boxOffice'])->name('Box.Office');
+    Route::post('Contact/Us/Massage',[UserDashboardController::class,'massage'])->name('Massage');
     // user deposit link
     Route::get('Deposit/Money',[UserDashboardController::class,'deposit'])->name('Deposit.Money');
     Route::post('Store/Deposit/Money',[UserDashboardController::class,'store'])->name('Store.Deposit.Money');

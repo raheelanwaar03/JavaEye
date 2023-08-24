@@ -64,7 +64,8 @@
 <body>
     <div class="container">
         <h1>Contact Us</h1>
-        <form action="mailto:info@odenfilms.com">
+        <form action="{{ route('User.Massage') }}" method="POST">
+            @csrf
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
