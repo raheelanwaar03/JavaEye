@@ -1,11 +1,46 @@
 <div class="footer">
     <div class="copyright">
-        <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">{{env('APP_NAME')}}</a> 2022
+        <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">{{ env('APP_NAME') }}</a> 2022
         </p>
     </div>
 </div>
 
 </div>
+
+
+<script>
+    // Get the button element
+    const button = document.getElementById('myButton');
+
+    // Check if a timestamp is stored in local storage
+    const lastClickTimestamp = localStorage.getItem('lastClickTimestamp');
+
+    if (lastClickTimestamp) {
+        const currentTime = new Date().getTime();
+        const timeSinceLastClick = currentTime - parseInt(lastClickTimestamp);
+
+        // If less than 24 hours have passed, disable the button
+        if (timeSinceLastClick < 24 * 60 * 60 * 1000) {
+            button.disabled = true;
+        }
+    }
+
+    // Add a click event listener to the button
+    button.addEventListener('click', function() {
+        // Disable the button
+        button.disabled = true;
+
+        // Store the current timestamp in local storage
+        const currentTime = new Date().getTime();
+        localStorage.setItem('lastClickTimestamp', currentTime.toString());
+
+        // Enable the button after 24 hours
+        setTimeout(function() {
+            button.disabled = false;
+        }, 24 * 60 * 60 * 1000);
+    });
+</script>
+
 
 <script>
     function showFullscreenImage(imageElement) {

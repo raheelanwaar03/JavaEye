@@ -89,7 +89,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="">
-                        <a href="{{ route('Admin.Give.Bouns') }}" class="btn btn-primary">Give Bouns</a>
+                        <a href="{{ route('Admin.Give.Bouns') }}" id="myButton" class="btn btn-primary">Give Bouns</a>
                     </div>
                 </div>
             </div>
