@@ -126,6 +126,6 @@ class AdminDashboardController extends Controller
                 }
             }
         }
-        return redirect()->back()->with('success', 'All VIP0 level user got thier commission');
+        return redirect()->back()->with('success', 'Commission Given to all users');
     }
 }

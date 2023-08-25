@@ -103,7 +103,7 @@
                             </p>
 
                             <p class="card-text" style="margin-top:-20px;font-size: 11px;color: rgb(64, 64, 151);">
-                                {{ $item->ticket_price }}$
+                                {{ $item->total_price }}$
                                 <span
                                     style="float: right;color: rgb(64, 64, 151);margin-right: -5px;">{{ $item->created_at }}</span>
                             </p>

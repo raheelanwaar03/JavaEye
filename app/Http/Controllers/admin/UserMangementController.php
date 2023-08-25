@@ -111,7 +111,7 @@ class UserMangementController extends Controller
 
         $depositBalance = $deposit->amount;
         $user = User::where('id',$deposit->user_id)->first();
-        $user->balance = $depositBalance;
+        $user->balance += $depositBalance;
         $user->save();
 
         // storing in reward \
