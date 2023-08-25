@@ -15,7 +15,7 @@ function allUser()
 
 function Total_deposit()
 {
-    $deposits = UserDeposit::where('status','approved')->get();
+    $deposits = UserDeposit::where('user_id',auth()->user()->id)->where('status','approved')->get();
     $total_deposit = 0;
     foreach ($deposits as $deposit) {
         $total_deposit += $deposit->amount;

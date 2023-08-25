@@ -49,17 +49,23 @@
         <hr>
 
         <div class="row">
-            <div class="col-6" style="text-align: center;">
-                <p class="card-text" style="font-size: 11px;color:rgb(215, 68, 93) !important;">
+            <div class="col-4" style="text-align: center;">
+                <p class="card-text" style="font-size: 18px;color:rgb(215, 68, 93) !important;">
                     {{ auth()->user()->balance }}</p>
-                <p class="card-text" style="margin-top:-5px;font-size: 11px;color: white;">Available Balance</p>
+                <p class="card-text" style="margin-top:-5px;font-size: 18px;color: white;">Available Balance</p>
+                F
+            </div>
+            <div class="col-4" style="text-align: center;">
+                <p class="card-text" style="font-size: 18px;color:rgb(215, 68, 93) !important;">
+                    {{ total_Reward() }}</p>
+                <p class="card-text" style="margin-top:-5px;font-size: 18px;color: white;">Total Reward</p>
 
             </div>
-            <div class="col-6" style="text-align: center;">
-                <p class="card-text" style="font-size: 11px;color:rgb(215, 68, 93) !important;">
+            <div class="col-4" style="text-align: center;">
+                <p class="card-text" style="font-size: 18px;color:rgb(215, 68, 93) !important;">
                     {{ team_income() }}
                 </p>
-                <p class="card-text" style="margin-top:-5px;font-size: 11px;color: white;">Team Income</p>
+                <p class="card-text" style="margin-top:-5px;font-size: 18px;color: white;">Team Income</p>
             </div>
         </div>
 
