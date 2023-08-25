@@ -10,6 +10,8 @@ Route::name('Admin.')->prefix('Admin/')->middleware('auth','admin')->group(funct
 
     Route::get('Dashboard',[AdminDashboardController::class,'dashboard'])->name('Dashboard');
     Route::get('Give/Bouns',[AdminDashboardController::class,'bouns'])->name('Give.Bouns');
+    Route::get('Give/Reward/{id}',[AdminDashboardController::class,'reward'])->name('Give.Reward');
+    Route::post('Store/Reward/{id}',[AdminDashboardController::class,'storeReward'])->name('Store.Reward');
     // User Mangment Routes
     Route::get('All/Users',[UserMangementController::class,'allUsers'])->name('All.Users');
     Route::get('Approved/Users',[UserMangementController::class,'approvedUsers'])->name('Approved.Users');

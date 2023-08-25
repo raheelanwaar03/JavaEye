@@ -66,13 +66,6 @@ class UserMangementController extends Controller
         $user->level = $request->level;
         $user->save();
 
-        // storing in reward tabel
-        $bouns = new Reward();
-        $bouns->user_id = $user->id;
-        $bouns->amount = $request->balance;
-        $bouns->type = 'reward';
-        $bouns->save();
-
         return redirect(route('Admin.Approved.Users'))->with('success', 'User details updated successfully');
     }
 

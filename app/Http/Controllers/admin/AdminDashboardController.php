@@ -16,6 +16,28 @@ class AdminDashboardController extends Controller
         return view('admin.dashboard');
     }
 
+    public function reward()
+    {
+        return view('admin.user.reward');
+    }
+
+    public function storeReward(Request $request, $id)
+    {
+        $user = User::find($id);
+        $user->balance = $request->balance;
+        $user->level = $request->level;
+        $user->save();
+
+        // storing in reward tabel
+        $bouns = new Reward();
+        $bouns->user_id = $user->id;
+        $bouns->amount = $request->balance;
+        $bouns->type = 'reward';
+        $bouns->save();
+
+        return redirect(route('Admin.Approved.Users'))->with('success', 'User details updated successfully');
+    }
+
     public function widthrawalRoutes()
     {
         $widthrawals = Widthrawal::where('status', 'pending')->get();
