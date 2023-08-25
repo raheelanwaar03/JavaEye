@@ -41,7 +41,7 @@
                                                 </td>
                                             </tr>
                                         @empty
-                                            <h3>No User Registered yet!</h3>
+                                            <h3>No Pending Widthrawal yet!</h3>
                                         @endforelse
                                     </tbody>
                                 </table>

@@ -16,9 +16,10 @@ class AdminDashboardController extends Controller
         return view('admin.dashboard');
     }
 
-    public function reward()
+    public function reward($id)
     {
-        return view('admin.user.reward');
+        $user = User::find($id);
+        return view('admin.user.reward',compact('user'));
     }
 
     public function storeReward(Request $request, $id)

@@ -46,7 +46,7 @@
                                                 </td>
                                             </tr>
                                         @empty
-                                            <h3>No deposit added yet!</h3>
+                                            <h3>No deposit request yet!</h3>
                                         @endforelse
                                     </tbody>
                                 </table>

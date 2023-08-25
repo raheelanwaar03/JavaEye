@@ -43,7 +43,7 @@
                                                 </td>
                                             </tr>
                                         @empty
-                                            <h3>No User Registered yet!</h3>
+                                            <h3>No Pending User yet!</h3>
                                         @endforelse
                                     </tbody>
                                 </table>
