@@ -121,41 +121,41 @@ class UserMangementController extends Controller
         $total_deposit = 0;
         foreach ($userDeposit as $deposit) {
             $total_deposit += $deposit->amount;
-        }
-        if ($total_deposit >= 30) {
-            $user = User::where('id', $deposit->user_id)->first();
-            $user->level = 'VIP1';
-            $user->save();
-        }
+            if ($total_deposit >= 30) {
+                $user = User::where('id', $deposit->user_id)->first();
+                $user->level = 'VIP1';
+                $user->save();
+            }
 
-        if ($total_deposit >= 500) {
-            $user = User::where('id', $deposit->user_id)->first();
-            $user->level = 'VIP2';
-            $user->save();
-        }
+            if ($total_deposit >= 500) {
+                $user = User::where('id', $deposit->user_id)->first();
+                $user->level = 'VIP2';
+                $user->save();
+            }
 
-        if ($total_deposit >= 1500) {
-            $user = User::where('id', $deposit->user_id)->first();
-            $user->level = 'VIP3';
-            $user->save();
-        }
+            if ($total_deposit >= 1500) {
+                $user = User::where('id', $deposit->user_id)->first();
+                $user->level = 'VIP3';
+                $user->save();
+            }
 
-        if ($total_deposit >= 4000) {
-            $user = User::where('id', $deposit->user_id)->first();
-            $user->level = 'VIP4';
-            $user->save();
-        }
+            if ($total_deposit >= 4000) {
+                $user = User::where('id', $deposit->user_id)->first();
+                $user->level = 'VIP4';
+                $user->save();
+            }
 
-        if ($total_deposit >= 15000) {
-            $user = User::where('id', $deposit->user_id)->first();
-            $user->level = 'VIP5';
-            $user->save();
-        }
+            if ($total_deposit >= 15000) {
+                $user = User::where('id', $deposit->user_id)->first();
+                $user->level = 'VIP5';
+                $user->save();
+            }
 
-        if ($total_deposit >= 40000) {
-            $user = User::where('id', $deposit->user_id)->first();
-            $user->level = 'VIP6';
-            $user->save();
+            if ($total_deposit >= 40000) {
+                $user = User::where('id', $deposit->user_id)->first();
+                $user->level = 'VIP6';
+                $user->save();
+            }
         }
 
 
