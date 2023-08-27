@@ -15,7 +15,7 @@
                                         <tr>
                                             <th>Name</th>
                                             <th>Email</th>
-                                            <th>Phone</th>
+                                            <th>level</th>
                                             <th>Referral</th>
                                             <th>Balance</th>
                                             <th>Status</th>
@@ -28,7 +28,7 @@
                                             <tr>
                                                 <td>{{ $user->name }}</td>
                                                 <td>{{ $user->email }}</td>
-                                                <td>{{ $user->phone }}</td>
+                                                <td>{{ $user->level }}</td>
                                                 <td>{{ $user->referral }}</td>
                                                 <td><strong>{{ $user->balance }}</strong></td>
                                                 <td><span class="badge light badge-success">Approved</span></td>
