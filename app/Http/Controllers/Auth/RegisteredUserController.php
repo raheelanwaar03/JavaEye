@@ -37,6 +37,13 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
+        if($request->referral != 'default')
+        {
+            $user = User::where('email',$request->referral)->first();
+            $user->balance += 5;
+            $user->save();
+        }
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
