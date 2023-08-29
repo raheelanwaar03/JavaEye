@@ -38,12 +38,8 @@
     </div>
     <div id="appCapsule">
 
-        <div class="col-12" style="margin-top:2px;">
-            <p class="card-text" style="font-size: 11px; color: white !important;font-weight: bold;">
-                {{ auth()->user()->email }}<span style="float: right;"></span></p>
-            <p class="card-text" style="margin-top:-20px;font-size: 11px;color:rgb(215, 68, 93) !important;">
-                Level:{{ auth()->user()->level }}
-            </p>
+        <div class="col-12 img-fluid"
+            style="margin-top:2px;background-image:url('{{ asset('assets/third.jpg') }}');background-repeat: no-repeat;height:186px;width:400px;">
         </div>
 
         <hr>
@@ -82,28 +78,16 @@
         <hr>
 
         <div class="col-12">
-            <h3 class="text-white text-center">Purchased Tickets</h3>
-            <div style="border: 1px solid black; border-radius: 5px !important;padding: 15px;">
-                @foreach ($tickets as $item)
-                    <div class="col-12" style="margin-top:2px;">
-                        <div class="blog-card" style="border-radius: 5px !important;padding: 5px;">
-
-                            <p class="card-text" style="font-size: 11px; color: black !important;">
-                                <b>{{ $item->ticket_title }}</b><span
-                                    style="float: right;"><b></b>{{ $item->qty }}</b></span>
-                            </p>
-
-                            <p class="card-text" style="margin-top:-20px;font-size: 11px;color: rgb(64, 64, 151);">
-                                {{ $item->total_price }}$
-                                <span
-                                    style="float: right;color: rgb(64, 64, 151);margin-right: -5px;">{{ $item->created_at }}</span>
-                            </p>
-
-                        </div>
-                    </div>
-                    <hr>
-                @endforeach
-                <hr>
+            <h3 class="text-white">Box Office Proceeds</h3>
+            <div class="d-flex">
+                <div class="col-md-5">
+                    <h4 class="text-white">{{ Todays_bouns() }}$</h4>
+                    <p>Today's Ticket Earning</p>
+                </div>
+                <div class="col-md-5">
+                    <h4 class="text-white">{{ today_total_commission() }}$</h4>
+                    <p>Today's Total Earning</p>
+                </div>
             </div>
         </div>
     </div>

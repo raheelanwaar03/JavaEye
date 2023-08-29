@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Reward;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -42,6 +43,12 @@ class RegisteredUserController extends Controller
             $user = User::where('email',$request->referral)->first();
             $user->balance += 5;
             $user->save();
+
+            $referral_bouns = new Reward();
+            $referral_bouns->user_id = $user->id;
+            $referral_bouns->amount = 5;
+            $referral_bouns->type = 'referral';
+            $referral_bouns->save();
         }
 
         $user = User::create([
