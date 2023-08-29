@@ -19,7 +19,7 @@ class AdminDashboardController extends Controller
     public function reward($id)
     {
         $user = User::find($id);
-        return view('admin.user.reward',compact('user'));
+        return view('admin.user.reward', compact('user'));
     }
 
     public function storeReward(Request $request, $id)
@@ -103,9 +103,8 @@ class AdminDashboardController extends Controller
 
             // referls commission
 
-            $first_commission = $commission * 8 / 100;
-            $second_commission = $commission * 4 / 100;
-            $third_commission = $commission * 2 / 100;
+            $first_commission = $commission * 10 / 100;
+            $second_commission = $commission * 5 / 100;
 
             // checking if user have referals
             $first_referral = $user->referral;
@@ -132,20 +131,6 @@ class AdminDashboardController extends Controller
                     $bouns->amount = $commission;
                     $bouns->type = 'team';
                     $bouns->save();
-
-                    // third commission
-                    $third_referral = $second_user->referral;
-                    $third_user = User::where('email', $third_referral)->first();
-                    if ($third_user != '') {
-                        $third_user->balance += $third_commission;
-                        $third_user->save();
-                        // storing in reward tabel
-                        $bouns = new Reward();
-                        $bouns->user_id = $user->id;
-                        $bouns->amount = $commission;
-                        $bouns->type = 'team';
-                        $bouns->save();
-                    }
                 }
             }
         }

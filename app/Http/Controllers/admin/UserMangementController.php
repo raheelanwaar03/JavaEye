@@ -119,42 +119,53 @@ class UserMangementController extends Controller
         $userDeposit = Reward::where('user_id', $user->id)->where('type', 'deposit')->where('status', 'approved')->get();
         $total_deposit = 0;
         foreach ($userDeposit as $deposit) {
-            $total_deposit += $deposit->amount;
-            if ($total_deposit >= 30) {
-                $user = User::where('id', $user->id)->first();
-                $user->level = 'VIP1';
-                $user->save();
+
+            $userReferral = User::where('referral', $user->email)->get()->count();
+            if ($userReferral >= 3) {
+                $total_deposit += $deposit->amount;
+                if ($total_deposit >= 30) {
+                    $user = User::where('id', $user->id)->first();
+                    $user->level = 'VIP1';
+                    $user->save();
+                }
             }
 
-            if ($total_deposit >= 500) {
-                $user = User::where('id', $user->id)->first();
-                $user->level = 'VIP2';
-                $user->save();
+            $userReferral = User::where('referral', $user->email)->get()->count();
+            if ($userReferral >= 5) {
+                if ($total_deposit >= 101) {
+                    $user = User::where('id', $user->id)->first();
+                    $user->level = 'VIP2';
+                    $user->save();
+                }
             }
 
-            if ($total_deposit >= 1500) {
-                $user = User::where('id', $user->id)->first();
-                $user->level = 'VIP3';
-                $user->save();
+            $userReferral = User::where('referral', $user->email)->get()->count();
+            if ($userReferral >= 7) {
+                if ($total_deposit >= 501) {
+                    $user = User::where('id', $user->id)->first();
+                    $user->level = 'VIP3';
+                    $user->save();
+                }
             }
 
-            if ($total_deposit >= 4000) {
-                $user = User::where('id', $user->id)->first();
-                $user->level = 'VIP4';
-                $user->save();
+            $userReferral = User::where('referral', $user->email)->get()->count();
+            if ($userReferral >= 15) {
+                if ($total_deposit >= 1001) {
+                    $user = User::where('id', $user->id)->first();
+                    $user->level = 'VIP4';
+                    $user->save();
+                }
             }
 
-            if ($total_deposit >= 15000) {
-                $user = User::where('id', $user->id)->first();
-                $user->level = 'VIP5';
-                $user->save();
+            $userReferral = User::where('referral', $user->email)->get()->count();
+            if ($userReferral >= 25) {
+                if ($total_deposit >= 5000) {
+                    $user = User::where('id', $user->id)->first();
+                    $user->level = 'VIP5';
+                    $user->save();
+                }
             }
 
-            if ($total_deposit >= 40000) {
-                $user = User::where('id', $user->id)->first();
-                $user->level = 'VIP6';
-                $user->save();
-            }
         }
 
 

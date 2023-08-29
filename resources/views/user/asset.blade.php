@@ -53,7 +53,6 @@
                 <p class="card-text" style="font-size: 18px;color:rgb(215, 68, 93) !important;">
                     {{ auth()->user()->balance }}</p>
                 <p class="card-text" style="margin-top:-5px;font-size: 18px;color: white;">Available Balance</p>
-                F
             </div>
             <div class="col-4" style="text-align: center;">
                 <p class="card-text" style="font-size: 18px;color:rgb(215, 68, 93) !important;">
