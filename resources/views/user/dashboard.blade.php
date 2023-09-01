@@ -32,12 +32,12 @@
         <div class="col-12 my-4">
             <div class="row" style="padding:10px;" id="homeProducts">
                 @forelse ($tickets as $ticket)
-                    <div class="col-6" style="margin-top:10px;">
-                        <a href="{{ route('User.Show.Ticket',['id'=>$ticket->id]) }}">
+                    <div class="col-6" style="margin-top:10px;margin-bottom:20px">
+                        <a href="{{ route('User.Dashboard') }}">
                             <div class="blog-card"
-                                style="width:130px;height: 130px; border-radius: 10px !important;padding: 5px; background-image: url('{{asset('images/'.$ticket->image)}}');">
-                                <p class="card-text" style="font-size: 11px;margin-top: 90px;"><span
-                                        style="padding: 8px 10px;color: white;border-radius: 10px;background-color: blue;">{{ $ticket->price }}$</span><span
+                                style="width:150px;height: 150px; border-radius: 10px !important;padding: 5px; background-image: url('{{asset('images/'.$ticket->image)}}');">
+                                <p class="card-text" style="font-size: 11px;margin-top: 160px;"><span
+                                        style="padding: 8px 10px;color: white;border-radius: 10px;">{{ $ticket->title }}</span><span
                                         style="float: right;padding: 2px 12px;color: white;border-radius: 10px;background-color: red;">Buy</span>
                                 </p>
                             </div>
