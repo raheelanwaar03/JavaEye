@@ -18,7 +18,8 @@
 
     <style>
         * {
-            box-sizing: border-box
+            box-sizing: border-box;
+            font-family: 'Playfair Display', serif;
         }
 
         .mySlides1,
