@@ -15,12 +15,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/icon/192x192.png') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('font-awesome/css/font-awesome.min.css') }}">
-    <style>
-        * {
-            box-sizing: border-box;
-            font-family: 'Playfair Display', serif;
-        }
-    </style>
 
 </head>
 
